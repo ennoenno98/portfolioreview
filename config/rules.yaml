@@ -1,0 +1,46 @@
+# ---------------------------------------------------------------------------
+# Vanatari portfolio rules - the operating system for the monthly review.
+# Every SKU x market gets exactly one verdict. Deterministic, ordered checks:
+# the FIRST rule that matches wins. Change thresholds here, rerun classify.py,
+# and the whole review (app + monthly pack) follows.
+# ---------------------------------------------------------------------------
+
+review:
+  min_months_data: 3        # fewer active months -> "No data"
+  incubation_months: 6      # age <= this -> Incubate (agreed 2026-07)
+  trend_window_months: 3    # sales trend = last 3m vs prior 3m
+  margin_window_months: 6   # CM gates evaluated on the trailing 6 months
+
+thresholds:
+  fix_gap_pp: 5.0           # CM3% below country target by more than this -> broken
+  scale_growth_pct: 10.0    # 3m sales growth needed for Scale when not already top tier
+  decline_pct: -10.0        # 3m sales decline that marks a product as slipping
+  improving_pp: 2.0         # CM3% improvement (3m vs prior 3m) that counts as "improving"
+  exit_neg_months: 3        # months with CM3 < 0 within the margin window -> Exit
+  stall_min_ttm_sales: 500  # EUR TTM; below this a silent SKU is noise, not a stall
+
+# Verdict definitions (documented for the review meeting; engine mirrors this order)
+verdicts:
+  Incubate: >
+    Younger than the incubation window. Judged only on growth and gross sanity,
+    never Harvest/Exit. Goal: reach run-rate and target CM3% by month 6.
+  Exit: >
+    CM3 negative in >= exit_neg_months of the margin window, margin not improving,
+    out of incubation. Delist / liquidate in this market.
+  Fix: >
+    CM3% more than fix_gap_pp below the country target (or negative) but the
+    product is worth saving - high volume tier or improving. Actions: price,
+    fees, COGS, ad efficiency.
+  Harvest: >
+    Profitable but below target, bottom volume tier, flat or declining.
+    Keep selling, cut ads to maintenance, no aggressive restock.
+  Scale: >
+    At or above CM3% target with top-tier volume or strong growth.
+    Feed it: budget, inventory, variations, new markets.
+  Defend: >
+    At or above target, top volume tier, but momentum flat/negative.
+    Protect share: availability, price position, listing quality.
+  Watch: >
+    Everything in between. No action this month; re-check next review.
+  No data: >
+    Not enough history or no margin data - listed in the data-gaps panel.

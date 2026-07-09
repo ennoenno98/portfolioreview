@@ -1,0 +1,14 @@
+# Provisional cost assumptions for Shopify (vegavero.com) contribution margins.
+# CM for the webshop is ESTIMATED until a real margin feed exists:
+#   CM1 = net sales - COGS            (COGS per unit from productpricer, else fallback %)
+#   CM2 = CM1 - payment fees - fulfillment
+#   CM3 = CM2 - marketing             (no per-SKU webshop marketing data yet -> CM3 = CM2)
+#
+# >>> TODO (owner: Enno/Omar): replace these placeholders with real numbers from
+# >>> the payment provider statement and the 3PL invoice, then rerun the pipeline.
+
+payment_fee_pct: 1.9          # % of net sales (Shopify Payments EU average)
+payment_fee_per_order: 0.25   # EUR per order
+fulfillment_per_order: 4.20   # EUR per order (3PL pick base + carrier DE)
+pick_pack_per_item: 0.35      # EUR per additional item
+fallback_cogs_pct: 30.0       # % of net sales when a SKU has no COGS record
