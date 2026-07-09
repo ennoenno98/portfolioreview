@@ -28,6 +28,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline.common import (  # noqa: E402
+    COGS_CSV,
     FACTS_PATH,
     INVENTORY_GLOB,
     OOS_PATH,
@@ -39,6 +40,37 @@ from pipeline.common import (  # noqa: E402
 MIN_BASELINE_UNITS = 5.0   # trailing avg units/month below this = slow mover, ignore
 COLLAPSE_FRAC = 0.15       # a month under this fraction of baseline units = "out"
 LOW_STOCK_DAYS = 14        # days-of-inventory at/under this = critically low (current)
+# Slow-mover / dead-stock tuning (stock sitting, not selling).
+SLOW_DOI = 180             # >= this many days of supply on hand = slow / overstocked
+OVERSTOCK_DOI = 270        # >= this = badly overstocked (long-term storage-fee risk)
+
+
+def load_unit_cogs() -> pd.DataFrame:
+    """Median COGS per SKU (to value stock tied up in slow movers)."""
+    try:
+        c = pd.read_csv(COGS_CSV, usecols=["sku", "COGS"])
+    except Exception:
+        return pd.DataFrame(columns=["sku", "cogs_unit"])
+    return c.groupby("sku", as_index=False)["COGS"].median().rename(
+        columns={"COGS": "cogs_unit"}
+    )
+
+
+def stock_reco(r: pd.Series) -> str:
+    """Plain-language action for a slow mover / dead stock row."""
+    if not r["slow_mover"]:
+        return ""
+    av = r["fba_available"] or 0
+    doi = r["days_of_inventory"]
+    if r["dead_stock"]:
+        return (f"Dead stock: {av:,.0f} units on hand, no sales in 30 days — raise a "
+                "removal/liquidation order and stop reordering")
+    months = doi / 30.0 if pd.notna(doi) else None
+    if pd.notna(doi) and doi >= OVERSTOCK_DOI:
+        return (f"Badly overstocked (~{months:.0f} months of supply) — markdown or promo "
+                "to clear, halt reorders; watch long-term storage fees")
+    return (f"Slow mover (~{months:.0f} months of supply) — cut reorder quantity, "
+            "consider a markdown to free up capital")
 
 
 def latest_inventory() -> pd.DataFrame:
@@ -137,6 +169,19 @@ def main() -> Path:
     oos["advertising_while_out_now"] = oos["out_now"] & (oos["recent_ad_spend"] > 0)
     # reorder-urgency: selling but running low while advertised (protect, don't stop).
     oos["advertising_while_low"] = oos["low_stock"] & (oos["recent_ad_spend"] > 0)
+
+    # slow movers / dead stock: sellable units on hand that aren't moving.
+    units_30d = pd.to_numeric(oos["units_30d"], errors="coerce")
+    has_stock = amazon & (oos["fba_available"].fillna(0) > 0)
+    oos["dead_stock"] = has_stock & (units_30d.fillna(0) <= 0)
+    oos["slow_mover"] = has_stock & (
+        oos["dead_stock"] | (oos["days_of_inventory"] >= SLOW_DOI)
+    )
+    oos = oos.merge(load_unit_cogs(), on="sku", how="left")
+    oos["tied_capital"] = (oos["fba_available"].fillna(0) * oos["cogs_unit"]).where(
+        oos["slow_mover"]
+    )
+    oos["stock_reco"] = oos.apply(stock_reco, axis=1)
     oos["review_month"] = review_month
 
     OOS_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -148,6 +193,9 @@ def main() -> Path:
           f"| of those still advertised: {int(waste.sum())} "
           f"(EUR {oos.loc[waste, 'recent_ad_spend'].sum():,.0f} last month)")
     print(f"  LOW stock (reorder) while advertised: {int(oos['advertising_while_low'].sum())}")
+    print(f"  SLOW movers / dead stock: {int(oos['slow_mover'].sum())} "
+          f"(dead {int(oos['dead_stock'].sum())}), "
+          f"EUR {oos['tied_capital'].sum():,.0f} capital tied up")
     print(f"  historical wasted ad spend (l6m, demand-gap): "
           f"EUR {oos['wasted_ad_spend_l6m'].sum():,.0f} "
           f"over {int((oos['wasted_ad_spend_l6m'] > 0).sum())} SKUs")
