@@ -181,24 +181,25 @@ def load_shopify() -> pd.DataFrame:
     # Web marketing: actual Google Ads spend (Windsor.ai). Product-attributed
     # spend lands on its SKU; the monthly remainder (search/brand campaigns,
     # spend on SKUs without a sales row) is allocated pro-rata by net sales.
-    # Months without ads data (pre 2025-10) keep CM3 = CM2. Meta & other
-    # channels are not connected yet (documented gap).
+    # CM3 is computed ONLY for months that have ads data (Oct 2025 onward). A
+    # month without an ads figure gets ad_spend = CM3 = NaN (treated as "no CM3"
+    # downstream) rather than a flattering CM3 = CM2 that hides marketing cost.
+    # Meta & other channels are not connected yet (documented gap).
     mapped, totals = load_web_ad_spend()
     df = df.merge(
         mapped.rename(columns={"spend": "ads_product"}), on=["month", "sku"], how="left"
     )
     df["ads_product"] = df["ads_product"].fillna(0.0)
     month_total = df["month"].map(totals)
+    has_ads = month_total.notna()
     landed = df.groupby("month")["ads_product"].transform("sum")
     residual = (month_total - landed).clip(lower=0)
     pos_sales = df["net_sales"].clip(lower=0)
-    sales_share = pos_sales / df.groupby("month")["net_sales"].transform(
-        lambda s: s.clip(lower=0).sum()
-    )
-    df["ad_spend"] = np.where(
-        month_total.notna(), df["ads_product"] + residual * sales_share, np.nan
-    )
-    df["cm3"] = df["cm2"] - df["ad_spend"].fillna(0.0)
+    month_pos_sales = pos_sales.groupby(df["month"]).transform("sum")
+    sales_share = pos_sales / month_pos_sales.where(month_pos_sales > 0)
+    df["ad_spend"] = np.where(has_ads, df["ads_product"] + residual * sales_share, np.nan)
+    # NaN ad_spend -> NaN CM3: only calculate CM3 where ads data is available.
+    df["cm3"] = df["cm2"] - df["ad_spend"]
 
     out = df.rename(columns={"net_items_sold": "units"}).copy()
     out["brand"] = "Vegavero"
