@@ -232,13 +232,15 @@ def classify_row(row: pd.Series, cfg: dict, apply_volume_floor: bool = False) ->
             reasons.insert(0, tag)
         return verdict, "; ".join(reasons)
 
-    # 0b. volume floor: a whole product too small to keep (channel grain only).
+    # 0b. volume floor: a whole product too small to keep (channel grain only,
+    # Amazon only - webshop revenue/CM is estimated, so the hard floor is N/A there).
     # New launches are shielded by finish(); a SKU whose recent run-rate is
     # already on pace to clear the floor (annualised last-3m >= floor) is spared.
     floor = t.get("discontinue_below_ttm")
     ttm_sales = row["net_sales_ttm"] or 0
     run_rate = (row["net_sales_l3m"] or 0) * 4  # annualised recent pace
-    if apply_volume_floor and floor and ttm_sales < floor and run_rate < floor:
+    if (apply_volume_floor and row["channel"] == "Amazon" and floor
+            and ttm_sales < floor and run_rate < floor):
         reasons.insert(0, f"TTM sales EUR {ttm_sales:,.0f} < EUR {floor:,.0f} floor "
                           f"(run-rate EUR {run_rate:,.0f}/yr) - discontinue")
         return finish("Exit")
