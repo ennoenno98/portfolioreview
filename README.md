@@ -18,6 +18,41 @@ productpricer COGS                                        │
                            app.py (Streamlit)       ──►   interactive review dashboard
 ```
 
+## Run the dashboard
+
+Locally:
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+The app is self-contained: it reads only the committed files in
+`data/generated/` and `config/`, makes no live API calls, and writes nothing.
+That is what makes it safe to host — the data-refresh (Nova/Shopify/Windsor
+pulls) happens offline in the pipeline; the deployed app just renders the
+committed snapshot.
+
+## Deploy to Streamlit Community Cloud
+
+Push-to-deploy — every push to the tracked branch redeploys automatically.
+
+1. Push this repo to GitHub (done — branch `claude/new-session-nzuzts`).
+2. Go to <https://share.streamlit.io> and sign in with the GitHub account that
+   can see `ennoenno98/portfolioreview`.
+3. **Create app → Deploy a public app from GitHub** and set:
+   - **Repository**: `ennoenno98/portfolioreview`
+   - **Branch**: `main` (after the PRs merge) or `claude/new-session-nzuzts`
+     to preview the current work immediately
+   - **Main file path**: `app.py`
+   - Python version: 3.11 (Advanced settings) — matches the pipeline.
+4. **Deploy**. First build installs `requirements.txt` (~1–2 min); afterwards
+   every `git push` to that branch redeploys within seconds.
+
+No secrets or environment variables are needed — the app ships with its data.
+If you later want to keep the review private, use *Deploy a private app* instead
+and share it with named viewers (free tier allows a limited number).
+
 ## Monthly cadence
 
 1. **Refresh data** (first business days of the month)
