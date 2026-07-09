@@ -17,6 +17,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import yaml
+from plotly.subplots import make_subplots
 
 from pipeline.common import (
     COUNTRY_VERDICTS_PATH,
@@ -310,15 +311,45 @@ def _chips_html(country_verdicts: str) -> str:
     return "<div class='vt-chips'>" + "".join(out) + "</div>"
 
 
+def _diverging(series: pd.Series, ref, span: float, pos="0,131,0", neg="227,73,72"):
+    """CSS backgrounds: green when value >= ref, red when below; alpha by distance.
+    `ref` is a scalar or an aligned Series (e.g. per-row CM3 target)."""
+    ref = ref if not hasattr(ref, "reindex") else ref.reindex(series.index)
+    out = []
+    for i, v in series.items():
+        r = ref if not hasattr(ref, "reindex") else ref.get(i)
+        if pd.isna(v) or (hasattr(ref, "reindex") and pd.isna(r)):
+            out.append(""); continue
+        diff = v - (r if not hasattr(ref, "reindex") else r)
+        a = min(1.0, abs(diff) / span) * 0.45
+        out.append(f"background-color: rgba({pos if diff >= 0 else neg},{a:.2f})")
+    return out
+
+
 def channel_table(v: pd.DataFrame) -> None:
+    verds = [x for x in VERDICT_ORDER + [NO_DATA] if x in v["verdict"].unique()]
+    counts = v["verdict"].value_counts()
+    labels = ["All"] + [f"{x} ({int(counts.get(x, 0))})" for x in verds]
+    pick = st.radio("Filter by verdict", labels, horizontal=True, key="ch_verdict_filter")
+    if pick != "All":
+        chosen = pick.rsplit(" (", 1)[0]
+        v = v[v["verdict"] == chosen]
+
     show = v[[
         "brand", "channel", "sku", "product", "verdict", "incubating", "reasons",
         "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
         "cm3_pct_l6m", "cm3_target", "bsr", "n_markets", "n_markets_action",
         "country_verdicts", "cluster", "cm_source", "manual",
     ]].sort_values("net_sales_ttm", ascending=False)
+    # colour code: CM3 vs its plan target (green above / red below), CM1 & CM2 by
+    # level, revenue growth by sign.
+    sty = show.style
+    sty = sty.apply(lambda s: _diverging(s, show["cm3_target"], 8.0), subset=["cm3_pct_l6m"])
+    sty = sty.apply(lambda s: _diverging(s, 55.0, 25.0), subset=["cm1_pct_l6m"])
+    sty = sty.apply(lambda s: _diverging(s, 20.0, 20.0), subset=["cm2_pct_l6m"])
+    sty = sty.apply(lambda s: _diverging(s, 0.0, 40.0), subset=["sales_trend_pct"])
     st.dataframe(
-        show, use_container_width=True, height=480, hide_index=True,
+        sty, use_container_width=True, height=480, hide_index=True,
         column_config={
             "incubating": st.column_config.CheckboxColumn("New"),
             "net_sales_ttm": st.column_config.NumberColumn("Net TTM €", format="€%.0f"),
@@ -374,14 +405,18 @@ def country_table(cv: pd.DataFrame) -> None:
 
 
 def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> None:
-    opts = (
-        cv.assign(label=lambda d: d["sku"] + " · " + d["country"] + " · "
-                  + d["product"].astype(str).str.slice(0, 60))
-        .sort_values("net_sales_ttm", ascending=False)
-    )
-    pick = st.selectbox("SKU × market", opts["label"], index=0)
-    row = opts[opts["label"] == pick].iloc[0]
-    sku, country = row["sku"], row["country"]
+    # separate Market and SKU pickers (Market first, then SKU within it)
+    sel = st.columns([1, 3])
+    markets = sorted(cv["country"].dropna().unique())
+    market = sel[0].selectbox("Market", markets, index=0)
+    sub = cv[cv["country"] == market].sort_values("net_sales_ttm", ascending=False)
+    if sub.empty:
+        st.info("No SKUs for this market under the current filters.")
+        return
+    sub = sub.assign(label=lambda d: d["sku"] + " · " + d["product"].astype(str).str.slice(0, 70))
+    pick = sel[1].selectbox("SKU", sub["label"], index=0)
+    row = sub[sub["label"] == pick].iloc[0]
+    sku, country = row["sku"], market
 
     new_badge = ""
     if bool(row.get("incubating", False)):
@@ -400,6 +435,16 @@ def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> N
         st.info("No monthly facts for this market.")
         return
 
+    # one shared month axis for every chart below, so a given month lines up
+    # vertically across net sales / CM / PPC / ROAS / BSR.
+    bsr = history[(history["sku"] == sku) & (history["metric"] == "bsr")]
+    bsr = bsr.groupby("month", as_index=False)["value"].mean()
+    months = sorted(set(f["month"]) | set(bsr["month"]))
+
+    def xc(**extra):
+        return dict(showgrid=False, type="category", categoryorder="array",
+                    categoryarray=months, **extra)
+
     c1, c2 = st.columns(2)
     with c1:
         fig = go.Figure(
@@ -411,61 +456,84 @@ def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> N
         )
         fig.update_layout(
             **PLOT_LAYOUT, height=300, title=dict(text="Net sales · monthly", font=dict(size=14)),
-            xaxis=dict(showgrid=False), yaxis=dict(gridcolor=HAIR, zeroline=False),
+            xaxis=xc(), yaxis=dict(gridcolor=HAIR, zeroline=False),
             showlegend=False,
         )
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
     with c2:
-        fig = go.Figure()
-        for key, label in [("cm1_pct", "CM1%"), ("cm2_pct", "CM2%"), ("cm3_pct", "CM3%")]:
+        # small multiples: CM1/CM2/CM3 each on its own scale (never a shared axis
+        # that squashes CM3 under CM1). Shared x, three stacked panels.
+        fig = make_subplots(rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.07,
+                            subplot_titles=("CM1 %", "CM2 %", "CM3 %"))
+        for i, key in enumerate(["cm1_pct", "cm2_pct", "cm3_pct"], start=1):
             fig.add_trace(go.Scatter(
-                x=f["month"], y=f[key], name=label, mode="lines",
+                x=f["month"], y=f[key], mode="lines",
                 line=dict(width=2, color=CM_RAMP[key[:3]]),
-                hovertemplate="%{x} " + label + ": %{y:.1f}%<extra></extra>",
-            ))
+                hovertemplate="%{x}: %{y:.1f}%<extra></extra>", showlegend=False,
+            ), row=i, col=1)
         if pd.notna(row["cm3_target"]):
             fig.add_hline(y=row["cm3_target"], line=dict(color=ORANGE, dash="dot", width=2),
-                          annotation_text="CM3 plan", annotation_font_color=ORANGE)
-        fig.update_layout(
-            **PLOT_LAYOUT, height=300,
-            title=dict(text="Contribution margins · monthly", font=dict(size=14)),
-            xaxis=dict(showgrid=False), yaxis=dict(gridcolor=HAIR, zeroline=True,
-                                                   zerolinecolor=INK60),
-            legend=dict(orientation="h", y=1.12),
-        )
+                          annotation_text="plan", annotation_font_color=ORANGE, row=3, col=1)
+        fig.update_layout(**PLOT_LAYOUT, height=320,
+                          title=dict(text="Contribution margins · monthly (own scale each)",
+                                     font=dict(size=14)))
+        fig.update_xaxes(showgrid=False, type="category", categoryorder="array",
+                         categoryarray=months)
+        fig.update_yaxes(gridcolor=HAIR, zeroline=True, zerolinecolor=INK60)
+        for ann in fig["layout"]["annotations"][:3]:
+            ann["font"] = dict(size=11, color=INK60)
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
-    hist = history[(history["sku"] == sku)]
-    if not hist.empty:
-        c3, c4 = st.columns(2)
+    # PPC: ad spend (bars) + ROAS from actual spend (own panel) — real per-market
+    # facts (Amazon from Feb 2026, webshop from Oct 2025), not the Excel history.
+    f = f.assign(ad_spend=pd.to_numeric(f["ad_spend"], errors="coerce"))
+    ppc = f[f["ad_spend"].notna() & (f["ad_spend"] > 0)].copy()
+    c3, c4 = st.columns(2)
+    if not ppc.empty:
+        ppc["roas"] = ppc["net_sales"] / ppc["ad_spend"]
         with c3:
-            spend = hist[hist["metric"] == "ad_spend"].groupby("month", as_index=False)["value"].sum()
-            if not spend.empty and spend["value"].abs().sum() > 0:
-                fig = go.Figure(go.Bar(
-                    x=spend["month"], y=spend["value"],
-                    marker=dict(color="#eb6834", line=dict(width=1, color="#fbf7f2")),
-                    hovertemplate="%{x}: €%{y:,.0f}<extra></extra>",
-                ))
-                fig.update_layout(**PLOT_LAYOUT, height=280,
-                                  title=dict(text="Ad spend · channel level (Excel history)",
-                                             font=dict(size=14)),
-                                  xaxis=dict(showgrid=False),
-                                  yaxis=dict(gridcolor=HAIR), showlegend=False)
-                st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+            fig = go.Figure(go.Bar(
+                x=ppc["month"], y=ppc["ad_spend"],
+                marker=dict(color="#eb6834", line=dict(width=1, color="#fbf7f2")),
+                hovertemplate="%{x}: €%{y:,.0f} ad spend<extra></extra>",
+            ))
+            fig.update_layout(**PLOT_LAYOUT, height=280,
+                              title=dict(text="Ad spend · monthly (PPC)", font=dict(size=14)),
+                              xaxis=xc(), yaxis=dict(gridcolor=HAIR),
+                              showlegend=False)
+            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
         with c4:
-            bsr = hist[hist["metric"] == "bsr"].groupby("month", as_index=False)["value"].mean()
-            if not bsr.empty:
-                fig = go.Figure(go.Scatter(
-                    x=bsr["month"], y=bsr["value"], mode="lines",
-                    line=dict(width=2, color="#4a3aa7"),
-                    hovertemplate="%{x}: BSR %{y:,.0f}<extra></extra>",
-                ))
-                fig.update_layout(**PLOT_LAYOUT, height=280,
-                                  title=dict(text="Amazon BSR (lower is better)", font=dict(size=14)),
-                                  xaxis=dict(showgrid=False),
-                                  yaxis=dict(gridcolor=HAIR, autorange="reversed"),
-                                  showlegend=False)
-                st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+            fig = go.Figure(go.Bar(
+                x=ppc["month"], y=ppc["roas"],
+                marker=dict(color="#008300", line=dict(width=1, color="#fbf7f2")),
+                text=[f"{r:.1f}×" for r in ppc["roas"]], textposition="outside",
+                textfont=dict(color=INK, size=10),
+                hovertemplate="%{x}: ROAS %{y:.2f}× (sales ÷ ad spend)<extra></extra>",
+            ))
+            fig.add_hline(y=1, line=dict(color=INK60, dash="dot", width=1),
+                          annotation_text="break-even on spend", annotation_font_color=INK60)
+            fig.update_layout(**PLOT_LAYOUT, height=280,
+                              title=dict(text="ROAS · sales ÷ PPC spend", font=dict(size=14)),
+                              xaxis=xc(),
+                              yaxis=dict(gridcolor=HAIR, rangemode="tozero"), showlegend=False)
+            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    else:
+        c3.caption("No PPC spend recorded for this market/period.")
+
+    # Amazon BSR as a bar chart (lower is better -> reversed axis), same month axis
+    if not bsr.empty:
+        fig = go.Figure(go.Bar(
+            x=bsr["month"], y=bsr["value"],
+            marker=dict(color="#4a3aa7", line=dict(width=1, color="#fbf7f2")),
+            hovertemplate="%{x}: BSR %{y:,.0f}<extra></extra>",
+        ))
+        fig.update_layout(**PLOT_LAYOUT, height=280,
+                          title=dict(text="Amazon BSR · monthly (lower is better)",
+                                     font=dict(size=14)),
+                          xaxis=xc(),
+                          yaxis=dict(gridcolor=HAIR, autorange="reversed", rangemode="tozero"),
+                          showlegend=False)
+        st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 
 def oos_view(oos: pd.DataFrame, verdicts: pd.DataFrame) -> None:
@@ -552,6 +620,40 @@ def oos_view(oos: pd.DataFrame, verdicts: pd.DataFrame) -> None:
             column_config={
                 "oos_months_l6m": st.column_config.NumberColumn("OOS months", format="%d"),
                 "wasted_ad_spend_l6m": st.column_config.NumberColumn("Wasted €", format="€%.0f"),
+                "product": st.column_config.TextColumn("Product", width="medium"),
+            },
+        )
+
+    # ---- slow movers / dead stock (opposite problem: capital tied in stock) ----
+    slow = o[o.get("slow_mover", False) == True].sort_values(  # noqa: E712
+        "tied_capital", ascending=False, na_position="last")
+    st.markdown("---")
+    st.markdown("##### :snail: Slow movers & dead stock — capital sitting still")
+    st.caption(
+        "Amazon SKUs with sellable stock on hand but little or no movement "
+        f"(no sales in 30 days = dead; ≥{int(180/30)} months of supply = slow). "
+        "‘Capital tied’ values the on-hand units at COGS. Recommendation per row."
+    )
+    if slow.empty:
+        st.success("No slow movers or dead stock flagged in the current snapshot.")
+    else:
+        s = st.columns(3)
+        s[0].metric("Slow movers", f"{len(slow)}",
+                    help="Includes dead stock (no sales in 30 days)")
+        s[1].metric("Dead stock", f"{int(o['dead_stock'].sum())}",
+                    help="Stock on hand with zero sales in the last 30 days")
+        s[2].metric("Capital tied up", eur(slow["tied_capital"].sum()),
+                    help="On-hand units × COGS across slow movers")
+        st.dataframe(
+            slow[["sku", "product", "channel", "verdict", "fba_available", "units_30d",
+                  "days_of_inventory", "tied_capital", "stock_reco"]],
+            use_container_width=True, height=320, hide_index=True,
+            column_config={
+                "fba_available": st.column_config.NumberColumn("Avail units", format="%.0f"),
+                "units_30d": st.column_config.NumberColumn("Units 30d", format="%.0f"),
+                "days_of_inventory": st.column_config.NumberColumn("Days stock", format="%.0f"),
+                "tied_capital": st.column_config.NumberColumn("Capital tied €", format="€%.0f"),
+                "stock_reco": st.column_config.TextColumn("Recommendation", width="large"),
                 "product": st.column_config.TextColumn("Product", width="medium"),
             },
         )

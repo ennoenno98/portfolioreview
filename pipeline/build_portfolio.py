@@ -36,6 +36,8 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline.common import (  # noqa: E402
     COGS_CSV,
+    DISCONTINUED_XLSX,
+    EN_TITLES_CSV,
     EXCEL_PATH,
     EXPORTS_DIR,
     FACTS_PATH,
@@ -360,6 +362,28 @@ def build_launch_dates(facts: pd.DataFrame, history: pd.DataFrame) -> pd.DataFra
     return first
 
 
+def discontinued_skus() -> set[str]:
+    """SKUs flagged inactive in the discontinued-products list (excluded from the
+    review). A SKU with a product_inactive_date is treated as discontinued."""
+    if not DISCONTINUED_XLSX.exists():
+        return set()
+    d = pd.read_excel(DISCONTINUED_XLSX)
+    d = d[d["product_inactive_date"].notna()]
+    return set(d["sku"].astype(str))
+
+
+def apply_english_titles(facts: pd.DataFrame) -> pd.DataFrame:
+    """Override product names with English titles (Margin-Analytics map) where a
+    SKU has one; keep the existing title otherwise."""
+    if not EN_TITLES_CSV.exists():
+        return facts
+    t = pd.read_csv(EN_TITLES_CSV).dropna(subset=["SKU", "Title"])
+    mapping = dict(zip(t["SKU"].astype(str), t["Title"].astype(str)))
+    en = facts["sku"].map(mapping)
+    facts["product"] = en.where(en.notna(), facts["product"])
+    return facts
+
+
 def load_tags() -> pd.DataFrame:
     """Top Seller / New Product flags per country from the Nova custom drawers."""
     try:
@@ -396,6 +420,14 @@ def main() -> None:
 
     facts = pd.concat([margin, wow, shop, ex_facts], ignore_index=True)
     facts = facts.sort_values(["brand", "channel", "country", "sku", "month"])
+
+    # exclude discontinued products, then use English product titles everywhere
+    disc = discontinued_skus()
+    before = facts["sku"].nunique()
+    facts = facts[~facts["sku"].isin(disc)].copy()
+    print(f"  discontinued: dropped {before - facts['sku'].nunique()} SKUs "
+          f"({len(disc)} on the list)")
+    facts = apply_english_titles(facts)
 
     for c in ("cm1", "cm2", "cm3"):
         facts[f"{c}_pct"] = (facts[c] / facts["net_sales"].where(facts["net_sales"] != 0)) * 100

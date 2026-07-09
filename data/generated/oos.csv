@@ -1,507 +1,464 @@
-brand,channel,sku,recent_ad_spend,recent_units,product,wasted_ad_spend_l6m,oos_months_l6m,fba_available,fba_incoming,sales_velocity,days_of_inventory,oos_risk,units_30d,snapshot,out_now,low_stock,advertising_while_out_now,advertising_while_low,review_month
-Jasnum,Amazon,5904569253554,176.15,33.0,Jasnum All-in-One | Integratore Menopausa Com,0.0,0,551.0,0.0,0.5608,1125.218,False,15.0,2026-07-09,False,False,False,False,2026-06
-Jasnum,Amazon,5904569253561,225.66,8.0,Jasnum Mood | Integratore Menopausa per il Be,0.0,0,99.0,0.0,0.2838,355.8971,False,9.0,2026-07-09,False,False,False,False,2026-06
-Jasnum,Amazon,5904569253578,147.16,5.0,Jasnum Line | Integratore Metabolismo Menopau,0.0,0,545.0,0.0,0.0334,23010.7871,False,4.0,2026-07-09,False,False,False,False,2026-06
-Jasnum,Amazon,VV-VITA-294,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,2R-49NC-R697,7108.72,4355.0,"MSM Vegavero® Poudre | 1 Kg Méthylsulfonylméthane Pur à 99,9% | Sans Additifs & VEGAN | Formation de Collagène | Testé en Laboratoire | Format Sachet ou Boîte",0.0,0,9690.0,67.0,129.4348,73.9625,False,4077.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,Amazon.Found.B07ZQHMLQY,0.0,0.0,ASHWAGANDHA BIO Pura Vegavero® | 670 mg per capsula | con il 2% di Withanolidi | SENZA ADDITIVI | Polvere di Withania Somnifera | Premium Organic Ashwaganda | 180 capsule | Vegan,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,BJ-E223-8EKW,3922.89,1420.0,"BIO Moringa Oleifera Vegavero | Dosis Alta: 1800 mg | 270 Cápsulas | SUPERFOOD: Proteínas, Vitaminas, Minerales y Omega 3 | Antioxidante | Sin Aditivos | Vegana | Superalimentos",0.0,0,12309.0,0.0,31.4334,132.1029,False,1050.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,CP-DQMG-RVN9,440.76,308.0,Igname Selvatico Vegavero® | 1000 mg di estratto di Mexican Wild Yam | con 20% di Diosgenina e Zinco | 120 capsule | No OGM | Vegan,0.0,0,298.0,86.0,8.6747,38.7335,False,295.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,CW-KVIN-V39Y,611.3199999999999,424.0,Vegavero Pure D-Mannose Powder 250 g | 4 Months’ Supply | 2000 mg per Day | NO Additives | 100% Naturally Sourced | Urinary Tract Infection | Vegan,0.0,0,49.0,1.0,8.6215,3.0157,True,242.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,NX-CVPF-VCEZ,1558.23,556.0,EXTRAIT de Reishi Vegavero® | 1950 mg (Extract 14:1) | 120 Gélules | 40% Polysaccharides + 20% Bêta-glucane | Immunité + Énergie | VEGAN,0.0,0,1314.0,0.0,14.1681,47.2389,False,458.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,TU-QNYD-JRRX,2403.4199999999996,949.0,"Vegavero Tribulus Terrestris 10,800 mg | High Strength Extract | 1620 mg Saponins per Serving | NO Additives, Lab-Tested | Stamina & Strength Support for Men & Women | 120 Capsules | Vegan",0.0,0,537.0,600.0,35.9909,17.5044,True,968.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VI-ZU99-SZ0B,512.83,318.0,L-Triptófano 500mg Puro* Vegavero | El Único Sin Aditivos | Para 4 meses | Estrés + Insomnio + Cansancio | Alta dosificación | 120 Cápsulas,0.0,0,709.0,0.0,10.8856,67.245,False,316.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-ALO-06,2422.45,722.0,"MSM Vegavero® Poudre | 1 Kg Méthylsulfonylméthane Pur à 99,9% | Sans Additifs & VEGAN | Formation de Collagène | Testé en Laboratoire | Format Sachet ou Boîte",0.0,0,754.0,252.0,14.6869,41.634,False,519.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-02,927.03,639.0,Cardo Mariano 35000 mg Vegavero | MAS ALTA DOSIS | Con 80% de Silimarina & 30% de Silibina | Liver Detox y Higado Graso | SIN ADITIVOS | Milk Thistle | Testado en Laboratorio | 120 Cápsulas,0.0,4,244.0,170.0,20.6266,12.9444,True,635.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-02-V,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-101,7009.889999999999,2359.0,Vegavero Premium Rhodiola Rosea 1200 mg | 3% Rosavins & 1% Salidroside | 120 Capsules | Herbal Adaptogenic Supplement | Rhodiolife® | NO Additives | Vegan,0.0,0,507.0,464.0,55.0794,6.3,True,1886.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-102,1298.56,508.0,Ginkgo Biloba | Extra Fort : 6000mg | Mémoire + Circulation Sanguine | 180 Gélules | Unique : 24% Glycosides de Flavone + 6% Lactones Terpéniques | Vegan & Sans Additifs | Vegavero®,0.0,0,151.0,288.0,13.2176,13.4669,False,406.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-104,650.48,276.0,Echinacea Vegavero® | Extrait Pur : 725 mg | Unique : Avec 4% Polyphenol | 4 MOIS | Systeme Immunitaire + Antioxydant Puissant | Sans Additifs | VEGAN,3.53,1,493.0,0.0,8.1176,66.1527,False,261.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-105,2403.7,661.0,PANAX GINSENG Vegavero® | 4800 mg | Rosso e Coreano | con 120 mg di Ginsenosidi | Contro Stanchezza Fisica e Mentale | 120 capsule | Vegan,0.0,0,143.0,720.0,21.6018,8.0549,False,644.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-106,1.04,1.0,"Vegavero Zwarte Knoflookcapsules | 11.250 mg dagelijkse dosis | Uittreksel (15:1) | 0,2% S-allylcysteïne (SAC) | Laboratorium getest | 120 capsules | Veganistisch & zonder toevoegingen",3.39,15,0.0,540.0,2.1313,0.0,False,27.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-107,2884.72,1432.0,Canela de Ceylan Vegavero | DOSIS ALTA: 2500 mg | Para 4 Meses | Controla Glucosa - Azúcar en Sangre | Colesterol + Antioxidantes | Sin Aditivos & Vegano | 120 Cápsulas,0.0,0,361.0,144.0,41.6789,10.8928,True,1352.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-109,985.99,385.0,"Leber Komplex Vegavero | Mariendistel, Artischocke, Löwenzahn, Cholin & Zichorie | Mit Silymarin & Cynarin | Hochdosierte Extrakte | Leber & Fettstoffwechsel* | Vegan & Ohne Zusätze | 120 Kapseln",0.0,0,95.0,0.0,7.2487,7.1737,True,290.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-111,841.34,375.0,"COLON CARE | 120 capsule | 100% Naturale con Psillio, Zenzero, Finocchio e Fermenti Lattici | Prodotto in Germania | Vegan e Senza Additivi | Vegavero",0.0,0,495.0,0.0,12.3022,42.0251,False,372.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-115,38.92,11.0,Vegavero Organic Probiotics for Kids | NO Additives | Organic Prebiotic Inulin and 5 Bacterial Strains with 10 Billion CFU | for Children 3+ Years | 75g Powder | Spoon Included,0.0,0,58.0,0.0,0.1977,293.3844,False,8.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-116,629.75,462.0,Vegavero Organic Iodine Supplement | NO Additives | 100% Natural Organic Scottish Sea Kelp | 150 mcg Pure | 180 Tablets | Vegan,0.0,0,367.0,144.0,10.0358,30.3641,True,305.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-119,4098.26,1516.0,Citrate de Magnésium + Potassium Vegavero® | 180 Gélules | Sans Additifs & VEGAN | Absorption Optimale | Douleurs Musculaires + Crampes + Anti Fatigue*,0.0,0,3406.0,0.0,40.37,58.3437,False,1245.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-121,1532.21,383.0,"Wechseljahre Vegavero | Meno Balance für Menopause | wildyamswurzel, Nachtkerze, Hopfen, Salbei, Kamille | 100% Natürlich & Hormonfrei | Vegan",0.0,0,114.0,180.0,14.6877,11.9147,True,406.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-122,249.73,130.0,"Vegavero Immunsystem Komplex – mit Echinacea, Acerola Vitamin C, Vitamin D3, Ingwer, Zink & Selen – vegane Immunformel ohne Zusatzstoffe – 120 Kapseln hochdosiert",0.0,1,1185.0,0.0,4.0067,300.7432,False,125.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-122-V,118.67,94.0,"Vegavero Immunsystem Komplex – mit Echinacea, Acerola Vitamin C, Vitamin D3, Ingwer, Zink & Selen – vegane Immunformel ohne Zusatzstoffe – 240 Kapseln hochdosiert",0.0,0,750.0,0.0,2.0799,369.2556,False,88.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-124,636.11,506.0,Vegavero NATUURLIJKE VITAMINE C | gemaakt van biologisch acerola-extract | Veganistisch | Zonder toevoegingen | 180 capsules,0.0,0,325.0,144.0,11.5394,32.2373,False,382.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-127,3259.68,2058.0,Safran 30 mg | Extrait de Qualité : Affron® | 120 Gélules | Analysé en Laboratoire | Vegan & Sans Additifs | Vegavero®,5.84,3,954.0,1008.0,75.6197,14.6919,True,2405.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-129,532.87,312.0,"Gingembre BIO 650 mg | 120 Gélules (4 mois) | 1,5% Gingerol | Digestion + Vomissement | Testé en Laboratoire | Vegan & Sans Additifs | Vegavero®",0.0,0,248.0,0.0,10.2079,27.9194,True,294.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-136,4004.89,1229.0,"Vegavero Aderen capsules | 100% natuurlijk | Veldpaardenstaart, rode wijnbladeren, gotuola, slagersbezem & bosbes | Zware en vermoeide benen | 120 cap",0.0,0,1073.0,0.0,41.7386,28.0316,True,1294.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-142,2122.72,711.0,"Prostata Komplex Vegavero | 800 mg Kürbiskernextrakt |180 Kapseln Hochdosiert | Mit Sägepalmenextrakt, Kürbiskernen, Brennnessel & Mehr | Vegan & Ohne Zusätze",233.16,4,225.0,0.0,20.381,14.2289,True,673.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-143,500.91,286.0,Vitamine B12 1000 mcg Vegavero® | Origine FRANCE & Espagne | La Seule SANS ADDITIFS & VEGAN | Avec 2 Formes Actives + Acide Folique + B6 + Choline | Énergie + Anti-Fatigue* | 180 Gélules,16.27,6,960.0,0.0,14.5599,72.6653,False,404.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-146,1683.93,572.0,"Spirulina Bio | 4000 mg | Höchste Dosis pro Tablette | Laborgeprüft | Vegan & Ohne Zusatzstoffe | 3,9% Phycocyanin | 300 Stück | Deutsche Produktion von Vegavero",0.0,0,379.0,450.0,17.5369,24.4626,True,538.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-151,4736.46,931.0,"Vegavero Hormone Balance for Women | PMS Supplements | NO Additives | 180 Capsules | Vitex Agnus Castus, Lady's Mantle, Folic Acid (Quatrefolic®) Mac",0.0,0,1583.0,0.0,28.5302,58.6747,False,913.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-153,632.33,258.0,Ashwagandha Orgánica Vegavero | 2010 mg | Con Withanólidos | Insomnio + Estrés + Relajante | Probado en laboratorio | 180 Capsulas | Sin Aditivos & Vegano,17.810000000000002,1,272.0,0.0,6.8783,42.1614,False,243.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-155,971.37,301.0,"REISHI BIO Vegavero® | 40% Polisaccaridi, 30% Beta Glucani e 1% Triterpeni | Senza OGM e con Analisi di Laboratorio | Estratto Biologico Altamente Dosato | Ganoderma Lucidum Puro | Vegan",0.0,0,413.0,255.0,12.8118,20.5317,False,309.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-157,603.79,482.0,"Aubépine BIO Vegavero® | 700 mg d’Extrait | Extraction FRANÇAISE | Sans Additifs | Titré à 1,5% en Flavonoïdes | Antioxydant Naturel + Relaxant | 60 Gélules | VEGAN",0.0,0,526.0,0.0,12.3301,45.6607,False,378.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-158,619.63,350.0,"Vegavero Vegan Glucosamine Complex | with Chondroitin, MSM, Devil's Claw and Vit C | NO Additives, Lab-Tested | Joint Pain Relief | 180 Capsules",9.62,1,190.0,288.0,8.0731,25.269,False,279.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-159,2100.2799999999997,911.0,EAA Aminoácidos Esenciales Vegavero | BCCAS Aminoacids | 300 Comprimidos | 9 Aminoácidos Esenaciales | Vegano | Aminos Ramificados,0.0,0,86.0,0.0,28.3389,2.9641,True,879.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-160,0.8,3.0,Maca + L-Arginine | Avec Tribulus & Zinc | VEGAN & Sans Additifs | 180 Gélules | Vegavero®,0.0,0,19.0,0.0,0.1274,149.1292,False,3.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-161,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-165,1010.41,299.0,Vegavero Trans Resveratrol 98% 1000 mg | Natural Anti Aging & Skin Supplement | Pure from Japanese Knotweed | NO Additives | High Bioavailability with VIT B3 & Piperine | Lab Tested | Vegan,0.0,0,319.0,288.0,8.4027,41.6531,False,273.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-166,924.26,362.0,Vegavero Biologische TRIPHALA capsules | 180 capsules met 650 mg per capsule | Bio Triphala-poeder uit India | Veganistisch | Zonder additieven,0.0,0,1924.0,48.0,8.0733,35.1972,False,242.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-168,1432.82,325.0,"Vegavero ZONVERZORGINGS COMPLEX | 180 capsules | Bruiningscapsules | Bètacaroteen, vitamine E, olijfbladextract, tyrosine, lycopeen, zink, koper | VEGAN & zonder toevoegingen",0.0,0,189.0,0.0,7.3873,27.0734,True,247.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-170,1617.4399999999998,689.0,"Vegavero Vitamin B3 Nicotinamide 500 mg | Flush Free Niacinamide | NO Additives, Lab-Tested | 180 Capsules | Vegan",0.0,0,671.0,180.0,18.5479,38.9801,False,592.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-171,1188.0700000000002,553.0,"Vegavero Integratore OCCHI | 120 capsule | con Luteina, Zeaxantina, Mirtillo Nero, Vitamina A, B2 e Zinco | Salute della VISTA | Vegan",1.59,1,395.0,255.0,16.1615,27.349,False,507.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-172,311.49,224.0,BIO Maitake Vegavero | La dosis más alta 8500 mg | 50% de Polisacáridos | Sin Aditivos | Testado | Sistema Inmunológico + Estrés & Ansiedad + Adaptógeno | 60 Cápsulas | TCM,0.0,1,419.0,0.0,5.8088,45.6452,False,184.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-173,1133.8799999999999,510.0,Bio Hericium Erinaceus Kapseln Vegavero | 50% Polysaccharide | 500 mg organic Löwenmähne Pilz Extrakt – entspricht mind. 7500 mg Hericium Pulver | Laborgeprüft | Ohne Zusätze | 60 Stück | Vegan,0.0,0,191.0,580.0,15.8202,16.0555,False,502.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-174,669.59,347.0,Extracto de Hoja de Olivo Vegavero | La Dosis Más Alta: 7500 mg con 40% de Oleuropeína | Antioxidante | Sin Aditivos | 90 Cápsulas | De España,0.0,0,174.0,0.0,7.5132,25.9542,True,241.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-181,222.48,136.0,Salvia BIO Vegavero | 500 mg por Cápsula | Sin Aditivos | Antitranspirante Natural Hombres & Mujeres | Hiperhidrosis & Menopausia | Vegano | Orgánico | 4 Meses de Suministro | 120 Cápsulas,0.0,0,0.0,0.0,3.1761,0.3148,True,120.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-183,991.07,421.0,"Vegavero REFLUX-complex | 100% natuurlijk | Voor brandend maagzuur en zuurgerelateerde maagproblemen | Met Mucosave®, olijfbladextract, natriumalginaat & kamille | LABORATORIUMGETEST | Vegan",0.12,1,196.0,120.0,9.4084,19.8759,True,268.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-186,171.75,42.0,"Chlorella BIO - 3000 mg | Sans Additifs & Vegan | Source de Vitamines, Minéraux et Protéines | 180 Comprimés | Vegavero®",0.0,4,160.0,96.0,2.0535,2.6641,False,48.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-188,590.61,304.0,"Vegavero Organic STINGING Nettle 3600 mg | from 4:1 Root & Leaf Extracts | Blood Sugar Control, Joint Health, Prostate Health | NO Additives | Urtica Dioica | 120 Capsules | Vegan",0.0,0,148.0,85.0,5.9038,6.2672,True,194.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-189,542.37,390.0,Vegavero BIOLOGISCHE Rozenbottel capsules | EU-teelt | 1400 mg rozenbottelpoeder BIO | Laboratorium getest | Veganistisch - zonder toevoegingen,0.0,0,319.0,144.0,12.0269,29.4341,False,389.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-190,667.86,283.0,BIO Papaya Vegavero | Alta Dosis 1400mg | Calidad Española | Sin Aditivos | Estreñimiento + Digestión + Gases | Fuente de Papaína & Vitamina C | 120 Cápsulas,0.0,0,395.0,0.0,7.4985,54.2773,False,257.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-197,553.56,267.0,Vegavero Guggul Capsules 7500 mg | From 15:1 Extract | Dried Resin | NO Additives | Lab-Tested | 120 Capsules | Vegan,0.0,0,2051.0,0.0,6.9751,34.1049,True,219.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-198,4922.139999999999,953.0,Bromelain hochdosiert | bis zu 1300 mg am Tag | (3250 F.I.P - 1625 Gdu) pro Kapsel | magensaftres. DRCaps | Laborgeprüft | Eaus Ananas | Vegan - Ohne Zusatzstoffe | Dt. Produktion Vegavero,0.0,0,843.0,0.0,31.015,28.9215,True,970.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-198-V,390.21000000000004,178.0,"Vegavero Bromelain 650 mg | High Strength - 2500 GDU/g | Gastro-Resistant DrCaps | NO Additives, Lab-Tested | Pure Pineapple Enzyme | 240 Capsules | Vegan",0.0,0,463.0,0.0,3.7393,67.6115,False,153.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-199,276.39,223.0,Bio Johanniskraut hochdosiert | mit Passionsblume | Extrakte aus Europa | Laborgeprüft | Hypericin - Flavonoide | Vegan - ohne Zusatzstoffe | Deutsche Produktion von Vegavero,0.0,0,290.0,2.0,5.8379,51.5595,False,207.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-202,615.9499999999999,405.0,"Vegavero Multivitamin for Kids Spray | No Added Sugar | NO Additives | Natural Orange Flavour | with Vitamin C, D3, E, K2 & All B Vitamins | 125 Sprays | Vegan",0.0,0,387.0,144.0,8.694,48.1944,False,290.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-203,1980.03,632.0,Vegavero Gaba Kapseln hochdosiert 120 Stück - 1000 mg Gaba mit L-Theanin aus Grüntee Extrakt & Vitamin B6 - Gamma Aminobuttersäure vegan - ohne Zusatzstoffe,0.0,1,2891.0,0.0,35.6423,83.777,False,845.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-204,445.61,325.0,Teufelskralle Kapseln Vegavero | 550 mg | Mit Weidenrinde (Salix alba) & Ingwer | 2% Harpagoside aus Harpagophytum procumbens | Vegan & Ohne Zusätze | 120 Stück,0.0,0,20.0,0.0,5.1892,1.5417,True,231.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-206,746.0,445.0,"Vegavero Organic Artichoke 40,000 mg 20:1 High Strength Extract | Without Leaf Fibre or Inulin | 2.5% Cynarin | NO Additives, Lab-Tested | 120 Capsules | Vegan",0.0,0,339.0,0.0,10.0298,37.887,False,295.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-207,1449.83,697.0,ASTRAGALO BIO Vegavero® | 5600 mg | Titolato in Polisaccaridi | ADATTOGENO per DIFESE IMMUNITARIE | 120 capsule | Vegan,0.0,0,448.0,120.0,24.2169,20.688,True,725.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-208,2935.41,1359.0,Vegavero Organic Horse Chestnut Extract | with Red Vines & Acerola Cherry | 120 Capsules | NO Additives | Circulation & Varicose Veins Support | Aesculus Hippocastanum | Vegan,0.0,0,1054.0,34.0,40.1398,28.326,True,1217.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-215,1131.2900000000002,384.0,"EQUISETO BIO Vegavero® | 2500 mg | Integratore per Capelli, Unghie e Pelle (Psoriasi)* | fonte di Silicio e Flavonoidi | 90 capsule | Vegan",0.0,0,88.0,0.0,2.3597,4.6617,True,202.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-216,3000.6400000000003,1191.0,Vegavero Kudzu Root | 6000 mg (10:1) High Strength Extract 8% Isoflavones | NO Additives | 180 Capsules | Plus Avena Sativa & Vitamin C | Alcohol Detox | Midlife Supplement | Vegan,54.34,5,1779.0,60.0,31.3337,31.1073,False,1000.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-222,13289.83,1472.0,Vegavero Organic Black Cumin Seed Oil 1000 mg | Cold Pressed | 180 Capsules | Nigella Sativa | High Strength Thymoquinone & Linoleic Acid | NO Additives | Vegan | Added Vitamin E,0.0,0,1203.0,360.0,41.0246,31.4689,False,1355.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-222-V,874.21,57.0,"Vegavero Bio Schwarzkümmelöl Kapseln hochdosiert 300 Stück - 1000 mg kaltgepresstes Nigella sativa Öl mit 55% Linolsäure, 22% Ölsäure & 1,5% Thymoquinon – vegan, ohne Zusatzstoffe & Laborgeprüft",0.0,0,441.0,0.0,2.5543,173.4345,False,62.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-223,2050.94,665.0,Vegavero Vegan Omega 3 | Algae Oil DHA & EPA | 90 Capsules | NO Additives | Lab-Tested,0.0,1,599.0,0.0,19.6779,32.8796,True,626.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-224,178.98,131.0,"Vegavero Vegan Essentials Vitamine complex | Vitaminen A, B12, B2, D3 + K2, foliumzuur, ijzer, selenium, jodium, calcium | Laboratoriumgetest, geen toevoegingen",0.65,4,157.0,120.0,5.4999,8.1672,True,88.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-225,691.39,173.0,SHILAJIT MUMIJO Puro Vegavero® | 1.300 mg | con 60% Acidi Fulvici e 12% Acidi Umici | Mumio con più di 85 oligoelementi | Medicina Ayurveda e Tibetana | 90 capsule | Vegan,0.0,0,3028.0,0.0,6.4423,94.3533,False,180.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-225-V,196.35,62.0,Vegavero Himalayan Shilajit Resin 1300 mg | 60% Fulvic Acid + Humic Acids | 60:1 Himalyan Extract | NO Additives | 6 Month Supply | 180 Capsules | Vegan,0.0,0,926.0,0.0,1.2847,733.9971,False,53.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-227,738.5600000000001,303.0,"Olio di Enotera e Borragine BIO | L’UNICO VEGANO | Pressato a Freddo con 10,5% e 20,5% di GLA | per Sindrome Premestruale e Menopausa | Senza additivi | 90 capsule",0.0,0,165.0,0.0,6.9144,27.4788,True,237.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-228,2103.4700000000003,612.0,"Vitamina D3 + K2 MK7 | VEGAN | Vitamine di Marca dall’Europa | K2 >99% all-trans MK-7 K2VITAL | Alta Biodisponibilità | per Ossa, Denti e Sistema Immunitario | Cruelty Free | Vegavero",0.0,1,711.0,340.0,18.4037,40.97,False,562.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-230,125.10000000000001,53.0,"Vegavero Berberine HCL 1000 mg | 50:1 Barberry Extract 97% Berberin | with Black Garlic Extract, Chromium and Piperine | NO Additives, Lab-Tested | Blood Sugar Levels Supplement | Vegan",71.5,7,291.0,1700.0,12.576,26.7175,True,190.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-231,11185.72,2134.0,"Vegavero Integratore INOSITOLO | Myo & D Chiro Inositol, Folato 5-MTHF, Cromo, Zinco e Vitamina B6 | PCOS e Ovaio Policistico | Certificato in Laboratorio",34.31,2,1252.0,355.0,70.2829,20.9866,True,2157.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-236,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-237,3256.25,1699.0,Colina Trio | Bitartrato + Citicolina + Fosfatidilcolina | per Fegato e Metabolismo | Certificato in Laboratorio | Vegano e Senza Additivi | Vegavero®,0.0,0,930.0,269.0,46.005,22.1063,True,1460.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-243,11669.37,2005.0,"Complexe de Magnesium 375 mg | 180 Gélules | 4 FORMES - Bisglycinate, Malate, Citrate et Taurate | Avec Vitamine B2 & B6 | Absorption Supérieure | Sans Additifs & Vegan | Vegavero®",0.0,0,1921.0,960.0,63.9192,32.9479,False,1938.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-247,1732.79,641.0,"Vegavero Astaxanthin Antioxidant Supplement 8 mg | Natural Oil from Algae | NO Additives, Lab-Tested | AstaZine | 60 Capsules | Vegan",0.0,0,359.0,144.0,19.4634,10.1729,True,602.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-248,5011.19,942.0,"Vegavero BIOLOGISCHE Oregano-olie | 90 veganistische capsules | 90 mg Carvacrol | met 2,75% thymol | Laboratorium getest | 100% oregano-olie biologisch | Veganistisch en zonder toevoegingen",0.0,0,850.0,400.0,25.6147,35.4875,False,766.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-248-V,925.71,98.0,"Vegavero BIOLOGISCHE Oregano-olie | 180 veganistische capsules | 90 mg Carvacrol | met 2,75% thymol | Laboratorium getest | 100% oregano-olie biologisch | Veganistisch en zonder toevoegingen",0.0,0,752.0,0.0,2.391,306.4968,False,85.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-249,746.88,550.0,Vegavero Saccharomyces Boulardii | Prebiotic and Probiotic Supplements | NO Additives | 7 Billion CFU per Capsule | 350 mg S. Boulardi & 150mg S. Cerevisiae | Vegan,7.430000000000001,4,720.0,0.0,17.6179,42.2865,False,511.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-250,1943.0800000000002,806.0,Bacopa Monnieri BIO Vegavero® | 180 Comprimés | Nootropic : Mémoire + Focus | Unique : Brahmi BIOLOGIQUE Avec Bacosides | Vegan,0.0,1,841.0,192.0,22.6034,39.7285,False,698.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-252,679.7,301.0,SHIITAKE Kapslar Vegavero ® | med 750 mg shiitake-extrakt per kapsel | 40% polysackarider & 30% betaglukan | 100% NATURLIGT & VEGANISKT | utan tillsatser | 120 kapslar,0.0,0,191.0,60.0,10.1753,21.4244,True,289.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-256,3136.15,1120.0,Pumpkin Seed Oil Vegavero | El Único Orgánico | Aceite Semillas Calabaza | 180 Cápsulas | Prensado En Frío | Sin Aditivos & Vegano | Incontinencia & Próstata | Sin Gelatina,0.0,0,1325.0,0.0,24.8471,55.3384,False,801.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-257,3165.7400000000002,1185.0,Vegavero BIOLOGISCHE Lecithine capsules | 1800 mg zonnebloemlecithine | VEGANISCH | Koudgeperst | 15% Fosfatidylcholine | Zonnebloemlecithine – geen sojalecithine | 120 capsules,0.0,6,682.0,107.0,30.2548,24.459,True,977.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-258,279.24,201.0,Flaxseed Oil Vegavero | Orgánico | Omega 3 + 6 + 9 Natural | Ácido Linoleico + Alfa Linoleico | Sin Aditivos | Alternativa Aceite Pescado | Cápsulas Sin Gelatina | 120 Cápsulas,0.0,0,172.0,0.0,4.2797,54.9105,False,160.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-259,1018.71,297.0,"Vegavero Mushroom Complex | High Strength Extracts | Reishi, Cordyceps, Chaga, Lions Mane, Shiitake & Agaricus | NO Additives | 120 Capsules | Vegan",0.0,0,308.0,0.0,9.3517,36.5708,False,280.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-262,374.7,262.0,Myrtille + Écorce de Pin BIO Vegavero® | Extraits Fortement Dosés | Sans Additifs | Avec Proanthocyanidines (OPC) | Antioxydant Puissant + Yeux | 90 Gélules | VEGAN,2.17,4,199.0,0.0,4.8583,26.2909,True,164.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-264,935.9,285.0,Artemisa Vegavero | 2% Flavonoides | Dosis Más Alta: 4800 mg | Síndrome Premenstrual + Menstruación Dolor + Dismenorrea | Extracto 8:1 | Artemisia Vulgaris | Vegano & Sin Aditivos | 180 Cápsulas,0.0,0,186.0,144.0,8.5743,24.4919,False,281.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-265,232.07,166.0,"Ginkgo Biloba + Ginseng | 12.000 mg Máxima Dosificación | Circulación Sanguínea, Memoria, Concentración | Sin Aditivos | Probado en Laboratorio | Vegavero",0.0,0,53.0,0.0,4.5848,5.9027,True,149.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-266,0.0,0.0,Moringa BIO | Dose Elevée : 2000mg | 180 Comprimés | SUPERFOOD : Multivitamines et Minéraux | 3 Mois | Antioxydant + Energie | VEGAN | Vegavero®,0.0,2,1626.0,0.0,2.4749,669.114,False,25.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-274,974.0799999999999,297.0,Cystite Complex Vegavero® | 120 Gélules | 100% NATUREL : Avec D-Mannose + Canneberge + Ortie + Pamplemousse + Busserole | Sans Additifs | Confort Urinaire | VEGAN,0.0,0,325.0,0.0,9.2761,37.4079,False,266.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-276,9050.07,2639.0,Vegavero Diosmine + Hespéridine | Avec Rutine + Marronnier d’Inde + Petit Houx | Circulation Sanguine et Hémorroïdes | 100% Naturel | 120 Gélules | VEGAN,0.0,0,492.0,240.0,50.0926,8.1649,True,1873.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-277,552.41,455.0,Vegavero Vitamin B12 for Kids Spray | Natural Cherry Flavour | NO Artificial Additives | Children’s B12 Methylcobalamin & Cyanocobalamin | Natural Xylitol | 4 Months Supply | 125 Sprays | Vegan,0.0,0,206.0,144.0,7.8527,26.9008,False,254.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-284,810.9200000000001,317.0,"Vegavero Organic Chaga Mushroom Extract | 6000 mg 10:1 Extract | 40% Polysaccharides, 30% Betaglucans | NO Additives | 120 Capsules | Vegan",0.0,0,275.0,60.0,8.9617,33.3642,False,271.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-286,2081.75,711.0,Vegavero ZAAG PALMETTO + PYGEUM AFRICANUM | 500 mg zaagpalmetto-extract (20:1) & 200 mg pygeum-extract (2:1) | 45% vetzuren en 10% sterolen | VEGAN - Geen toevoegingen | 90 capsules,35.03,5,367.0,255.0,32.7073,13.3303,True,960.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-287,774.48,582.0,"Vegavero Organic Silica Supplement 300 mg | High Bioavailability | 100% Natural from Bamboo Extracts | Supports Hair, Skin and Nail Health | 120 Capsules | Vegan",12.95,6,496.0,600.0,17.0246,32.5999,False,517.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-295,1368.76,478.0,Vegavero Blood Sugar Control | 4 Months Supply - 120 Capsules| Chromium Picolinate + Ceylon Cinnamon Extract + Gymnema Sylvestre Extract | Blood Glucose Metabolism* | Vegan,113.45,4,376.0,0.0,10.8362,31.4568,True,372.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-297,350.85999999999996,43.0,Betacaroteno Plus Vegavero | Aceite Vitamina E + Astaxantina | ACTIVADOR BRONCEADO | TCM aceite | 120 Capsulas – Para 4 Meses | Sin Aditivos | Vegano,5.15,4,337.0,0.0,2.622,32.579,True,56.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-298,1415.9099999999999,317.0,Vegavero Zwarte MACA capsules + TRIBULUS | 5000 mg Maca zwart + 1.200 mg Tribulus Terrestris | Laboratorium getest | Geen toevoegingen | Veganistisch,0.0,0,71.0,360.0,13.6549,7.0304,True,361.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-301,308.25,175.0,"Vegavero ZM+ capsules | Zink, magnesium, vitamine B6 | Premie: met AquaminTM marien magnesium, zinkaspartaat + citraat | Hoge biologische beschikbaarh",0.0,0,146.0,0.0,7.5771,21.5122,True,188.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-303,3742.06,480.0,"Vegavero BRANDNETEL Complex | 100% GROENTE | Met extracten van berk, paardenbloem en brandnetel | Alternatief voor drainagetabletten | 120 capsules | Vegan",0.0,0,0.0,0.0,3.6,3.0556,True,294.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-304,1358.3999999999999,738.0,Folsäure 400μg Kapseln | Premium: Quatrefolic 5-MTHF Folat | Rohstoff aus Italien | Kinderwunsch - Schwangerschaft | Ohne Zusatzstoffe | Deutsche Produktion Vegavero,64.57,7,349.0,696.0,30.377,13.2008,True,870.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-307,396.3,258.0,Vitamine B3 Nicotinamide Vegavero® | 180 Gélules | Formule Pure (Flush Free) | Sans additifs | VEGAN,0.0,0,337.0,0.0,7.7694,57.5333,False,244.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-308,538.45,195.0,Enzym Komplex | Bromelain - Papain - Amylase - Lipase - Cellulase | Magensaftresistente DRCaps | Natürliche Verdauungsenzyme | Laborgeprüft | Ohne Zusatzstoffe | Deutsche Produktion Vegavero,0.0,0,219.0,60.0,7.1691,20.9309,True,213.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-31,804.6800000000001,367.0,"Vegavero Papaya Enzyme | 2,100 mg Papain | 100% Natural: Carica Papay Fruit Extract | NO Additives | 120 Vegan Capsules",0.0,0,79.0,0.0,8.3251,9.8497,True,279.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-310,1702.5200000000002,738.0,"Vegavero BERGAMOT Supplement | 1250 mg Extract (15:1) | 120 Capsules (2 Months Supply) | 40% BIOFLAVONOIDS | Citrus Bergamia | NO Additives, Lab-Tested | Vegan",0.0,0,0.0,540.0,12.3022,0.671,True,336.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-311,2452.31,903.0,"Vegavero NAC Supplement | 100% Pure N-Acetyl-Cysteine 600 mg | Lab Tested, NO Additives | 180 Capsules | Vegan",201.84,3,350.0,0.0,28.1203,15.1848,True,845.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-313,1241.64,630.0,Vegavero BOSWELLIA SERRATA | 9450 mg 15:1 Extract 85% Boswellic Acids | NO Additives | Indian Frankincense Gum Resin Extract | Supports Healthy Bones and Joints | 120 Capsules | Vegan,0.0,0,297.0,0.0,9.1844,2.8309,True,341.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-314,12577.970000000001,6789.0,Vegavero Glycin Pulver 1000g mit Messlöffel – 100% Aminosäure hochdosiert - reines Glycine Pulver ohne Zusatzstoffe - fein löslich - Laborgeprüft & vegan,0.0,0,1635.0,413.0,185.4027,10.426,True,6206.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-316,1576.69,546.0,"Vegavero Organic Ceylon Cinnamon | High Strength 2500 mg Per Serving | NO Additives | Extract (5:1) from Madagascar | Lab-Tested, Non-GMO | 120 Capsules | Vegan",1.93,1,611.0,3.0,18.2664,37.0626,False,512.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-317,2832.03,970.0,L-Citrullin Malat | Hochdosiert: 2000 mg Citrullin | Mit L-Arginin Base + Rote Beete | Aus Fermentation | Pre-Workout | Laborgeprüft | Vegan - Ohne Zusatzstoffe | Deutsche Produktion von Vegavero,0.2,1,355.0,961.0,24.309,16.4548,False,795.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-318,379.64,256.0,"Vegavero Knoflook capsules | UNIEK: Extracten van knoflook, meidoorn en olijfblad | 1% allicine - 3% flavonen - 40% oleuroperine | Laboratorium getest | Zonder toevoegingen",0.0,0,265.0,0.0,5.3196,46.9507,False,189.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-319,531.44,217.0,OMEGA 3 6 9 BIO | VEGAN | Cholesterol et Santé Cardiovasculaire | 1400 mg d'Huile de Chia | Acides Gras Insaturés Hautement Dosés | SANS ADDITIFS | 120 Gélules | Vegavero®,0.0,0,199.0,120.0,6.8841,31.0862,True,195.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-320,5251.8099999999995,1247.0,Vegavero Vegane Kollagen Kapseln hochdosiert | Einzigartig: Markenrohstoff Vollagen | Vegan mit Hyaluronsäure | Laborgeprüft | Vegan - ohne Zusatzstoffe | Deutsche Produktion,0.0,0,1254.0,116.0,39.3239,30.621,True,1203.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-320-V,827.8399999999999,374.0,Vegavero Advanced Vegan Collagen Supplement 500 mg | 4 Months Supply | NO Additives | Plant-Based Collagen Capsules with Hyaluronic Acid | Essential Amino Acids | Vollagen,0.0,0,439.0,120.0,10.2239,45.2861,False,341.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-323,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-326,1734.75,594.0,Vegavero 5-HTP capsules van Griffonia extracten | Met Ashwagandha KSM-66® en Rhodiola Rosea Rhodiolife® | Laboratorium getest | Zonder toevoegingen,12.03,1,482.0,463.0,17.484,29.6843,False,546.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-327,0.0,0.0,L-CARNITINA COMPLEX | CARNIPURE | Café Verde + Vitaminas B + Cromo | PRE WORKOUT + PARA la Figura | ALTA concentración | Energía | Sin Aditivos & Vegano | 120 Cápsulas | Vegavero®,0.0,2,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-328,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-329,3881.2900000000004,955.0,Vegavero Liposomale Vitamine C | Echte liposomale technologie - merkgrondstof PureWay-C®; | Laboratorium getest | Veganistisch - Geen toevoegingen,76.30000000000001,7,1269.0,765.0,27.3287,48.7766,False,849.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-331,0.0,0.0,"Vegavero Nootropics Brain Supplements | Ayurveda Products | NO Additives | Brahmi, Ginkgo, Panax Ginseng, DHA & B Vitamins | Vegan | 90 Capsules",0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-332,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-333,1016.9499999999999,358.0,"Elektrolyte Plus 1872 mg | Magnesium, Calcium, Kalium, Natrium, Chlorid + B Vitamine | Natürliche Quellen: ConcenTrace & Aquamin | Vegan & ohne Zusätze | Vegavero | 120 Kapseln",0.0,0,68.0,0.0,8.1837,1.7107,True,312.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-335,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-336,607.42,183.0,"Vegavero Organic Devil’s Claw Capsules | 4,995 mg (3:1 Extract) Daily | 90 Capsules | NO Additives | Natural Joint Support | Harpagophytum with 2,7% Harpagoside | Vegan",0.0,0,104.0,0.0,9.7417,13.1393,True,224.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-337,0.0,0.0,"Vegavero Rocket | Pre Workout Supplement | Black Maca, L-Arginine, Cordyceps Sinensis, Panax Gingseng & Ashwagandha KSM 66 | NO Additives | Vegan",0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-338,260.14,148.0,Vegavero Biologische kurkuma capsules | Uniek: BIOLOGISCH Curcuma-EXTRACT – geen poeder | 14.620 mg kurkuma-equivalent per capsule | 158 mg Curcumine | Met piperine | 60 capsules | Vegan,0.0,0,147.0,0.0,3.8001,42.104,False,123.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-339,2800.6899999999996,1109.0,"Vegavero L-Tyrosine Plus 1200 mg | THYROIDE* | Avec Iode, Selenium et Vitamine B | Énergie + Fatigue Mentale | 180 Gélules | VEGAN et SANS ADDITIFS",0.0,0,1682.0,1.0,32.4404,54.3151,False,987.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-340,1411.14,284.0,Mariendistel + Bio Artischocke & Löwenzahn | 80% Silymarin | Hochdosiert | 120 Kapseln | Vegan & Ohne Zusätze | Deutsche Produktion von Vegavero,0.0,0,121.0,0.0,9.5321,15.1068,True,283.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-341,542.5,339.0,Vitamin B12 Tropfen | 50 ml ohne Alkohol | 500 Tage | Aktivformen: 80% Methyl- & 20% Adenosylcobalamin | 500 µg B-12 flüssig | Laborgeprüft & Keine Konservierungsstoffe | Vegavero,0.0,0,16.0,0.0,8.3914,2.9792,True,282.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-342,373.39,119.0,Vegavero Vitamin D3 K2 Tropfen Vegan für 365 Tage - 1.000 Vitamin D3 + 25 µg Vitamin K2 all-trans - Vitamin D3 Tropfen laborgeprüft & ohne Konservierungsstoffe - Vitamin D3 K2 Tropfen mit Pipette,0.0,0,492.0,0.0,4.3785,116.2498,False,108.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-343,0.0,0.0,"Vegavero Chlorophyll Liquid | 60 ml | 300 mg Sodium Copper Chlorophyllin | NO Additives, Lab-Tested | Made in UK | Vegan",0.0,0,0.0,0.0,0.0,,False,0.0,2026-07-09,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-344,3794.1400000000003,599.0,Vegavero BIOLOGISCHE Ashwagandha KSM-66® | 600 mg – 15:1 BIOLOGISCH extract | 100% Biologisch | 30 mg withanoliden | Veganistisch en zonder toevoegingen,1.01,1,648.0,120.0,14.1557,47.8958,False,498.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-345,2054.7799999999997,557.0,"Complexe Sérénité | Humeur + Anti stress | Millepertuis, Rhodiola, Safran, Tryptophane, Vitamine B | 90 Gélules | SANS ADDITIFS et VEGAN | Vegavero®",0.0,0,351.0,85.0,17.9384,21.9083,True,551.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-346,464.82,249.0,"Vegavero Chroom tabletten | 250 μg Chroompicolinaat | Met magnesium, B12, paardenbloem | Voor bloedsuikerspiegels*",0.0,0,124.0,0.0,6.7495,9.6303,True,210.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-347,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-348,0.0,0.0,"Vegavero Vegan Pregnancy Vitamins | NO Additives | with Prenatal Omega 3, Iron, Zinc, Calcium, Iodine & Selenium | 60 Capsules",0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-349,295.91,121.0,Vegavero Capsules de fenugrec bio haute résistance | 2900 mg de fenugrec | Complément d'allaitement | Extrait de fenugrec (4:1) et poudre | 120 gél,0.0,0,139.0,60.0,2.652,58.0689,False,80.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-350,0.0,0.0,"Vegavero FenoLact® voor vrouwen die borstvoeding geven | Met BIOLOGISCHE Fenegriek & BIOLOGISCHE Moringa | Quatrefolic® foliumzuur, vitamine D3, B12",0.0,0,,,,,False,,,True,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-351,407.98,165.0,Cordyceps Sinensis BIO | Unique : Extrait Biologique (20:1) – 13000 mg de Poudre CS-4 | Adaptogène + Immunité | Sans Additifs & Vegan | Vegavero®,0.0,0,87.0,0.0,4.9595,7.8637,True,143.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-352,406.01,102.0,"Vegavero Omega 3 vegan + ADEK capsules | VEGANISCH | Veganistische EPA, DHA + Vitamine A, D, E, K | 60 capsules",56.03,8,458.0,0.0,3.7859,125.2014,False,113.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-353,665.14,285.0,Vegavero L-Tryptophan 220 mg | 120 Capsules (4 Months Supply) | NO Additives | Lab-Tested | Pure Tryptophan Supplement | Vegan,0.0,0,306.0,1.0,8.4786,38.5675,False,266.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-354,2002.1,709.0,BIO Mushroom Complex | Extracto Orgánico | Reishi + Lions Mane + Cordyceps + Shiitake | Sistema Imune y Defensas | Sin Additivos | Vegan | Vanatari,0.0,0,221.0,340.0,22.9938,12.6556,True,696.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-355,3791.06,834.0,"Vegavero L-Glutathione Complex | With Glycin, PureWay-C® Vitamin C Liposomal and MSM | NO Additives | Vegan | 90 Capsules",0.0,0,2320.0,1.0,30.1415,80.7192,False,806.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-355-V,1028.01,216.0,"Vegavero L-Glutathione Complex | 180 Capsules | with Glycin, PureWay-C Vitamin C Liposomal and MSM | NO Additives | Vegan",0.0,0,507.0,0.0,6.1759,84.846,False,207.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-356,1056.99,398.0,"Vegavero Zwarte MACA capsules + l-ARGININE | Met tribulus, ginseng, vitamin c en zink | 5000 mg Maca zwarte 10:1 extract | Veganistisch en zonder toevoegingen | 120 capsules",0.0,0,21.0,0.0,2.9678,12.9463,True,227.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-357,240.71,121.0,L Taurina Cápsulas | 1000 mg | Energizante + Concentracion | Cúrcuma + Té Verde + Vitamina B3 | Preentreno | Vegano | Vegavero,0.0,0,1134.0,0.0,3.3196,0.0,False,114.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-358,18.330000000000002,14.0,OPC | 12.500 mg de Extracto de Semilla de Uva | Antioxidante Natural para Circulación | Alta Dosis de Uvas Italianas | Vegano & Sin Pesticidas | Vegavero,0.0,0,0.0,0.0,0.0249,40.1476,False,3.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-359,177.62,149.0,"Vegavero® Gélules de riz rouge Plus | 2,9 mg de monacoline K | Complexe avec bergamote + artichaut + Q10 | Red Yeast Rice | Flavonoïdes & antioxydants | Sans additifs | Végétalien",0.0,0,115.0,85.0,4.0779,29.9172,False,122.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-360,20.759999999999998,6.0,Vegavero Caffeine 200 mg | 9090 mg Guarana Seeds from 10:1 Extract | 120 Capsules | Natural and Sugar Free | Vegan,0.0,0,0.0,0.0,0.0554,72.1863,False,2.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-361,1457.24,373.0,"Vegavero RAPUNZEL | Haarvitamines met MSM, biotine, zink, L-cysteïne en selenium | KRUIDENKRACHTEXTRACTEN: Gouden gierst, bamboe en meer | Haarcapsules voor vrouwen | 120 capsules | Vegan",0.0,0,1323.0,60.0,10.8478,50.1767,False,349.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-362,147.23,107.0,"Complexe Échinacée Immunité | Avec Vitamine C, Reishi, Curcuma et Zinc | Sans Additifs & Vegan | 120 Gélules | Vegavero®",0.0,0,782.0,0.0,2.643,298.5258,False,96.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-363,1616.99,293.0,"Vegavero Vinaigre de cidre de pomme avec mère 1500 mg | Picolinate de chrome pour taux de sucre dans le sang | avec extraits de poivre de Cayenne, gi",0.0,0,4943.0,0.0,7.646,650.1461,False,258.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-363-V,179.6,96.0,"Complexe Vinaigre de Cidre 1950mg | 240 Gélules | Avec Chrome, Cannelle, Gingembre et Piment de Cayenne | Glycémie + Keto | Sans Additifs & Vegan | Vegavero®",0.0,0,223.0,0.0,1.9466,114.5597,False,76.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-364,8192.57,2695.0,Astaxanthine BIO | Issue de 160 mg d'Haematococcus Biologiques | Antioxydant 100% Naturel | Biodisponibilité Elevée | Vegan & Sans Additifs | Vegavero®,0.0,0,792.0,142.0,75.8029,12.8227,True,2474.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-365,1885.3100000000002,260.0,Vegavero Apple Cider Vinegar Gummies | NO Sweeteners or Added Sugars | 91% Fruit | Digestive Gums | Without Gelatine | Vegan | 90 Apple Cider Soft Bites,0.0,0,129.0,200.0,8.879,16.1053,False,261.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-366,213.07,90.0,Gummies Fer | Pour Enfant et Adulte | Sans Sucres Ajoutés & Vegan | Avec 97% de Fruits | 94 Gommes Goût Cassis | Anti Fatigue + Immunité | Vegavero®,0.0,0,149.0,0.0,3.6228,37.1296,False,49.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-367,595.11,239.0,"Vegavero Creatine Monohydrate Powder | Pure Unflavoured | 3,4 mg per day - 147 Portions | Performance and Muscle Building | NO Additives | Lab Tested | 500g Vegan Creatin",9.85,1,295.0,0.0,7.9914,38.2913,False,222.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-368,486.42,191.0,Vegavero L-Glutamine Powder 5000 mg | Post Workout and Muscle Building | 100% Pure - NO Additives | Lab Tested | 500g L Glutamine Vegan,0.0,0,111.0,40.0,3.1066,13.3887,True,120.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-369,279.99,96.0,Vegavero Organic Glucomannan Capsules 4000 mg | with Chromium and Zinc | Weight Loss Supplement* | 95% Glucomanan | NO Additives | Vegan,0.0,0,108.0,0.0,2.4489,36.7509,False,71.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-370,15826.210000000001,3334.0,Vegavero Magnesium bisglycinaat capsules | 400 mg elementair magnesium | Magnesium bisglycinate laboratorium getest | Zonder vulstoffen en additieven | Vegan,0.0,2,6511.0,242.0,93.1921,47.6874,False,3074.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-370-V,3014.38,1026.0,"Vegavero Bisglicinato de Magnesio | 400 mg de Magnesio Elemental por Dosis Diaria | 365 Cápsulas | Alta Absorción | Magnesio Quelado | Sistema Nervioso, Músculos y Energía | Sin Aditivos & Vegano",87.59,10,533.0,90.0,30.194,20.5339,True,972.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-371,847.99,400.0,Nattokinase | 100 mg – 20 000 FU/g | Natto de soja sans OGM | Hautement dosé | Sans additifs artificiels et testé en laboratoire | Vegan | Vegavero®,0.0,0,471.0,1.0,10.1472,50.8514,False,295.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-372,1266.74,204.0,Vegavero VITAMINE D3 7000 IE en 200 mcg K2 | VOOR 14 MAANDEN | Hoge Dosering en Biobeschikbaarheid | Zonder Additieven & Vegan,27.96,12,607.0,0.0,4.3368,66.4446,False,134.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-373,45.650000000000006,12.0,Keto Diet Power | Metabolismo de Carbohidratos y Grasas | con L-Carnitina y Glucomanano | Suplemento Cetogénico | Para Hombres y Mujeres | 60 Cápsulas | Vegavero,0.0,0,0.0,0.0,0.1501,219.8662,False,7.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-374,1855.27,299.0,Vegavero Organic Psyllium Husk 400g | 5000 mg per dose | Pure Natural Soluble Fiber Supplement | NO Additives | Lab Tested | Vegan,0.0,0,125.0,140.0,5.0771,13.7874,True,161.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-375,173.0,62.0,Vegavero Calcium Tablets 1645 mg Magnesium 1251 mg | With Zinc Bisglycinate and Red Clover Extract | Bone Health Supplements | NO Additives | 180 Capsules | Vegan,8.15,1,126.0,0.0,1.704,75.704,False,53.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-376,1879.92,742.0,"5HTP Griffonia 200 mg | Equivalente a 3000 mg | Dosis Más Alta | Griffonia Simplicifolia | Para Estrés, Sueño y Animo | Vegano | SIN ADITIVOS | Vegavero",0.0,0,3357.0,0.0,22.0536,121.4058,False,690.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-377,3367.83,959.0,Cholin Bitartrat Kapseln | Hochdosiert: 1400 mg Cholin-Bitartrat pro Tag | 4 Monate Vorrat | Deutsche Produktion | Laborgeprüft | Ohne Zusätze | 120 Stück | Vegan von Vegavero,0.0,0,366.0,420.0,23.2079,16.5461,True,785.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-378,469.29,205.0,"Vegavero Brewer's Yeast 2500 mg | 100% Pure | Natural Source of B-Vitamins, Amino Acids, Minerals | Highly Dosed | NO Additives, Lab Tested | Vegan",0.0,0,388.0,0.0,4.6149,51.7919,False,129.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-379,935.65,529.0,"Vegavero Vegan Glucosamine Plus | with Chondroitin, MSM and Boswellia Serrata | NO Additives, Lab-Tested | Natural Joint Pain Relief | 120 Capsules",0.0,0,88.0,420.0,14.3003,4.3587,False,446.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-38,412.56,260.0,Vegavero VITAMINE B COMPLEX | Alle 8 B-vitamines | Met choline | VEGAN,0.0,0,267.0,232.0,7.5249,37.7412,False,257.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-380,317.57,122.0,"Party Hero Hangover Kit | 60 Tabletten | 14 natürliche Inhaltsstoffe | Elektrolyte, Vitamine, Cholin und Kudzu | Vegan | Vegavero",0.0,0,309.0,0.0,4.532,69.5062,False,125.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-381,5514.15,1688.0,Vegavero Myo-Inositol Powder 4000 mg | Inositol PCOS Supplement Powder | NO Additives | Up To 100 Days Supply | Vegan,0.0,0,1682.0,0.0,57.5323,31.2868,True,1677.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-382,1397.55,270.0,100% Reines Taurin Pulver | 3000 mg | 1kg mit Messlöffel | Vegan & Ohne Zusatzstoffe | Bis zu 3 Jahre Vorrat | Deutsche Produktion von Vegavero,0.0,0,133.0,52.0,5.976,21.0842,True,173.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-383,664.27,76.0,Vitamin K2 Tabletten Hochdosiert | 200 μg MK-7 | Deutsche Produktion | Ohne Zusatzstoffe | 180 Stück | 100% Vegan & Laborgeprüft | Vegavero,38.57,3,387.0,0.0,2.5568,122.4727,False,74.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-384,139.1,58.0,Vegavero Beta Alanine 3000 mg | Premium Vegan Pre Workout Powder | 166 Servings – 500 G | 100% Pure Beta-Alanine | NO Additives,0.0,0,97.0,0.0,1.5026,67.2161,False,43.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-385,1201.01,272.0,Vegavero Evening Primrose Oil | 2100 mg High Dose | Cold-Pressed | 120 Capsules | Omega-6 & 11% GLA | NO Additives | Lab-Tested | Vegan,259.41,4,175.0,0.0,7.2976,24.2546,True,241.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-386,520.8299999999999,69.0,"Vegavero Probiotica voor vrouwen | 35 miljard CFU/dag uit 6 bacteriestammen | met rode bosbes, vitamines, lactobacillen en bifidobacteriën | voor de",0.0,0,234.0,0.0,1.4769,160.4742,False,62.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-387,458.35999999999996,52.0,"Vegavero Youth Biotics | 5 Billion CFU & Vollagen | with Hyaluronic Acid, Resveratrol & Coenzyme Q10 | 60 Capsules | Gut-Skin Axis & Collagen Support | NO Additives",0.0,1,334.0,0.0,1.1201,301.758,False,42.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-388,1356.8,431.0,"Vegavero Pure Glycine Powder 300 g | 3000 mg Daily Dose | NO Additives, Lab-Tested | Recovery, Muscle & Collagen Synthesis | with Measuring Spoon | Vegan",0.0,0,149.0,0.0,7.5254,2.9234,True,265.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-389,3320.52,529.0,Vegavero Prosta-X Supplement | 180 Capsules (3 Months Supply) | Pumpkin Seed & Stinging Nettle Root Extracts | 80% Fatty Acids | for Men's Health | Vegan,0.0,0,292.0,1.0,20.1503,6.6092,True,564.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-39,3473.5699999999997,1547.0,D-Mannose 2000mg | Avec Cranberry et Vitamine C | Infection Urinaire | 100% Naturel & Testé en Laboratoire | 120 Gélules Vegan | Vegavero®,1.79,1,1584.0,0.0,48.4292,35.1234,False,1528.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-390,272.47,80.0,L-Citrullin Malat Pulver 500g | 3400 mg Citrullin | 2:1 Markenrohstoff AMINOFERMENT| Pre-Workout | Aus Fermentation | Laborgeprüft | Vegan - Ohne Zusatzstoffe | Dt. Produktion von Vegavero,9.53,2,238.0,80.0,2.6605,92.0888,False,67.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-391,3286.4900000000002,691.0,"Vegavero Quercetin 1000 mg | with Vitamin C, Bromelain and Piperine | 95% Sophora Japonica Extract | Antioxidant, Anti-inflammatory and Immune System | NO Additives | Vegan",7.07,3,285.0,0.0,19.7195,16.3797,True,641.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-392,2672.5299999999997,580.0,Gaba Kapseln | 1.400 mg Gamma Aminobuttersäure | 90 Stück | Laborgeprüft und ohne Zusatzstoffe | Vegan | Deutsche Produktion von Vegavero®,0.0,0,536.0,0.0,14.9505,37.7913,False,535.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-393,181.98000000000002,30.0,BCAA en Polvo | 450 g – 56 Porciones | Proporción 2:1:1 | Vegano | Sabor Mango,4.24,1,274.0,0.0,0.421,657.9994,False,23.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-394,575.94,125.0,EAA Pulver Pfirsich | 400 g Beutel | 50 Tage Vorrat | 2:1:1 | mehr als 12.600 mg der 9 essenziellen Aminosäuren | Vegan | Laborgeprüft | Deutsche Produktion von Vegavero,12.67,1,96.0,0.0,3.6379,28.5876,True,112.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-395,2926.1499999999996,333.0,Vegavero Zinc Supplement 90 mg | Bisglycinate Form with High Bioavailability | NO Additives | Vegan | 300 Capsules,0.0,0,524.0,0.0,10.8218,50.0839,False,322.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-396,596.83,329.0,"Vegavero MSM-poeder 300 g | Zak | 99,9% puur | Veganistisch & zonder toevoegingen",0.0,0,463.0,40.0,6.6901,36.8446,False,213.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-397,244.74,106.0,Reishi Puro Vegavero | Dosis Más Alta: 13000 mg (10:1) | Con 40% Polisacáridos & 20% Betaglucanos | Ganoderma Lucidum | Sin Aditivos & Vegano | 240 Cápsulas,0.0,0,1319.0,0.0,2.8722,463.0618,False,103.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-398,388.02,67.0,"Vegavero Multivitamin Gummies for Kids | 100% Vegan | Children's Immune System Support | With Vitamin C, Zinc, Vitamin D3, B12 & More | Wild Berry Flavour | 60 Gums",0.0,0,312.0,0.0,1.7741,179.8047,False,58.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-399,288.13,62.0,Vegavero Glucomannan Complex 4000 mg | with Chromium and Vitamin B3 | Weight Loss Supplement* | 95% Glucomannan | NO Additives | Vegan,0.0,0,691.0,0.0,0.7751,110.9498,False,32.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-400,548.21,50.0,"Vegavero Keto Power - Keto Kapseln hochdosiert mit Glucomannan, L-Carnitin & Magnesium Bisglycinat - Für die Figur & Energie - vegan, laborgeprüft - 90 Kapseln für 1 Monat",0.0,0,721.0,0.0,1.1716,617.1286,False,44.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-401,864.1500000000001,116.0,Vegavero Mönchspfeffer Kapseln 20mg - Vitex agnus castus Extrakt 15:1 – Vorrat für 8 Monate Mönchspfeffer hochdosiert - Vegan & laborgeprüft - 240 Kapseln,0.0,0,240.0,0.0,3.3873,84.1372,False,116.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-402,685.86,116.0,"Vegavero Un-Bloat | Complejo de Enzimas Digestivas para Gases e Hinchazón Adultos | 120 Cápsulas | con Bromelina, Papaína, Lactasa, Alfa-d-galactosidasa | Vegano y Sin Aditivos",0.0,0,680.0,0.0,2.8909,239.7189,False,99.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-403,4433.33,650.0,Vegavero Magnesiumcitrat Pulver 500 g - 400 mg elementares Magnesium hochdosiert pro Portion - 100 Portionen Magnesium Citrate Pulver mit Messlöffel - vegan ohne Zusätze,0.0,0,183.0,40.0,9.3169,8.6092,True,445.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-404,583.8499999999999,139.0,Sauge Vegavero® | Dosage Élevé : 6250 mg (extrait 10:1) | Pour 4 Mois | Unique : Standardisé en Acide Rosmarinique | Sans Additifs & Vegan,0.0,0,474.0,0.0,4.3735,108.8361,False,139.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-405,8031.66,415.0,"Vegavero Vitamin B12 hochdosiert - 500 µg B12 Tabletten 180 Stück, vegan - Vitamin-B12 Methylcobalamin & Adenosylcobalamin - Vitamintabletten ohne Zusatzstoffe",0.0,0,192.0,1.0,5.8222,35.2101,False,300.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-406,641.18,158.0,Vegavero Vitamina B12 1000 mcg | Metilcobalamina y Adenosilcobalamina | 180 Comprimidos para 9 Meses | Producido en Alemania | Sin Aditivos y Vegano,0.0,0,87.0,0.0,0.5256,13.3175,True,68.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-407,1401.12,261.0,"Vegavero Super Greens Powder | 20+ Superfood Ingredients | Morning Complete | Adaptogens, Mushrooms, Algae, Probiotics & Fibre | with Standardised Extracts | Vegan & Gluten-Free",0.0,0,58.0,75.0,6.7728,10.1877,True,262.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-408,2286.02,251.0,"Gut Routine | Formule Tout en Un : 7g de Fibres, Probiotiques, L-Glutamine | Digestion & Microbiote Intestinal | Vegan & Sans Gluten | Goût Fraise | Vegavero®",0.0,0,213.0,26.0,8.9424,25.273,True,256.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-409,2470.76,187.0,Vegavero Magnesiumcitrat Kapseln 180 Stück - 400 mg elementares Magnesium hochdosiert pro Tagesdosis - Magnesium Kapseln hochdosiert und gut bioverfügbar - vegan ohne Zusätze - Laborgeprüfte Qualität,0.0,0,1244.0,0.0,5.9647,214.0914,False,197.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-410,252.86,45.0,Vegavero OPC Grape Seed Extract 30:1 | High Strength from French Grapes | Standardised for OPC by HPLC | Lab Tested | NO Additives | Vegan | 240 Capsules,0.0,0,484.0,0.0,1.5968,170.2437,False,42.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-411,1282.92,278.0,"Enzymes Digestives Complexe PRO | Unique : Avec Enzyme Pour le Gluten | Lactase, Bromeline, Lipase, Amylase… | 120 Gélules Gastro-résistantes | Testé en Laboratoire & Sans Additifs | Vegavero®",0.0,0,418.0,0.0,6.032,70.457,False,229.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-412,65.3,47.0,Vegavero Lactasa 10.000 FCC + Calcio | 180 Comprimidos | Digestión Lactosa,0.0,0,643.0,1.0,0.7287,885.1619,False,50.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-413,8.219999999999999,10.0,Vegavero Coenzyme Q10 Supplement 200 mg | PureWay Liposomal CoQ10 | High Strength Q10 | 120 Capsules | NO Additives | Lab-Tested | Vegan,0.0,0,501.0,144.0,4.5552,111.3014,False,74.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-414,39.95,47.0,Vegavero Hericium Melena de León | 2000 mg de Extracto 5:1 | 180 Cápsulas,0.0,0,655.0,0.0,2.0002,328.9683,False,64.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-415,35.56,36.0,"Vegavero PMS Kapseln - Zyklus Komplex mit Magnesium, Mönchspfeffer, Safran, Melisse & Vitamin B6 – Vitamine für Frauen - 120 vegane Kapseln – laborgeprüft - Zyklus Balance",0.0,0,851.0,0.0,1.503,567.5225,False,47.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-417,268.61,120.0,Vegavero Vegan Omega 3 Gummies | Sugar-Free | No Fishy Taste | Algae Oil DHA & EPA | 250 mg per Gummy | Lab-Tested | 60 Gummies,0.0,0,523.0,96.0,4.6421,119.7731,False,132.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-46,1270.33,419.0,"Multivitamin Kapseln Vegavero | Immunabwehr & Energie* | Hochdosiert | Wichtige A-Z Vitamine & Mineralien | B-Vitamine, Eisen, Jod & Co | Ohne Zusatzstoffe | Laborgeprüft | Vegan | 120 Stück",0.0,0,563.0,0.0,17.0194,35.6652,False,479.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-49,432.63,377.0,"Vegavero Iron Supplement 30 mg | NO Additives | Iron Bisglycinate with Vitamin C, B2, B6, B9, B12 | Anaemia, Tiredness and Blood Loss | 120 Capsules | Vegan",0.0,0,148.0,0.0,10.2648,9.6169,True,337.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-49-V2,65.81,71.0,"Eisen Bisglycinat Vegavero | 30 mg Iron | Mit natürlichem Vitamin C, Folsäure Quatrefolic, Vitamin B12, B6 & B2 | Vegan & Ohne Zusätze | 240 Kapseln",0.0,0,317.0,0.0,1.9157,166.5174,False,64.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-50,189.26,123.0,"Vegavero® Vegan Collagen | 100% Plant - No Animal Waste | With Natural Vitamin C, L-Lysine, L-Proline & Plant Extracts | No Additives | 120 Capsules",35.49,2,493.0,1.0,6.7357,31.6225,True,156.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-57-V,318.09000000000003,213.0,Vegavero HYALURONZUUR capsules | 600 mg | 180 capsules voor 6 maanden | 800-1500 kDa hoog molecuulgewicht | Geen additieven en veganistisch,0.0,0,202.0,0.0,6.233,35.4564,False,199.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-57-V2,321.37,218.0,Ácido Hialurónico Puro Vegavero | La Dosis más Alta: 600 mg | Libre de Aditivos & Vegano | 90 Cápsulas | Natural de Fermentación | 800-1500 kDa | Hidratante facial + Articulaciones…,3.98,1,201.0,0.0,5.7909,27.2842,True,180.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Amazon,VV-VITA-63,1610.38,660.0,Vegavero Cordyceps Sinensis 19 500 mg Daily | 10:1 Mushroom Extract | 4-Month Supply | 40% Polysaccharides | NO Additives | Lab-Tested | Vegan,0.0,0,3894.0,90.0,16.0516,34.2066,False,528.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-86,568.88,223.0,Vegavero MSM Capsules 2000 mg | Distilled Organic Sulphur | NO Additives & Non-GMO | Lab-Tested Methylsulfonylmethane Supplements | 365 Pills | Vegan,0.0,0,494.0,240.0,10.4972,35.9722,False,201.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-88,1089.9799999999998,326.0,Vegavero Organic Spirulina and Chlorella Capsules High Strength | 2000 mg Per Serving | 240 Capsules | NO Additives | Pure Powder | Vegan,0.0,0,253.0,60.0,5.524,26.9778,False,178.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-90,12095.65,2705.0,Betacarotene per Abbronzatura Forte | Altamente Dosato | da Estratto di Carota | Attivatore Naturale Melanina | con Vitamina A 1167 mcg | Certificato in Laboratorio | Vegavero®,0.0,0,1677.0,1155.0,56.3765,15.8577,False,1961.0,2026-07-09,False,False,False,False,2026-06
-Vegavero,Amazon,VV-VITA-93,585.38,327.0,Vegavero Vitamin B12 Spray | Vegan Methylcobalamin | 120 Days | Natural Cherry Flavour | 500 µg per Day | Liquid Travel Size,0.0,0,0.0,0.0,7.0467,0.6206,True,224.0,2026-07-09,True,False,True,False,2026-06
-Vegavero,Amazon,VV-VITA-94,618.04,194.0,Vegavero Probiotics & Prebiotics | 100% Organic | 20 Strains (Lactobacillus + Bifidobacterium) | 20 Billion Active Bacteria & Acacia Fibre | 60 Vegan Capsules | NO Additives,0.0,0,71.0,0.0,5.7876,16.069,True,169.0,2026-07-09,False,True,False,True,2026-06
-Vegavero,Shopify,2R-49NC-R697,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,BJ-E223-8EKW,603.5567264543109,56.0,BJ-E223-8EKW,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,CP-DQMG-RVN9,114.77003469325352,12.0,CP-DQMG-RVN9,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,CW-KVIN-V39Y,284.66626878399995,22.0,CW-KVIN-V39Y,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,NX-CVPF-VCEZ,260.60291071181194,37.0,NX-CVPF-VCEZ,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,TU-QNYD-JRRX,126.91411852651248,32.0,TU-QNYD-JRRX,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VI-ZU99-SZ0B,105.44658078515776,24.0,VI-ZU99-SZ0B,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-ALO-06,358.8760365601965,24.0,VV-ALO-06,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-02,64.85797081258838,17.0,VV-VITA-02,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-101,381.355202349553,61.0,VV-VITA-101,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-102,123.72073803824456,18.0,VV-VITA-102,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-104,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-105,63.83165823554295,5.0,VV-VITA-105,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-106,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-107,175.4229398295834,60.0,VV-VITA-107,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-109,145.5147426847281,29.0,VV-VITA-109,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-111,122.68344879285851,21.0,VV-VITA-111,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-115,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-116,146.4550568258627,32.0,VV-VITA-116,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-119,409.8275913248873,81.0,VV-VITA-119,37.56163859925984,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-121,229.39659202216308,35.0,VV-VITA-121,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-122,162.4535140344379,28.0,VV-VITA-122,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-124,425.98727738565526,74.0,VV-VITA-124,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-127,540.3615411996623,96.0,VV-VITA-127,38.39510958504371,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-129,47.70025587002608,5.0,VV-VITA-129,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-136,253.56704326508867,42.0,VV-VITA-136,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-142,297.9245944219731,55.0,VV-VITA-142,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-143,124.06188235073796,11.0,VV-VITA-143,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-146,173.18716311203963,15.0,VV-VITA-146,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-151,482.0902138374455,81.0,VV-VITA-151,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-153,306.7607320370294,39.0,VV-VITA-153,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-155,257.9892716883478,49.0,VV-VITA-155,1.63,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-157,203.53467421103704,39.0,VV-VITA-157,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-158,578.6183412575929,85.0,VV-VITA-158,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-159,652.2893673523918,101.0,VV-VITA-159,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-160,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-161,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-163,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-165,133.8590730000588,17.0,VV-VITA-165,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-166,169.39393715673967,19.0,VV-VITA-166,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-168,244.49258165644412,48.0,VV-VITA-168,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-170,215.32487374355577,30.0,VV-VITA-170,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-171,352.71568427583026,51.0,VV-VITA-171,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-172,89.70632218457581,21.0,VV-VITA-172,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-173,348.38970573010954,61.0,VV-VITA-173,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-174,149.00979691931525,20.0,VV-VITA-174,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-181,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-183,243.6718523442252,32.0,VV-VITA-183,0.0,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-186,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-188,81.80317522011275,25.0,VV-VITA-188,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-189,94.03002236858632,19.0,VV-VITA-189,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-190,81.16537576767122,14.0,VV-VITA-190,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-197,112.10160327236886,20.0,VV-VITA-197,112.10160327236886,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-198,201.04743341710807,37.0,VV-VITA-198,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-199,140.34856293399315,19.0,VV-VITA-199,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-200,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-202,86.55807010763895,11.0,VV-VITA-202,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-203,188.13000596735915,32.0,VV-VITA-203,44.76593986917565,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-204,33.059605704543884,2.0,VV-VITA-204,33.059605704543884,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-206,57.16791452257466,12.0,VV-VITA-206,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-207,266.4608185710241,23.0,VV-VITA-207,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-208,289.8581352323031,85.0,VV-VITA-208,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-215,166.5201921512249,27.0,VV-VITA-215,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-216,379.4189566552712,37.0,VV-VITA-216,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-217,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-222,495.6659363915333,110.0,VV-VITA-222,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-223,1672.3307713623326,365.0,VV-VITA-223,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-224,349.93706453386653,35.0,VV-VITA-224,0.0,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-225,196.99391544880973,56.0,VV-VITA-225,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-227,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-228,814.4595741226696,135.0,VV-VITA-228,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-230,9.88,0.0,VV-VITA-230,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-231,2508.3583696423434,325.0,VV-VITA-231,123.82778100388668,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-236,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-237,416.0001426478901,83.0,VV-VITA-237,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-243,907.7086353739488,201.0,VV-VITA-243,3.643199857705072,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-247,210.22430759534305,32.0,VV-VITA-247,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-248,288.8667143803124,43.0,VV-VITA-248,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-249,362.5394394483619,71.0,VV-VITA-249,37.96490251028239,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-250,181.9539363732041,24.0,VV-VITA-250,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-252,176.53626860148046,24.0,VV-VITA-252,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-253,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-256,431.7007090572085,49.0,VV-VITA-256,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-257,455.1982297072966,58.0,VV-VITA-257,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-258,99.39982593464444,17.0,VV-VITA-258,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-259,327.63677908902474,29.0,VV-VITA-259,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-262,86.28174053431427,11.0,VV-VITA-262,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-264,236.64482224697952,29.0,VV-VITA-264,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-266,43.257351560470966,10.0,VV-VITA-266,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-267,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-276,1097.395641252066,164.0,VV-VITA-276,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-277,94.89874252584612,14.0,VV-VITA-277,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-284,113.38817451218134,8.0,VV-VITA-284,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-286,270.21587417845353,37.0,VV-VITA-286,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-287,286.51175078759104,59.0,VV-VITA-287,18.3277416544277,2,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-295,124.91804008919809,28.0,VV-VITA-295,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-297,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-298,224.71594029706472,44.0,VV-VITA-298,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-299,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-301,224.39135670425597,51.0,VV-VITA-301,0.0,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-303,148.5092408682607,22.0,VV-VITA-303,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-304,204.53043448858756,44.0,VV-VITA-304,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-306,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-307,45.31000441796143,16.0,VV-VITA-307,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-308,225.9291442711824,33.0,VV-VITA-308,133.68445537515163,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-31,58.52289301036468,10.0,VV-VITA-31,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-310,274.4785782848336,60.0,VV-VITA-310,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-311,260.9784972162051,36.0,VV-VITA-311,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-312,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-313,355.69026735791863,36.0,VV-VITA-313,36.06260398957748,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-314,354.541689745888,70.0,VV-VITA-314,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-316,180.9241610938882,39.0,VV-VITA-316,43.66957024123869,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-317,278.0047466381903,37.0,VV-VITA-317,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-318,130.67013224616844,22.0,VV-VITA-318,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-319,50.05502281966652,8.0,VV-VITA-319,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-320,995.9862209597804,187.0,VV-VITA-320,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-324,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-325,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-326,223.5291170158809,35.0,VV-VITA-326,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-327,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-328,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-329,318.9112106257708,47.0,VV-VITA-329,16.184743764118966,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-330,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-331,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-332,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-333,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-335,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-336,44.1145809972788,5.0,VV-VITA-336,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-337,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-338,168.02653161853283,37.0,VV-VITA-338,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-339,199.97619556883808,16.0,VV-VITA-339,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-340,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-341,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-342,390.7691526115135,72.0,VV-VITA-342,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-343,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-344,525.5804861161537,84.0,VV-VITA-344,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-345,106.0698696031011,12.0,VV-VITA-345,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-346,42.01884321439447,7.0,VV-VITA-346,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-347,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-348,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-349,38.9328583260572,4.0,VV-VITA-349,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-350,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-351,16.17377765676079,2.0,VV-VITA-351,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-352,223.0608245309282,38.0,VV-VITA-352,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-354,198.9193189629012,36.0,VV-VITA-354,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-355,233.24611150727563,45.0,VV-VITA-355,0.0,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-356,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-357,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-358,10.7298,-1.0,VV-VITA-358,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-359,94.31899324634182,13.0,VV-VITA-359,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-360,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-361,393.6266154756479,77.0,VV-VITA-361,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-362,26.1328741352143,4.0,VV-VITA-362,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-363,105.19851300299707,24.0,VV-VITA-363,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-364,1724.0361867448823,275.0,VV-VITA-364,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-365,108.77333646222728,33.0,VV-VITA-365,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-366,105.23932296512942,20.0,VV-VITA-366,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-367,351.7730924943359,94.0,VV-VITA-367,0.0,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-368,120.74447216753856,29.0,VV-VITA-368,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-369,67.78406352904523,65.0,VV-VITA-369,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-370,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-371,171.24638027465588,27.0,VV-VITA-371,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-372,164.20225283385295,25.0,VV-VITA-372,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-373,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-374,83.18476844856251,17.0,VV-VITA-374,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-375,101.04395639991104,24.0,VV-VITA-375,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-376,83.89127660615547,19.0,VV-VITA-376,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-377,406.6029336190107,62.0,VV-VITA-377,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-378,12.99763560585096,1.0,VV-VITA-378,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-379,327.2951012231249,66.0,VV-VITA-379,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-38,308.49996811632565,66.0,VV-VITA-38,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-380,57.035954338520455,5.0,VV-VITA-380,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-381,328.9952384241576,38.0,VV-VITA-381,149.1343531814986,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-382,142.5149319256411,28.0,VV-VITA-382,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-383,78.90291721458291,13.0,VV-VITA-383,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-384,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-385,71.60490923056338,4.0,VV-VITA-385,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-386,111.52487930263676,19.0,VV-VITA-386,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-387,71.47259134830622,49.0,VV-VITA-387,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-388,166.9094029013659,37.0,VV-VITA-388,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-389,487.1049803728438,52.0,VV-VITA-389,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-39,247.08201610179248,58.0,VV-VITA-39,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-390,113.07430539445356,13.0,VV-VITA-390,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-391,325.89339314411814,39.0,VV-VITA-391,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-392,26.277649096984817,1.0,VV-VITA-392,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-393,27.488617532128263,7.0,VV-VITA-393,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-394,111.20593117618006,17.0,VV-VITA-394,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-395,142.38872460205937,29.0,VV-VITA-395,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-398,159.11863587015722,37.0,VV-VITA-398,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-399,37.3137930563673,8.0,VV-VITA-399,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-400,84.88008810128446,18.0,VV-VITA-400,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-401,18.998649050982195,1.0,VV-VITA-401,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-402,133.79122488553014,27.0,VV-VITA-402,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-403,579.6766555601544,59.0,VV-VITA-403,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-405,135.80148278414467,34.0,VV-VITA-405,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-407,178.73644356175993,54.0,VV-VITA-407,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-408,94.60899821931676,20.0,VV-VITA-408,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-409,1.9348821518174,1.0,VV-VITA-409,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-410,74.60160386443894,11.0,VV-VITA-410,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-411,173.6695403266663,31.0,VV-VITA-411,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-412,56.44984034433975,9.0,VV-VITA-412,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-413,225.00050541830967,23.0,VV-VITA-413,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-414,58.71175133343986,7.0,VV-VITA-414,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-415,45.194571027691424,2.0,VV-VITA-415,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-417,680.4035054604951,115.0,VV-VITA-417,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-46,180.14074978426072,38.0,VV-VITA-46,32.37221009369648,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-49,363.5896796932414,81.0,VV-VITA-49,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-50,143.6412351236782,26.0,VV-VITA-50,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-57,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-57-V,214.77682565288325,31.0,VV-VITA-57-V,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-57-V2,156.36498189965778,20.0,VV-VITA-57-V2,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-63,189.599736886688,26.0,VV-VITA-63,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-86,0.0,-1.0,VV-VITA-86,0.36,1,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-88,236.3312058116778,47.0,VV-VITA-88,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-90,459.8768252714432,223.0,VV-VITA-90,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-93,198.18748869357316,52.0,VV-VITA-93,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-94,366.8760601785274,60.0,VV-VITA-94,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-98,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-Vegavero,Shopify,VV-VITA-99,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Amazon,98-VX35-DC63-2er,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,98-VX35-DC63-Neu,4660.32,860.0,"wowtamins Teens Complete zuckerfrei - Vitamine für Jugendliche (30-Tage-Vorrat) - Multivitamin Gummies mit Omega 3 - Nahrungsergänzungsmittel für das Immunsystem mit Vitamin C, D3, B12, Zink & mehr",0.0,1,1015.0,0.0,23.0896,46.2546,False,812.0,2026-07-09,False,False,False,False,2026-06
-wowtamins,Amazon,9G-B3KH-DDA0-2er,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,9G-B3KH-DDA0-Neu,846.9,146.0,wowtamins Vitamin D3 Gummies + K2 - Vitamin Gummies mit 1000 IE Vitamin D3 (60 Stück) - Veganes Nahrungsergänzungsmittel für das Immunsystem,0.0,2,125.0,0.0,4.318,29.8746,True,138.0,2026-07-09,False,True,False,True,2026-06
-wowtamins,Amazon,A0-22PS-COWR,2497.26,426.0,wowtamins Kids Multi Gummies zuckerfrei - Vitamine für Kinder (30-Tage-Vorrat) mit 13 Vitaminen & 3 Mineralstoffen - Nahrungsergänzungsmittel als hochdosierte & Vegane Multivitamin Gummies,0.0,1,969.0,0.0,13.1927,74.89,False,435.0,2026-07-09,False,False,False,False,2026-06
-wowtamins,Amazon,CW-BID2-NFIP,3339.29,666.0,wowtamins Omega 3 für Kinder zuckerfrei - vegane & hochdosierte Gummies (60 Stück) mit EPA und DHA aus Algenöl - Nahrungsergänzungsmittel kinderleicht und lecker (Mango-Geschmack),0.0,2,508.0,72.0,18.9605,28.0584,True,639.0,2026-07-09,False,True,False,True,2026-06
-wowtamins,Amazon,Eisen-02-2025,0.0,0.0,Eisen-02-2025,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,Eisen-Feb-25,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,FH-L1DD-WJN8,0.0,0.0,FH-L1DD-WJN8,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,FW-WAIL-UBVC-Neu,0.0,,,0.0,0,0.0,0.0,0.0,,False,0.0,2026-07-09,True,False,False,False,2026-06
-wowtamins,Amazon,Immun-Intense-1er,189.02,47.0,"wowtamins IMMUN Intense - Zinc, Elderberry, Echinacea, Ginseng and Ginger Gummy Bears (Pack of 60) for Kids and Adults",0.0,1,100.0,0.0,1.86,55.3759,False,56.0,2026-07-09,False,False,False,False,2026-06
-wowtamins,Amazon,KO-0JFH-PXEC,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,Kids Complete zuckerfrei-alt,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,MW-NLU9-BEWZ,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,NB-49AE-8MWZ,3432.01,701.0,wowtamins Eisen Bisglycinat mit Vitamin C (60 Stück) - Zuckerfreie & Vegane Eisen Gummies - Hochdosiertes Eisenpräparat als Nahrungsergänzungsmittel für Kinder und Frauen bei Eisenunterversorgung,0.0,1,411.0,720.0,19.8445,21.8196,False,658.0,2026-07-09,False,False,False,False,2026-06
-wowtamins,Amazon,OD-MZWV-JBYL,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,OD-MZWV-JBYL-Neu,4444.72,1552.0,"wowtamins Kids Complete zuckerfrei - Vegane Multivitamin Gummies mit Omega 3 (30-Tage-Vorrat) - Vitamine für Kinder - Nahrungsergänzungsmittel für das Immunsystem mit Vitamin C, D3, B12, Zink & mehr",0.0,1,987.0,1300.0,44.7981,23.885,False,1507.0,2026-07-09,False,False,False,False,2026-06
-wowtamins,Amazon,OD-OAK8-N5TW,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,OD-OAK8-N5TW-Neu,1097.01,472.0,"wowtamins Kids Complete - Vegane Multivitamin Gummies mit Omega 3 (30-Tage-Vorrat) - Vitamine für Kinder - Nahrungsergänzungsmittel für das Immunsystem mit Vitamin C, D3, B12, Zink & mehr",0.0,1,174.0,200.0,13.3033,15.1842,True,447.0,2026-07-09,False,True,False,True,2026-06
-wowtamins,Amazon,SKU-WT-WKPz,1501.82,81.0,wowtamins Kids Probio – Leckere Direktsticks mit 9 ausgewählten Darmbakterien-Kulturen (30-Tage-Vorrat) für eine gesunde Darmflora – Nahrungsergänzungsmittel für Kinder ab 4 Jahre,0.0,1,137.0,0.0,3.0448,46.3079,False,97.0,2026-07-09,False,False,False,False,2026-06
-wowtamins,Amazon,U1-6CTS-AHGW-Neu,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Amazon,WT-66DZ-EI2B,0.0,,,0.0,0,,,,,False,,,True,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Flyer-Fachexperten-mit-Code,0.0,0.0,Fachexperten Flyer mit Rabattcode,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Flyer-RKI-Studie,0.0,0.0,Beileger - Ernährungsstudie RKI - EsKiMo II,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Flyer-kinderleicht-mit-Code,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Flyer-kinderleicht-ohne-Code,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-KC2-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-KMM,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-LZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Omega3-Studie,0.0,0.0,Beileger - Studie Omega 3 Fettsäuren,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-SP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-SPJ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-SPM,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Ueberraschung,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-Vitamindose,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WB12,0.0,0.0,Vitamin B12 Spray Energiespritzer,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WD3,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WEBZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WEBz-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WEGZ,0.0,0.0,Eisen Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WIG,0.0,0.0,Immun Gummies,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WIG-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKC,0.0,0.0,Kids Complete Gummies (Zucker / zuckerfrei),0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKC-BIO360,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKC-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKCZ,0.0,0.0,Kids Complete Gummies (Zucker / zuckerfrei),0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKCZ-BIO360,0.0,0.0,Kids Complete (BIO360),0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKCZ-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKMz,0.0,0.0,Kids Multi Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WKPz,0.0,0.0,Kids Probio Sticks zuckerfrei,0.0,0,,,,,False,,2026-07-09,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WMGz,0.0,0.0,Magnesium Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WO3,0.0,0.0,Omega 3 Gummies (Zucker / zuckerfrei),0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WO3Z,0.0,0.0,Omega 3 Gummies - Sonderverkauf,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WSEZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WTCZ,0.0,0.0,Teens Complete Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WVCZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WVD,0.0,0.0,Vitamin D3 + K2 Gummies,0.0,0,,,,,False,,,False,False,False,False,2026-06
-wowtamins,Shopify,SKU-WT-WVD-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,2026-06
+brand,channel,sku,recent_ad_spend,recent_units,product,wasted_ad_spend_l6m,oos_months_l6m,fba_available,fba_incoming,sales_velocity,days_of_inventory,oos_risk,units_30d,snapshot,out_now,low_stock,advertising_while_out_now,advertising_while_low,dead_stock,slow_mover,cogs_unit,tied_capital,stock_reco,review_month
+Jasnum,Amazon,5904569253554,176.15,33.0,Jasnum All-in-One | Integratore Menopausa Com,0.0,0,551.0,0.0,0.5608,1125.218,False,15.0,2026-07-09,False,False,False,False,False,True,0.0,0.0,"Badly overstocked (~38 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Jasnum,Amazon,5904569253561,225.66,8.0,Jasnum Mood | Integratore Menopausa per il Be,0.0,0,99.0,0.0,0.2838,355.8971,False,9.0,2026-07-09,False,False,False,False,False,True,0.0,0.0,"Badly overstocked (~12 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Jasnum,Amazon,5904569253578,147.16,5.0,Jasnum Line | Integratore Metabolismo Menopau,0.0,0,545.0,0.0,0.0334,23010.7871,False,4.0,2026-07-09,False,False,False,False,False,True,0.0,0.0,"Badly overstocked (~767 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,2R-49NC-R697,7108.72,4355.0,MSM Powder,0.0,0,9690.0,67.0,129.4348,73.9625,False,4077.0,2026-07-09,False,False,False,False,False,False,6.83,,,2026-06
+Vegavero,Amazon,Amazon.Found.B07ZQHMLQY,0.0,0.0,ASHWAGANDHA BIO Pura Vegavero® | 670 mg per capsula | con il 2% di Withanolidi | SENZA ADDITIVI | Polvere di Withania Somnifera | Premium Organic Ashwaganda | 180 capsule | Vegan,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,BJ-E223-8EKW,3922.89,1420.0,Moringa Oleifera Capsules Organic,0.0,0,12309.0,0.0,31.4334,132.1029,False,1050.0,2026-07-09,False,False,False,False,False,False,7.85,,,2026-06
+Vegavero,Amazon,CP-DQMG-RVN9,440.76,308.0,Wild Yams + Zinc Capsules,0.0,0,298.0,86.0,8.6747,38.7335,False,295.0,2026-07-09,False,False,False,False,False,False,6.47,,,2026-06
+Vegavero,Amazon,CW-KVIN-V39Y,611.3199999999999,424.0,D-Mannose Powder,0.0,0,49.0,1.0,8.6215,3.0157,True,242.0,2026-07-09,False,True,False,True,False,False,8.41,,,2026-06
+Vegavero,Amazon,NX-CVPF-VCEZ,1558.23,556.0,Reishi Extract Capsules,0.0,0,1314.0,0.0,14.1681,47.2389,False,458.0,2026-07-09,False,False,False,False,False,False,9.21,,,2026-06
+Vegavero,Amazon,TU-QNYD-JRRX,2403.4199999999996,949.0,Tribulus Terrestris Extract Capsules,0.0,0,537.0,600.0,35.9909,17.5044,True,968.0,2026-07-09,False,True,False,True,False,False,3.92,,,2026-06
+Vegavero,Amazon,VI-ZU99-SZ0B,512.83,318.0,L-Tryptophan Capsules,0.0,0,709.0,0.0,10.8856,67.245,False,316.0,2026-07-09,False,False,False,False,False,False,4.06,,,2026-06
+Vegavero,Amazon,VV-ALO-06,2422.45,722.0,MSM Powder,0.0,0,754.0,252.0,14.6869,41.634,False,519.0,2026-07-09,False,False,False,False,False,False,7.4,,,2026-06
+Vegavero,Amazon,VV-VITA-02,927.03,639.0,Milk Thistle Extract Capsules,0.0,4,244.0,170.0,20.6266,12.9444,True,635.0,2026-07-09,False,True,False,True,False,False,4.73,,,2026-06
+Vegavero,Amazon,VV-VITA-101,7009.889999999999,2359.0,Rhodiola Rosea Extract Capsules,0.0,0,507.0,464.0,55.0794,6.3,True,1886.0,2026-07-09,False,True,False,True,False,False,7.77,,,2026-06
+Vegavero,Amazon,VV-VITA-102,1298.56,508.0,Ginkgo Biloba Extract Capsules,0.0,0,151.0,288.0,13.2176,13.4669,False,406.0,2026-07-09,False,True,False,True,False,False,6.08,,,2026-06
+Vegavero,Amazon,VV-VITA-104,650.48,276.0,Echinacea Purpurea Extract Capsules,3.53,1,493.0,0.0,8.1176,66.1527,False,261.0,2026-07-09,False,False,False,False,False,False,5.07,,,2026-06
+Vegavero,Amazon,VV-VITA-105,2403.7,661.0,Panax Ginseng Extract Capsules,0.0,0,143.0,720.0,21.6018,8.0549,False,644.0,2026-07-09,False,True,False,True,False,False,5.56,,,2026-06
+Vegavero,Amazon,VV-VITA-106,1.04,1.0,Black Garlic Extract Capsules,3.39,15,0.0,540.0,2.1313,0.0,False,27.0,2026-07-09,True,False,True,False,False,False,6.92,,,2026-06
+Vegavero,Amazon,VV-VITA-107,2884.72,1432.0,Ceylon Cinnamon Extract Capsules,0.0,0,361.0,144.0,41.6789,10.8928,True,1352.0,2026-07-09,False,True,False,True,False,False,3.42,,,2026-06
+Vegavero,Amazon,VV-VITA-109,985.99,385.0,Liver Active Complex Capsules,0.0,0,95.0,0.0,7.2487,7.1737,True,290.0,2026-07-09,False,True,False,True,False,False,5.41,,,2026-06
+Vegavero,Amazon,VV-VITA-111,841.34,375.0,Colon Care Complex Capsules,0.0,0,495.0,0.0,12.3022,42.0251,False,372.0,2026-07-09,False,False,False,False,False,False,6.07,,,2026-06
+Vegavero,Amazon,VV-VITA-115,38.92,11.0,Pro Bio Junior Powder Organic,0.0,0,58.0,0.0,0.1977,293.3844,False,8.0,2026-07-09,False,False,False,False,False,True,7.74,448.92,"Badly overstocked (~10 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-116,629.75,462.0,Natural Iodine Organic Capsules,0.0,0,367.0,144.0,10.0358,30.3641,True,305.0,2026-07-09,False,True,False,True,False,False,5.05,,,2026-06
+Vegavero,Amazon,VV-VITA-119,4098.26,1516.0,Magnesium + Potassium Capsules,0.0,0,3406.0,0.0,40.37,58.3437,False,1245.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-121,1532.21,383.0,Female Harmony Complex Capsules,0.0,0,114.0,180.0,14.6877,11.9147,True,406.0,2026-07-09,False,True,False,True,False,False,7.33,,,2026-06
+Vegavero,Amazon,VV-VITA-122,249.73,130.0,Immu Pro Complex Capsules,0.0,1,1185.0,0.0,4.0067,300.7432,False,125.0,2026-07-09,False,False,False,False,False,True,4.76,5640.599999999999,"Badly overstocked (~10 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-122-V,118.67,94.0,"Vegavero Immunsystem Komplex – mit Echinacea, Acerola Vitamin C, Vitamin D3, Ingwer, Zink & Selen – vegane Immunformel ohne Zusatzstoffe – 240 Kapseln hochdosiert",0.0,0,750.0,0.0,2.0799,369.2556,False,88.0,2026-07-09,False,False,False,False,False,True,8.51,6382.5,"Badly overstocked (~12 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-124,636.11,506.0,Natural Vitamin C Organic Capsules,0.0,0,325.0,144.0,11.5394,32.2373,False,382.0,2026-07-09,False,False,False,False,False,False,8.87,,,2026-06
+Vegavero,Amazon,VV-VITA-127,3259.68,2058.0,Saffron Extract Capsules,5.84,3,954.0,1008.0,75.6197,14.6919,True,2405.0,2026-07-09,False,True,False,True,False,False,7.66,,,2026-06
+Vegavero,Amazon,VV-VITA-129,532.87,312.0,Ginger Organic Capsules,0.0,0,248.0,0.0,10.2079,27.9194,True,294.0,2026-07-09,False,True,False,True,False,False,3.99,,,2026-06
+Vegavero,Amazon,VV-VITA-136,4004.89,1229.0,Light Legs Complex Capsules,0.0,0,1073.0,0.0,41.7386,28.0316,True,1294.0,2026-07-09,False,True,False,True,False,False,7.26,,,2026-06
+Vegavero,Amazon,VV-VITA-142,2122.72,711.0,Prostaid Complex Capsules,233.16,4,225.0,0.0,20.381,14.2289,True,673.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-143,500.91,286.0,Vitamin B12 Plus Capsules,16.27,6,960.0,0.0,14.5599,72.6653,False,404.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-146,1683.93,572.0,Spirulina Tablets Organic,0.0,0,379.0,450.0,17.5369,24.4626,True,538.0,2026-07-09,False,True,False,True,False,False,6.56,,,2026-06
+Vegavero,Amazon,VV-VITA-151,4736.46,931.0,Female Balance Complex Capsules,0.0,0,1583.0,0.0,28.5302,58.6747,False,913.0,2026-07-09,False,False,False,False,False,False,8.09,,,2026-06
+Vegavero,Amazon,VV-VITA-153,632.33,258.0,Ashwagandha Capsules Organic,17.810000000000002,1,272.0,0.0,6.8783,42.1614,False,243.0,2026-07-09,False,False,False,False,False,False,5.36,,,2026-06
+Vegavero,Amazon,VV-VITA-155,971.37,301.0,Reishi Extract Capsules Organic,0.0,0,413.0,255.0,12.8118,20.5317,False,309.0,2026-07-09,False,False,False,False,False,False,5.5,,,2026-06
+Vegavero,Amazon,VV-VITA-157,603.79,482.0,Hawthorn Extract Capsules Organic,0.0,0,526.0,0.0,12.3301,45.6607,False,378.0,2026-07-09,False,False,False,False,False,False,4.2,,,2026-06
+Vegavero,Amazon,VV-VITA-158,619.63,350.0,Glucosamine Complex Capsules,9.62,1,190.0,288.0,8.0731,25.269,False,279.0,2026-07-09,False,False,False,False,False,False,8.66,,,2026-06
+Vegavero,Amazon,VV-VITA-159,2100.2799999999997,911.0,EAA Tablets,0.0,0,86.0,0.0,28.3389,2.9641,True,879.0,2026-07-09,False,True,False,True,False,False,7.83,,,2026-06
+Vegavero,Amazon,VV-VITA-165,1010.41,299.0,Resveratrol Plus Capsules,0.0,0,319.0,288.0,8.4027,41.6531,False,273.0,2026-07-09,False,False,False,False,False,False,10.73,,,2026-06
+Vegavero,Amazon,VV-VITA-166,924.26,362.0,Triphala Capsules Organic,0.0,0,1924.0,48.0,8.0733,35.1972,False,242.0,2026-07-09,False,False,False,False,False,False,5.69,,,2026-06
+Vegavero,Amazon,VV-VITA-168,1432.82,325.0,Sun Care Complex Capsules,0.0,0,189.0,0.0,7.3873,27.0734,True,247.0,2026-07-09,False,True,False,True,False,False,7.59,,,2026-06
+Vegavero,Amazon,VV-VITA-170,1617.4399999999998,689.0,Vitamin B3 (Nicotinamide) Capsules,0.0,0,671.0,180.0,18.5479,38.9801,False,592.0,2026-07-09,False,False,False,False,False,False,4.53,,,2026-06
+Vegavero,Amazon,VV-VITA-171,1188.0700000000002,553.0,Vision Care Complex Capsules,1.59,1,395.0,255.0,16.1615,27.349,False,507.0,2026-07-09,False,False,False,False,False,False,12.23,,,2026-06
+Vegavero,Amazon,VV-VITA-172,311.49,224.0,Maitake Capsules Organic,0.0,1,419.0,0.0,5.8088,45.6452,False,184.0,2026-07-09,False,False,False,False,False,False,6.05,,,2026-06
+Vegavero,Amazon,VV-VITA-173,1133.8799999999999,510.0,Lion's Mane Capsules Organic,0.0,0,191.0,580.0,15.8202,16.0555,False,502.0,2026-07-09,False,False,False,False,False,False,5.45,,,2026-06
+Vegavero,Amazon,VV-VITA-174,669.59,347.0,Olive Leaf Extract Capsules,0.0,0,174.0,0.0,7.5132,25.9542,True,241.0,2026-07-09,False,True,False,True,False,False,6.57,,,2026-06
+Vegavero,Amazon,VV-VITA-181,222.48,136.0,Sage Extract Capsules Organic,0.0,0,0.0,0.0,3.1761,0.3148,True,120.0,2026-07-09,True,False,True,False,False,False,4.87,,,2026-06
+Vegavero,Amazon,VV-VITA-183,991.07,421.0,Reflu-X Complex Capsules,0.12,1,196.0,120.0,9.4084,19.8759,True,268.0,2026-07-09,False,True,False,True,False,False,8.64,,,2026-06
+Vegavero,Amazon,VV-VITA-186,171.75,42.0,Chlorella Capsules Organic,0.0,4,160.0,96.0,2.0535,2.6641,False,48.0,2026-07-09,False,True,False,True,False,False,6.99,,,2026-06
+Vegavero,Amazon,VV-VITA-188,590.61,304.0,Stinging Nettle Capsules Organic,0.0,0,148.0,85.0,5.9038,6.2672,True,194.0,2026-07-09,False,True,False,True,False,False,5.66,,,2026-06
+Vegavero,Amazon,VV-VITA-189,542.37,390.0,Rosehip Capsules Organic,0.0,0,319.0,144.0,12.0269,29.4341,False,389.0,2026-07-09,False,False,False,False,False,False,5.51,,,2026-06
+Vegavero,Amazon,VV-VITA-190,667.86,283.0,Papaya Extract Capsules Organic,0.0,0,395.0,0.0,7.4985,54.2773,False,257.0,2026-07-09,False,False,False,False,False,False,6.4,,,2026-06
+Vegavero,Amazon,VV-VITA-197,553.56,267.0,Guggul Extract Capsules,0.0,0,2051.0,0.0,6.9751,34.1049,True,219.0,2026-07-09,False,True,False,True,False,False,8.36,,,2026-06
+Vegavero,Amazon,VV-VITA-198,4922.139999999999,953.0,Bromelain Capsules,0.0,0,843.0,0.0,31.015,28.9215,True,970.0,2026-07-09,False,True,False,True,False,False,7.04,,,2026-06
+Vegavero,Amazon,VV-VITA-198-V,390.21000000000004,178.0,"Vegavero Bromelain 650 mg | High Strength - 2500 GDU/g | Gastro-Resistant DrCaps | NO Additives, Lab-Tested | Pure Pineapple Enzyme | 240 Capsules | Vegan",0.0,0,463.0,0.0,3.7393,67.6115,False,153.0,2026-07-09,False,False,False,False,False,False,13.1,,,2026-06
+Vegavero,Amazon,VV-VITA-199,276.39,223.0,St. John's Wort + Passion Flower Capsules Organic,0.0,0,290.0,2.0,5.8379,51.5595,False,207.0,2026-07-09,False,False,False,False,False,False,5.29,,,2026-06
+Vegavero,Amazon,VV-VITA-202,615.9499999999999,405.0,Multivitamin Junior Spray,0.0,0,387.0,144.0,8.694,48.1944,False,290.0,2026-07-09,False,False,False,False,False,False,2.73,,,2026-06
+Vegavero,Amazon,VV-VITA-203,1980.03,632.0,GABA Plus Capsules,0.0,1,2891.0,0.0,35.6423,83.777,False,845.0,2026-07-09,False,False,False,False,False,False,5.79,,,2026-06
+Vegavero,Amazon,VV-VITA-204,445.61,325.0,Devil's Claw Plus Capsules,0.0,0,20.0,0.0,5.1892,1.5417,True,231.0,2026-07-09,False,True,False,True,False,False,5.01,,,2026-06
+Vegavero,Amazon,VV-VITA-206,746.0,445.0,Artichoke Extract Capsules Organic,0.0,0,339.0,0.0,10.0298,37.887,False,295.0,2026-07-09,False,False,False,False,False,False,5.06,,,2026-06
+Vegavero,Amazon,VV-VITA-207,1449.83,697.0,Astragalus Extract Capsules Organic,0.0,0,448.0,120.0,24.2169,20.688,True,725.0,2026-07-09,False,True,False,True,False,False,5.79,,,2026-06
+Vegavero,Amazon,VV-VITA-208,2935.41,1359.0,Horse Chestnut Capsules Organic,0.0,0,1054.0,34.0,40.1398,28.326,True,1217.0,2026-07-09,False,True,False,True,False,False,7.57,,,2026-06
+Vegavero,Amazon,VV-VITA-215,1131.2900000000002,384.0,Horsetail Extract Capsules Organic,0.0,0,88.0,0.0,2.3597,4.6617,True,202.0,2026-07-09,False,True,False,True,False,False,5.99,,,2026-06
+Vegavero,Amazon,VV-VITA-216,3000.6400000000003,1191.0,Kudzu Plus Capsules,54.34,5,1779.0,60.0,31.3337,31.1073,False,1000.0,2026-07-09,False,False,False,False,False,False,5.56,,,2026-06
+Vegavero,Amazon,VV-VITA-222,13289.83,1472.0,Black Cumin Seed Oil Capsules Organic,0.0,0,1203.0,360.0,41.0246,31.4689,False,1355.0,2026-07-09,False,False,False,False,False,False,6.68,,,2026-06
+Vegavero,Amazon,VV-VITA-222-V,874.21,57.0,"Vegavero Bio Schwarzkümmelöl Kapseln hochdosiert 300 Stück - 1000 mg kaltgepresstes Nigella sativa Öl mit 55% Linolsäure, 22% Ölsäure & 1,5% Thymoquinon – vegan, ohne Zusatzstoffe & Laborgeprüft",0.0,0,441.0,0.0,2.5543,173.4345,False,62.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-223,2050.94,665.0,Omega 3 Oil Capsules,0.0,1,599.0,0.0,19.6779,32.8796,True,626.0,2026-07-09,False,True,False,True,False,False,8.85,,,2026-06
+Vegavero,Amazon,VV-VITA-224,178.98,131.0,Vegan Essentials Complex Capsules,0.65,4,157.0,120.0,5.4999,8.1672,True,88.0,2026-07-09,False,True,False,True,False,False,6.26,,,2026-06
+Vegavero,Amazon,VV-VITA-225,691.39,173.0,Shilajit Extract Capsules,0.0,0,3028.0,0.0,6.4423,94.3533,False,180.0,2026-07-09,False,False,False,False,False,False,8.81,,,2026-06
+Vegavero,Amazon,VV-VITA-225-V,196.35,62.0,Vegavero Himalayan Shilajit Resin 1300 mg | 60% Fulvic Acid + Humic Acids | 60:1 Himalyan Extract | NO Additives | 6 Month Supply | 180 Capsules | Vegan,0.0,0,926.0,0.0,1.2847,733.9971,False,53.0,2026-07-09,False,False,False,False,False,True,16.11,14917.859999999999,"Badly overstocked (~24 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-227,738.5600000000001,303.0,Evening Primrose Oil & Borage Seed Capsules Organic,0.0,0,165.0,0.0,6.9144,27.4788,True,237.0,2026-07-09,False,True,False,True,False,False,6.65,,,2026-06
+Vegavero,Amazon,VV-VITA-228,2103.4700000000003,612.0,Vitamin D3 + K2 Oil Capsules,0.0,1,711.0,340.0,18.4037,40.97,False,562.0,2026-07-09,False,False,False,False,False,False,7.53,,,2026-06
+Vegavero,Amazon,VV-VITA-230,125.10000000000001,53.0,Berberine Plus Capsules,71.5,7,291.0,1700.0,12.576,26.7175,True,190.0,2026-07-09,False,True,False,True,False,False,8.89,,,2026-06
+Vegavero,Amazon,VV-VITA-231,11185.72,2134.0,Myo-Inositol Complex Capsules,34.31,2,1252.0,355.0,70.2829,20.9866,True,2157.0,2026-07-09,False,True,False,True,False,False,7.05,,,2026-06
+Vegavero,Amazon,VV-VITA-237,3256.25,1699.0,Choline Trio Capsules,0.0,0,930.0,269.0,46.005,22.1063,True,1460.0,2026-07-09,False,True,False,True,False,False,4.16,,,2026-06
+Vegavero,Amazon,VV-VITA-243,11669.37,2005.0,Multi Magnesium Complex Capsules,0.0,0,1921.0,960.0,63.9192,32.9479,False,1938.0,2026-07-09,False,False,False,False,False,False,6.04,,,2026-06
+Vegavero,Amazon,VV-VITA-247,1732.79,641.0,Astaxanthin Oil Capsules,0.0,0,359.0,144.0,19.4634,10.1729,True,602.0,2026-07-09,False,True,False,True,False,False,7.24,,,2026-06
+Vegavero,Amazon,VV-VITA-248,5011.19,942.0,Oregano Oil Capsules Organic,0.0,0,850.0,400.0,25.6147,35.4875,False,766.0,2026-07-09,False,False,False,False,False,False,6.15,,,2026-06
+Vegavero,Amazon,VV-VITA-248-V,925.71,98.0,"Vegavero BIOLOGISCHE Oregano-olie | 180 veganistische capsules | 90 mg Carvacrol | met 2,75% thymol | Laboratorium getest | 100% oregano-olie biologisch | Veganistisch en zonder toevoegingen",0.0,0,752.0,0.0,2.391,306.4968,False,85.0,2026-07-09,False,False,False,False,False,True,11.8,8873.6,"Badly overstocked (~10 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-249,746.88,550.0,Saccharomyces Boulardii Capsules,7.430000000000001,4,720.0,0.0,17.6179,42.2865,False,511.0,2026-07-09,False,False,False,False,False,False,6.2,,,2026-06
+Vegavero,Amazon,VV-VITA-250,1943.0800000000002,806.0,Brahmi Tablets Organic,0.0,1,841.0,192.0,22.6034,39.7285,False,698.0,2026-07-09,False,False,False,False,False,False,5.09,,,2026-06
+Vegavero,Amazon,VV-VITA-252,679.7,301.0,Shiitake Extract Capsules,0.0,0,191.0,60.0,10.1753,21.4244,True,289.0,2026-07-09,False,True,False,True,False,False,8.18,,,2026-06
+Vegavero,Amazon,VV-VITA-256,3136.15,1120.0,Pumpkin Seed Oil Capsules Organic,0.0,0,1325.0,0.0,24.8471,55.3384,False,801.0,2026-07-09,False,False,False,False,False,False,8.02,,,2026-06
+Vegavero,Amazon,VV-VITA-257,3165.7400000000002,1185.0,Lecithin Oil Capsules Organic,0.0,6,682.0,107.0,30.2548,24.459,True,977.0,2026-07-09,False,True,False,True,False,False,8.65,,,2026-06
+Vegavero,Amazon,VV-VITA-258,279.24,201.0,Flaxseed Oil Capsules Organic,0.0,0,172.0,0.0,4.2797,54.9105,False,160.0,2026-07-09,False,False,False,False,False,False,4.93,,,2026-06
+Vegavero,Amazon,VV-VITA-259,1018.71,297.0,Mushroom Mix Complex Capsules,0.0,0,308.0,0.0,9.3517,36.5708,False,280.0,2026-07-09,False,False,False,False,False,False,8.47,,,2026-06
+Vegavero,Amazon,VV-VITA-262,374.7,262.0,Bilberry & Pine Bark Extracts Capsules Organic,2.17,4,199.0,0.0,4.8583,26.2909,True,164.0,2026-07-09,False,True,False,True,False,False,6.33,,,2026-06
+Vegavero,Amazon,VV-VITA-264,935.9,285.0,Mugwort Extract Capsules,0.0,0,186.0,144.0,8.5743,24.4919,False,281.0,2026-07-09,False,False,False,False,False,False,5.3,,,2026-06
+Vegavero,Amazon,VV-VITA-265,232.07,166.0,"Ginkgo Biloba + Ginseng | 12.000 mg Máxima Dosificación | Circulación Sanguínea, Memoria, Concentración | Sin Aditivos | Probado en Laboratorio | Vegavero",0.0,0,53.0,0.0,4.5848,5.9027,True,149.0,2026-07-09,False,True,False,True,False,False,7.04,,,2026-06
+Vegavero,Amazon,VV-VITA-266,0.0,0.0,Moringa Oleifera Tablets Organic,0.0,2,1626.0,0.0,2.4749,669.114,False,25.0,2026-07-09,False,False,False,False,False,True,5.94,9658.44,"Badly overstocked (~22 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-274,974.0799999999999,297.0,Cystite Complex Vegavero® | 120 Gélules | 100% NATUREL : Avec D-Mannose + Canneberge + Ortie + Pamplemousse + Busserole | Sans Additifs | Confort Urinaire | VEGAN,0.0,0,325.0,0.0,9.2761,37.4079,False,266.0,2026-07-09,False,False,False,False,False,False,6.38,,,2026-06
+Vegavero,Amazon,VV-VITA-276,9050.07,2639.0,Venaflux Complex Capsules,0.0,0,492.0,240.0,50.0926,8.1649,True,1873.0,2026-07-09,False,True,False,True,False,False,7.95,,,2026-06
+Vegavero,Amazon,VV-VITA-277,552.41,455.0,Vitamin B12 Junior Spray,0.0,0,206.0,144.0,7.8527,26.9008,False,254.0,2026-07-09,False,False,False,False,False,False,3.48,,,2026-06
+Vegavero,Amazon,VV-VITA-284,810.9200000000001,317.0,Chaga Extract Capsules Organic,0.0,0,275.0,60.0,8.9617,33.3642,False,271.0,2026-07-09,False,False,False,False,False,False,7.63,,,2026-06
+Vegavero,Amazon,VV-VITA-286,2081.75,711.0,Saw palmetto + Pygeum africanum Extracts Capsules,35.03,5,367.0,255.0,32.7073,13.3303,True,960.0,2026-07-09,False,True,False,True,False,False,5.53,,,2026-06
+Vegavero,Amazon,VV-VITA-287,774.48,582.0,Natural Silicium Capsules Organic,12.95,6,496.0,600.0,17.0246,32.5999,False,517.0,2026-07-09,False,False,False,False,False,False,6.87,,,2026-06
+Vegavero,Amazon,VV-VITA-295,1368.76,478.0,Sugar Balance Complex Capsules,113.45,4,376.0,0.0,10.8362,31.4568,True,372.0,2026-07-09,False,True,False,True,False,False,5.83,,,2026-06
+Vegavero,Amazon,VV-VITA-297,350.85999999999996,43.0,Beta Carotene Plus Oil Capsules,5.15,4,337.0,0.0,2.622,32.579,True,56.0,2026-07-09,False,True,False,True,False,False,7.12,,,2026-06
+Vegavero,Amazon,VV-VITA-298,1415.9099999999999,317.0,Black Maca + Tribulus Capsules,0.0,0,71.0,360.0,13.6549,7.0304,True,361.0,2026-07-09,False,True,False,True,False,False,6.34,,,2026-06
+Vegavero,Amazon,VV-VITA-301,308.25,175.0,ZMA Capsules: Zinc + Magnesium + Vitamin B6,0.0,0,146.0,0.0,7.5771,21.5122,True,188.0,2026-07-09,False,True,False,True,False,False,4.05,,,2026-06
+Vegavero,Amazon,VV-VITA-303,3742.06,480.0,Drenaflux Complex Capsules,0.0,0,0.0,0.0,3.6,3.0556,True,294.0,2026-07-09,True,False,True,False,False,False,5.45,,,2026-06
+Vegavero,Amazon,VV-VITA-304,1358.3999999999999,738.0,Folate Capsules,64.57,7,349.0,696.0,30.377,13.2008,True,870.0,2026-07-09,False,True,False,True,False,False,4.26,,,2026-06
+Vegavero,Amazon,VV-VITA-307,396.3,258.0,Vitamin B3 Capsules,0.0,0,337.0,0.0,7.7694,57.5333,False,244.0,2026-07-09,False,False,False,False,False,False,3.42,,,2026-06
+Vegavero,Amazon,VV-VITA-308,538.45,195.0,Digestive Enzymes Complex Capsules,0.0,0,219.0,60.0,7.1691,20.9309,True,213.0,2026-07-09,False,True,False,True,False,False,7.62,,,2026-06
+Vegavero,Amazon,VV-VITA-31,804.6800000000001,367.0,Papaya Enzyme Capsules,0.0,0,79.0,0.0,8.3251,9.8497,True,279.0,2026-07-09,False,True,False,True,False,False,0.0,,,2026-06
+Vegavero,Amazon,VV-VITA-310,1702.5200000000002,738.0,Bergamot Extract Capsules,0.0,0,0.0,540.0,12.3022,0.671,True,336.0,2026-07-09,True,False,True,False,False,False,5.02,,,2026-06
+Vegavero,Amazon,VV-VITA-311,2452.31,903.0,NAC Capsules,201.84,3,350.0,0.0,28.1203,15.1848,True,845.0,2026-07-09,False,True,False,True,False,False,5.48,,,2026-06
+Vegavero,Amazon,VV-VITA-313,1241.64,630.0,Boswellia Extract Capsules,0.0,0,297.0,0.0,9.1844,2.8309,True,341.0,2026-07-09,False,True,False,True,False,False,4.89,,,2026-06
+Vegavero,Amazon,VV-VITA-314,12577.970000000001,6789.0,Glycine Powder,0.0,0,1635.0,413.0,185.4027,10.426,True,6206.0,2026-07-09,False,True,False,True,False,False,3.25,,,2026-06
+Vegavero,Amazon,VV-VITA-316,1576.69,546.0,Ceylon Cinnamon Extract Capsules Organic,1.93,1,611.0,3.0,18.2664,37.0626,False,512.0,2026-07-09,False,False,False,False,False,False,5.92,,,2026-06
+Vegavero,Amazon,VV-VITA-317,2832.03,970.0,Citrulline Plus Capsules,0.2,1,355.0,961.0,24.309,16.4548,False,795.0,2026-07-09,False,False,False,False,False,False,6.5,,,2026-06
+Vegavero,Amazon,VV-VITA-318,379.64,256.0,Garlic Plus Capsules,0.0,0,265.0,0.0,5.3196,46.9507,False,189.0,2026-07-09,False,False,False,False,False,False,4.77,,,2026-06
+Vegavero,Amazon,VV-VITA-319,531.44,217.0,Chia Seed Oil Capsules Organic,0.0,0,199.0,120.0,6.8841,31.0862,True,195.0,2026-07-09,False,True,False,True,False,False,5.97,,,2026-06
+Vegavero,Amazon,VV-VITA-320,5251.8099999999995,1247.0,Vollagen + Hyaluronic Acid Complex Capsules,0.0,0,1254.0,116.0,39.3239,30.621,True,1203.0,2026-07-09,False,True,False,True,False,False,6.37,,,2026-06
+Vegavero,Amazon,VV-VITA-320-V,827.8399999999999,374.0,Vegavero Advanced Vegan Collagen Supplement 500 mg | 4 Months Supply | NO Additives | Plant-Based Collagen Capsules with Hyaluronic Acid | Essential Amino Acids | Vollagen,0.0,0,439.0,120.0,10.2239,45.2861,False,341.0,2026-07-09,False,False,False,False,False,False,11.67,,,2026-06
+Vegavero,Amazon,VV-VITA-326,1734.75,594.0,Griffonia Plus Capsules,12.03,1,482.0,463.0,17.484,29.6843,False,546.0,2026-07-09,False,False,False,False,False,False,6.56,,,2026-06
+Vegavero,Amazon,VV-VITA-329,3881.2900000000004,955.0,Liposomal Vitamin C Capsules,76.30000000000001,7,1269.0,765.0,27.3287,48.7766,False,849.0,2026-07-09,False,False,False,False,False,False,5.69,,,2026-06
+Vegavero,Amazon,VV-VITA-333,1016.9499999999999,358.0,Electrolyte Plus Capsules,0.0,0,68.0,0.0,8.1837,1.7107,True,312.0,2026-07-09,False,True,False,True,False,False,5.08,,,2026-06
+Vegavero,Amazon,VV-VITA-336,607.42,183.0,Devil's Claw Extract Capsules Organic,0.0,0,104.0,0.0,9.7417,13.1393,True,224.0,2026-07-09,False,True,False,True,False,False,5.07,,,2026-06
+Vegavero,Amazon,VV-VITA-338,260.14,148.0,Turmeric Capsules Organic,0.0,0,147.0,0.0,3.8001,42.104,False,123.0,2026-07-09,False,False,False,False,False,False,6.0,,,2026-06
+Vegavero,Amazon,VV-VITA-339,2800.6899999999996,1109.0,L-Tyrosine Plus Capsules,0.0,0,1682.0,1.0,32.4404,54.3151,False,987.0,2026-07-09,False,False,False,False,False,False,6.93,,,2026-06
+Vegavero,Amazon,VV-VITA-340,1411.14,284.0,Milk Thistle Plus Capsules,0.0,0,121.0,0.0,9.5321,15.1068,True,283.0,2026-07-09,False,True,False,True,False,False,5.84,,,2026-06
+Vegavero,Amazon,VV-VITA-341,542.5,339.0,Vitamin B12 Drops,0.0,0,16.0,0.0,8.3914,2.9792,True,282.0,2026-07-09,False,True,False,True,False,False,5.27,,,2026-06
+Vegavero,Amazon,VV-VITA-342,373.39,119.0,Vitamin D3 + K2 Drops,0.0,0,492.0,0.0,4.3785,116.2498,False,108.0,2026-07-09,False,False,False,False,False,False,6.62,,,2026-06
+Vegavero,Amazon,VV-VITA-344,3794.1400000000003,599.0,Ashwagandha KSM-66 Extract Capsules Organic,1.01,1,648.0,120.0,14.1557,47.8958,False,498.0,2026-07-09,False,False,False,False,False,False,8.82,,,2026-06
+Vegavero,Amazon,VV-VITA-345,2054.7799999999997,557.0,Serenity Complex Capsules,0.0,0,351.0,85.0,17.9384,21.9083,True,551.0,2026-07-09,False,True,False,True,False,False,8.38,,,2026-06
+Vegavero,Amazon,VV-VITA-346,464.82,249.0,Chromium Plus Capsules,0.0,0,124.0,0.0,6.7495,9.6303,True,210.0,2026-07-09,False,True,False,True,False,False,3.18,,,2026-06
+Vegavero,Amazon,VV-VITA-349,295.91,121.0,Fenugreek Capsules Organic,0.0,0,139.0,60.0,2.652,58.0689,False,80.0,2026-07-09,False,False,False,False,False,False,4.27,,,2026-06
+Vegavero,Amazon,VV-VITA-351,407.98,165.0,Cordyceps Sinensis Extract Capsules Organic,0.0,0,87.0,0.0,4.9595,7.8637,True,143.0,2026-07-09,False,True,False,True,False,False,5.43,,,2026-06
+Vegavero,Amazon,VV-VITA-352,406.01,102.0,Omega 3 + ADEK Oil Capsules,56.03,8,458.0,0.0,3.7859,125.2014,False,113.0,2026-07-09,False,False,False,False,False,False,8.3,,,2026-06
+Vegavero,Amazon,VV-VITA-353,665.14,285.0,Vegavero L-Tryptophan 220 mg | 120 Capsules (4 Months Supply) | NO Additives | Lab-Tested | Pure Tryptophan Supplement | Vegan,0.0,0,306.0,1.0,8.4786,38.5675,False,266.0,2026-07-09,False,False,False,False,False,False,3.05,,,2026-06
+Vegavero,Amazon,VV-VITA-354,2002.1,709.0,Mushroom Complex Capsules Organic,0.0,0,221.0,340.0,22.9938,12.6556,True,696.0,2026-07-09,False,True,False,True,False,False,7.66,,,2026-06
+Vegavero,Amazon,VV-VITA-355,3791.06,834.0,L-Glutathione Complex Capsules,0.0,0,2320.0,1.0,30.1415,80.7192,False,806.0,2026-07-09,False,False,False,False,False,False,8.39,,,2026-06
+Vegavero,Amazon,VV-VITA-355-V,1028.01,216.0,"Vegavero L-Glutathione Complex | 180 Capsules | with Glycin, PureWay-C Vitamin C Liposomal and MSM | NO Additives | Vegan",0.0,0,507.0,0.0,6.1759,84.846,False,207.0,2026-07-09,False,False,False,False,False,False,16.14,,,2026-06
+Vegavero,Amazon,VV-VITA-356,1056.99,398.0,Black Maca Plus Capsules,0.0,0,21.0,0.0,2.9678,12.9463,True,227.0,2026-07-09,False,True,False,True,False,False,5.29,,,2026-06
+Vegavero,Amazon,VV-VITA-357,240.71,121.0,Taurine Plus Capsules,0.0,0,1134.0,0.0,3.3196,0.0,False,114.0,2026-07-09,False,True,False,True,False,False,3.91,,,2026-06
+Vegavero,Amazon,VV-VITA-358,18.330000000000002,14.0,OPC Trio Capsules,0.0,0,0.0,0.0,0.0249,40.1476,False,3.0,2026-07-09,True,False,True,False,False,False,7.92,,,2026-06
+Vegavero,Amazon,VV-VITA-359,177.62,149.0,Red Yeast Rice Plus Capsules,0.0,0,115.0,85.0,4.0779,29.9172,False,122.0,2026-07-09,False,False,False,False,False,False,5.78,,,2026-06
+Vegavero,Amazon,VV-VITA-360,20.759999999999998,6.0,Caffeine Capsules,0.0,0,0.0,0.0,0.0554,72.1863,False,2.0,2026-07-09,True,False,True,False,False,False,4.18,,,2026-06
+Vegavero,Amazon,VV-VITA-361,1457.24,373.0,Rapunzel Complex Capsules,0.0,0,1323.0,60.0,10.8478,50.1767,False,349.0,2026-07-09,False,False,False,False,False,False,5.44,,,2026-06
+Vegavero,Amazon,VV-VITA-362,147.23,107.0,Echinacea Plus Capsules,0.0,0,782.0,0.0,2.643,298.5258,False,96.0,2026-07-09,False,False,False,False,False,True,6.53,5106.46,"Badly overstocked (~10 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-363,1616.99,293.0,Apple Cider Vinegar Complex Capsules,0.0,0,4943.0,0.0,7.646,650.1461,False,258.0,2026-07-09,False,False,False,False,False,True,5.01,24764.43,"Badly overstocked (~22 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-363-V,179.6,96.0,"Complexe Vinaigre de Cidre 1950mg | 240 Gélules | Avec Chrome, Cannelle, Gingembre et Piment de Cayenne | Glycémie + Keto | Sans Additifs & Vegan | Vegavero®",0.0,0,223.0,0.0,1.9466,114.5597,False,76.0,2026-07-09,False,False,False,False,False,False,9.68,,,2026-06
+Vegavero,Amazon,VV-VITA-364,8192.57,2695.0,Astaxanthin Oil Capsules Organic,0.0,0,792.0,142.0,75.8029,12.8227,True,2474.0,2026-07-09,False,True,False,True,False,False,7.93,,,2026-06
+Vegavero,Amazon,VV-VITA-365,1885.3100000000002,260.0,Apple Cider Vinegar Gummies,0.0,0,129.0,200.0,8.879,16.1053,False,261.0,2026-07-09,False,False,False,False,False,False,3.38,,,2026-06
+Vegavero,Amazon,VV-VITA-366,213.07,90.0,Iron Gummies,0.0,0,149.0,0.0,3.6228,37.1296,False,49.0,2026-07-09,False,False,False,False,False,False,3.42,,,2026-06
+Vegavero,Amazon,VV-VITA-367,595.11,239.0,Creatine Monohydrate Powder,9.85,1,295.0,0.0,7.9914,38.2913,False,222.0,2026-07-09,False,False,False,False,False,False,5.35,,,2026-06
+Vegavero,Amazon,VV-VITA-368,486.42,191.0,L-Glutamine Powder,0.0,0,111.0,40.0,3.1066,13.3887,True,120.0,2026-07-09,False,True,False,True,False,False,5.35,,,2026-06
+Vegavero,Amazon,VV-VITA-369,279.99,96.0,Glucomannan Capsules Organic,0.0,0,108.0,0.0,2.4489,36.7509,False,71.0,2026-07-09,False,False,False,False,False,False,5.22,,,2026-06
+Vegavero,Amazon,VV-VITA-370,15826.210000000001,3334.0,Magnesium Bisglycinate Capsules,0.0,2,6511.0,242.0,93.1921,47.6874,False,3074.0,2026-07-09,False,False,False,False,False,False,5.01,,,2026-06
+Vegavero,Amazon,VV-VITA-370-V,3014.38,1026.0,"Vegavero Bisglicinato de Magnesio | 400 mg de Magnesio Elemental por Dosis Diaria | 365 Cápsulas | Alta Absorción | Magnesio Quelado | Sistema Nervioso, Músculos y Energía | Sin Aditivos & Vegano",87.59,10,533.0,90.0,30.194,20.5339,True,972.0,2026-07-09,False,True,False,True,False,False,9.1,,,2026-06
+Vegavero,Amazon,VV-VITA-371,847.99,400.0,Nattokinase Capsules,0.0,0,471.0,1.0,10.1472,50.8514,False,295.0,2026-07-09,False,False,False,False,False,False,4.76,,,2026-06
+Vegavero,Amazon,VV-VITA-372,1266.74,204.0,Vitamin D3 + K2 Depot Tablets,27.96,12,607.0,0.0,4.3368,66.4446,False,134.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-373,45.650000000000006,12.0,Keto Power Complex Capsules,0.0,0,0.0,0.0,0.1501,219.8662,False,7.0,2026-07-09,True,False,True,False,False,False,3.81,,,2026-06
+Vegavero,Amazon,VV-VITA-374,1855.27,299.0,Psyllium Husks Organic,0.0,0,125.0,140.0,5.0771,13.7874,True,161.0,2026-07-09,False,True,False,True,False,False,5.36,,,2026-06
+Vegavero,Amazon,VV-VITA-375,173.0,62.0,Strong Bones Complex Tablets,8.15,1,126.0,0.0,1.704,75.704,False,53.0,2026-07-09,False,False,False,False,False,False,4.81,,,2026-06
+Vegavero,Amazon,VV-VITA-376,1879.92,742.0,Griffonia Extract (5-HTP) Capsules,0.0,0,3357.0,0.0,22.0536,121.4058,False,690.0,2026-07-09,False,False,False,False,False,False,4.84,,,2026-06
+Vegavero,Amazon,VV-VITA-377,3367.83,959.0,Choline Bitartrate Capsules,0.0,0,366.0,420.0,23.2079,16.5461,True,785.0,2026-07-09,False,True,False,True,False,False,4.05,,,2026-06
+Vegavero,Amazon,VV-VITA-378,469.29,205.0,Brewer's Yeast Capsules,0.0,0,388.0,0.0,4.6149,51.7919,False,129.0,2026-07-09,False,False,False,False,False,False,3.81,,,2026-06
+Vegavero,Amazon,VV-VITA-379,935.65,529.0,Glucosamine Plus Capsules,0.0,0,88.0,420.0,14.3003,4.3587,False,446.0,2026-07-09,False,True,False,True,False,False,4.87,,,2026-06
+Vegavero,Amazon,VV-VITA-38,412.56,260.0,Vitamin B Plus Tablets,0.0,0,267.0,232.0,7.5249,37.7412,False,257.0,2026-07-09,False,False,False,False,False,False,3.27,,,2026-06
+Vegavero,Amazon,VV-VITA-380,317.57,122.0,Party Hero Complex Tablets,0.0,0,309.0,0.0,4.532,69.5062,False,125.0,2026-07-09,False,False,False,False,False,False,2.87,,,2026-06
+Vegavero,Amazon,VV-VITA-381,5514.15,1688.0,Myo-Inositol Powder,0.0,0,1682.0,0.0,57.5323,31.2868,True,1677.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-382,1397.55,270.0,Taurine Powder,0.0,0,133.0,52.0,5.976,21.0842,True,173.0,2026-07-09,False,True,False,True,False,False,5.08,,,2026-06
+Vegavero,Amazon,VV-VITA-383,664.27,76.0,Vitamin K2 Tablets,38.57,3,387.0,0.0,2.5568,122.4727,False,74.0,2026-07-09,False,False,False,False,False,False,5.12,,,2026-06
+Vegavero,Amazon,VV-VITA-384,139.1,58.0,Beta Alanine Powder,0.0,0,97.0,0.0,1.5026,67.2161,False,43.0,2026-07-09,False,False,False,False,False,False,3.65,,,2026-06
+Vegavero,Amazon,VV-VITA-385,1201.01,272.0,Evening Primrose Oil Capsules,259.41,4,175.0,0.0,7.2976,24.2546,True,241.0,2026-07-09,False,True,False,True,False,False,6.27,,,2026-06
+Vegavero,Amazon,VV-VITA-386,520.8299999999999,69.0,Femme Biotics Capsules,0.0,0,234.0,0.0,1.4769,160.4742,False,62.0,2026-07-09,False,False,False,False,False,False,9.2,,,2026-06
+Vegavero,Amazon,VV-VITA-387,458.35999999999996,52.0,Youth Biotics Capsules,0.0,1,334.0,0.0,1.1201,301.758,False,42.0,2026-07-09,False,False,False,False,False,True,11.01,3677.34,"Badly overstocked (~10 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-388,1356.8,431.0,Glycine Powder,0.0,0,149.0,0.0,7.5254,2.9234,True,265.0,2026-07-09,False,True,False,True,False,False,1.67,,,2026-06
+Vegavero,Amazon,VV-VITA-389,3320.52,529.0,Prosta-X Complex Capsules,0.0,0,292.0,1.0,20.1503,6.6092,True,564.0,2026-07-09,False,True,False,True,False,False,9.81,,,2026-06
+Vegavero,Amazon,VV-VITA-39,3473.5699999999997,1547.0,D-Mannose Complex Capsules,1.79,1,1584.0,0.0,48.4292,35.1234,False,1528.0,2026-07-09,False,False,False,False,False,False,5.89,,,2026-06
+Vegavero,Amazon,VV-VITA-390,272.47,80.0,L-Citrulline Malate Powder,9.53,2,238.0,80.0,2.6605,92.0888,False,67.0,2026-07-09,False,False,False,False,False,False,10.32,,,2026-06
+Vegavero,Amazon,VV-VITA-391,3286.4900000000002,691.0,Quercetin Complex Capsules,7.07,3,285.0,0.0,19.7195,16.3797,True,641.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-392,2672.5299999999997,580.0,Gaba Kapseln | 1.400 mg Gamma Aminobuttersäure | 90 Stück | Laborgeprüft und ohne Zusatzstoffe | Vegan | Deutsche Produktion von Vegavero®,0.0,0,536.0,0.0,14.9505,37.7913,False,535.0,2026-07-09,False,False,False,False,False,False,4.36,,,2026-06
+Vegavero,Amazon,VV-VITA-393,181.98000000000002,30.0,BCAA Powder Mango,4.24,1,274.0,0.0,0.421,657.9994,False,23.0,2026-07-09,False,False,False,False,False,True,7.28,1994.72,"Badly overstocked (~22 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-394,575.94,125.0,EAA Powder Peach,12.67,1,96.0,0.0,3.6379,28.5876,True,112.0,2026-07-09,False,True,False,True,False,False,7.07,,,2026-06
+Vegavero,Amazon,VV-VITA-395,2926.1499999999996,333.0,Zinc Bisglycinate Capsules,0.0,0,524.0,0.0,10.8218,50.0839,False,322.0,2026-07-09,False,False,False,False,False,False,6.22,,,2026-06
+Vegavero,Amazon,VV-VITA-396,596.83,329.0,"Vegavero MSM-poeder 300 g | Zak | 99,9% puur | Veganistisch & zonder toevoegingen",0.0,0,463.0,40.0,6.6901,36.8446,False,213.0,2026-07-09,False,False,False,False,False,False,2.74,,,2026-06
+Vegavero,Amazon,VV-VITA-397,244.74,106.0,Reishi Puro Vegavero | Dosis Más Alta: 13000 mg (10:1) | Con 40% Polisacáridos & 20% Betaglucanos | Ganoderma Lucidum | Sin Aditivos & Vegano | 240 Cápsulas,0.0,0,1319.0,0.0,2.8722,463.0618,False,103.0,2026-07-09,False,False,False,False,False,True,17.44,23003.36,"Badly overstocked (~15 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-398,388.02,67.0,Multivitamin Junior Gummies,0.0,0,312.0,0.0,1.7741,179.8047,False,58.0,2026-07-09,False,False,False,False,False,False,3.35,,,2026-06
+Vegavero,Amazon,VV-VITA-399,288.13,62.0,Glucomannan Complex Capsules,0.0,0,691.0,0.0,0.7751,110.9498,False,32.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-400,548.21,50.0,Keto Power Complex Capsules,0.0,0,721.0,0.0,1.1716,617.1286,False,44.0,2026-07-09,False,False,False,False,False,True,,,"Badly overstocked (~21 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-401,864.1500000000001,116.0,Vegavero Mönchspfeffer Kapseln 20mg - Vitex agnus castus Extrakt 15:1 – Vorrat für 8 Monate Mönchspfeffer hochdosiert - Vegan & laborgeprüft - 240 Kapseln,0.0,0,240.0,0.0,3.3873,84.1372,False,116.0,2026-07-09,False,False,False,False,False,False,4.78,,,2026-06
+Vegavero,Amazon,VV-VITA-402,685.86,116.0,Un-Bloat Capsules,0.0,0,680.0,0.0,2.8909,239.7189,False,99.0,2026-07-09,False,False,False,False,False,True,7.17,4875.6,"Slow mover (~8 months of supply) — cut reorder quantity, consider a markdown to free up capital",2026-06
+Vegavero,Amazon,VV-VITA-403,4433.33,650.0,Magnesium Citrate Powder,0.0,0,183.0,40.0,9.3169,8.6092,True,445.0,2026-07-09,False,True,False,True,False,False,6.22,,,2026-06
+Vegavero,Amazon,VV-VITA-404,583.8499999999999,139.0,Sage Extract Capsules,0.0,0,474.0,0.0,4.3735,108.8361,False,139.0,2026-07-09,False,False,False,False,False,False,6.53,,,2026-06
+Vegavero,Amazon,VV-VITA-405,8031.66,415.0,Vitamin B12 Tablets,0.0,0,192.0,1.0,5.8222,35.2101,False,300.0,2026-07-09,False,False,False,False,False,False,3.8,,,2026-06
+Vegavero,Amazon,VV-VITA-406,641.18,158.0,Vitamin B12 Tablets non DE,0.0,0,87.0,0.0,0.5256,13.3175,True,68.0,2026-07-09,False,True,False,True,False,False,4.68,,,2026-06
+Vegavero,Amazon,VV-VITA-407,1401.12,261.0,Green Supreme Complex Powder,0.0,0,58.0,75.0,6.7728,10.1877,True,262.0,2026-07-09,False,True,False,True,False,False,8.83,,,2026-06
+Vegavero,Amazon,VV-VITA-408,2286.02,251.0,Gut Routine Powder,0.0,0,213.0,26.0,8.9424,25.273,True,256.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-409,2470.76,187.0,Magnesium Citrate Capsules,0.0,0,1244.0,0.0,5.9647,214.0914,False,197.0,2026-07-09,False,False,False,False,False,True,,,"Slow mover (~7 months of supply) — cut reorder quantity, consider a markdown to free up capital",2026-06
+Vegavero,Amazon,VV-VITA-410,252.86,45.0,OPC Capsules,0.0,0,484.0,0.0,1.5968,170.2437,False,42.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-411,1282.92,278.0,Digestive Enzymes Pro Capsules,0.0,0,418.0,0.0,6.032,70.457,False,229.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-412,65.3,47.0,Lactase Tablets,0.0,0,643.0,1.0,0.7287,885.1619,False,50.0,2026-07-09,False,False,False,False,False,True,,,"Badly overstocked (~30 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-413,8.219999999999999,10.0,Q10 Capsules,0.0,0,501.0,144.0,4.5552,111.3014,False,74.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-414,39.95,47.0,Hericium Capsules,0.0,0,655.0,0.0,2.0002,328.9683,False,64.0,2026-07-09,False,False,False,False,False,True,,,"Badly overstocked (~11 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-415,35.56,36.0,PMS Capsules,0.0,0,851.0,0.0,1.503,567.5225,False,47.0,2026-07-09,False,False,False,False,False,True,,,"Badly overstocked (~19 months of supply) — markdown or promo to clear, halt reorders; watch long-term storage fees",2026-06
+Vegavero,Amazon,VV-VITA-417,268.61,120.0,Omega 3 Gummies,0.0,0,523.0,96.0,4.6421,119.7731,False,132.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Amazon,VV-VITA-46,1270.33,419.0,Multivitamin Plus Capsules,0.0,0,563.0,0.0,17.0194,35.6652,False,479.0,2026-07-09,False,False,False,False,False,False,6.2,,,2026-06
+Vegavero,Amazon,VV-VITA-49,432.63,377.0,Iron Bisglycinate Capsules,0.0,0,148.0,0.0,10.2648,9.6169,True,337.0,2026-07-09,False,True,False,True,False,False,6.7,,,2026-06
+Vegavero,Amazon,VV-VITA-49-V2,65.81,71.0,"Eisen Bisglycinat Vegavero | 30 mg Iron | Mit natürlichem Vitamin C, Folsäure Quatrefolic, Vitamin B12, B6 & B2 | Vegan & Ohne Zusätze | 240 Kapseln",0.0,0,317.0,0.0,1.9157,166.5174,False,64.0,2026-07-09,False,False,False,False,False,False,12.42,,,2026-06
+Vegavero,Amazon,VV-VITA-50,189.26,123.0,Colla-Veg Complex Capsules,35.49,2,493.0,1.0,6.7357,31.6225,True,156.0,2026-07-09,False,True,False,True,False,False,6.39,,,2026-06
+Vegavero,Amazon,VV-VITA-57-V,318.09000000000003,213.0,Hyaluronic Acid Capsules,0.0,0,202.0,0.0,6.233,35.4564,False,199.0,2026-07-09,False,False,False,False,False,False,16.78,,,2026-06
+Vegavero,Amazon,VV-VITA-57-V2,321.37,218.0,Hyaluronic Acid Capsules,3.98,1,201.0,0.0,5.7909,27.2842,True,180.0,2026-07-09,False,True,False,True,False,False,8.72,,,2026-06
+Vegavero,Amazon,VV-VITA-63,1610.38,660.0,Cordyceps Sinensis Extract Capsules,0.0,0,3894.0,90.0,16.0516,34.2066,False,528.0,2026-07-09,False,False,False,False,False,False,4.22,,,2026-06
+Vegavero,Amazon,VV-VITA-86,568.88,223.0,MSM Capsules,0.0,0,494.0,240.0,10.4972,35.9722,False,201.0,2026-07-09,False,False,False,False,False,False,7.95,,,2026-06
+Vegavero,Amazon,VV-VITA-88,1089.9799999999998,326.0,Chlorella & Spirulina Capsules Organic,0.0,0,253.0,60.0,5.524,26.9778,False,178.0,2026-07-09,False,False,False,False,False,False,8.03,,,2026-06
+Vegavero,Amazon,VV-VITA-90,12095.65,2705.0,Beta Carotene Capsules,0.0,0,1677.0,1155.0,56.3765,15.8577,False,1961.0,2026-07-09,False,False,False,False,False,False,6.32,,,2026-06
+Vegavero,Amazon,VV-VITA-93,585.38,327.0,Vitamin B12 Spray,0.0,0,0.0,0.0,7.0467,0.6206,True,224.0,2026-07-09,True,False,True,False,False,False,3.85,,,2026-06
+Vegavero,Amazon,VV-VITA-94,618.04,194.0,Pro Bio Capsules Organic,0.0,0,71.0,0.0,5.7876,16.069,True,169.0,2026-07-09,False,True,False,True,False,False,9.5,,,2026-06
+Vegavero,Shopify,2R-49NC-R697,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.83,,,2026-06
+Vegavero,Shopify,BJ-E223-8EKW,603.5567264543109,56.0,Moringa Oleifera Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.85,,,2026-06
+Vegavero,Shopify,CP-DQMG-RVN9,114.77003469325352,12.0,Wild Yams + Zinc Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.47,,,2026-06
+Vegavero,Shopify,CW-KVIN-V39Y,284.66626878399995,22.0,D-Mannose Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.41,,,2026-06
+Vegavero,Shopify,NX-CVPF-VCEZ,260.60291071181194,37.0,Reishi Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,9.21,,,2026-06
+Vegavero,Shopify,TU-QNYD-JRRX,126.91411852651248,32.0,Tribulus Terrestris Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.92,,,2026-06
+Vegavero,Shopify,VI-ZU99-SZ0B,105.44658078515776,24.0,L-Tryptophan Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.06,,,2026-06
+Vegavero,Shopify,VV-ALO-06,358.8760365601965,24.0,MSM Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.4,,,2026-06
+Vegavero,Shopify,VV-VITA-02,64.85797081258838,17.0,Milk Thistle Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.73,,,2026-06
+Vegavero,Shopify,VV-VITA-101,381.355202349553,61.0,Rhodiola Rosea Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.77,,,2026-06
+Vegavero,Shopify,VV-VITA-102,123.72073803824456,18.0,Ginkgo Biloba Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.08,,,2026-06
+Vegavero,Shopify,VV-VITA-104,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.07,,,2026-06
+Vegavero,Shopify,VV-VITA-105,63.83165823554295,5.0,Panax Ginseng Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.56,,,2026-06
+Vegavero,Shopify,VV-VITA-106,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.92,,,2026-06
+Vegavero,Shopify,VV-VITA-107,175.4229398295834,60.0,Ceylon Cinnamon Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.42,,,2026-06
+Vegavero,Shopify,VV-VITA-109,145.5147426847281,29.0,Liver Active Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.41,,,2026-06
+Vegavero,Shopify,VV-VITA-111,122.68344879285851,21.0,Colon Care Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.07,,,2026-06
+Vegavero,Shopify,VV-VITA-115,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.74,,,2026-06
+Vegavero,Shopify,VV-VITA-116,146.4550568258627,32.0,Natural Iodine Organic Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.05,,,2026-06
+Vegavero,Shopify,VV-VITA-119,409.8275913248873,81.0,Magnesium + Potassium Capsules,37.56163859925984,1,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-121,229.39659202216308,35.0,Female Harmony Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.33,,,2026-06
+Vegavero,Shopify,VV-VITA-122,162.4535140344379,28.0,Immu Pro Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.76,,,2026-06
+Vegavero,Shopify,VV-VITA-124,425.98727738565526,74.0,Natural Vitamin C Organic Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.87,,,2026-06
+Vegavero,Shopify,VV-VITA-127,540.3615411996623,96.0,Saffron Extract Capsules,38.39510958504371,1,,,,,False,,2026-07-09,False,False,False,False,False,False,7.66,,,2026-06
+Vegavero,Shopify,VV-VITA-129,47.70025587002608,5.0,Ginger Organic Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.99,,,2026-06
+Vegavero,Shopify,VV-VITA-136,253.56704326508867,42.0,Light Legs Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.26,,,2026-06
+Vegavero,Shopify,VV-VITA-142,297.9245944219731,55.0,Prostaid Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-143,124.06188235073796,11.0,Vitamin B12 Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-146,173.18716311203963,15.0,Spirulina Tablets Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.56,,,2026-06
+Vegavero,Shopify,VV-VITA-151,482.0902138374455,81.0,Female Balance Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.09,,,2026-06
+Vegavero,Shopify,VV-VITA-153,306.7607320370294,39.0,Ashwagandha Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.36,,,2026-06
+Vegavero,Shopify,VV-VITA-155,257.9892716883478,49.0,Reishi Extract Capsules Organic,1.63,1,,,,,False,,2026-07-09,False,False,False,False,False,False,5.5,,,2026-06
+Vegavero,Shopify,VV-VITA-157,203.53467421103704,39.0,Hawthorn Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.2,,,2026-06
+Vegavero,Shopify,VV-VITA-158,578.6183412575929,85.0,Glucosamine Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.66,,,2026-06
+Vegavero,Shopify,VV-VITA-159,652.2893673523918,101.0,EAA Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.83,,,2026-06
+Vegavero,Shopify,VV-VITA-165,133.8590730000588,17.0,Resveratrol Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,10.73,,,2026-06
+Vegavero,Shopify,VV-VITA-166,169.39393715673967,19.0,Triphala Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.69,,,2026-06
+Vegavero,Shopify,VV-VITA-168,244.49258165644412,48.0,Sun Care Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.59,,,2026-06
+Vegavero,Shopify,VV-VITA-170,215.32487374355577,30.0,Vitamin B3 (Nicotinamide) Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.53,,,2026-06
+Vegavero,Shopify,VV-VITA-171,352.71568427583026,51.0,Vision Care Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,12.23,,,2026-06
+Vegavero,Shopify,VV-VITA-172,89.70632218457581,21.0,Maitake Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.05,,,2026-06
+Vegavero,Shopify,VV-VITA-173,348.38970573010954,61.0,Lion's Mane Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.45,,,2026-06
+Vegavero,Shopify,VV-VITA-174,149.00979691931525,20.0,Olive Leaf Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.57,,,2026-06
+Vegavero,Shopify,VV-VITA-181,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.87,,,2026-06
+Vegavero,Shopify,VV-VITA-183,243.6718523442252,32.0,Reflu-X Complex Capsules,0.0,1,,,,,False,,2026-07-09,False,False,False,False,False,False,8.64,,,2026-06
+Vegavero,Shopify,VV-VITA-186,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.99,,,2026-06
+Vegavero,Shopify,VV-VITA-188,81.80317522011275,25.0,Stinging Nettle Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.66,,,2026-06
+Vegavero,Shopify,VV-VITA-189,94.03002236858632,19.0,Rosehip Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.51,,,2026-06
+Vegavero,Shopify,VV-VITA-190,81.16537576767122,14.0,Papaya Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.4,,,2026-06
+Vegavero,Shopify,VV-VITA-197,112.10160327236886,20.0,Guggul Extract Capsules,112.10160327236886,1,,,,,False,,2026-07-09,False,False,False,False,False,False,8.36,,,2026-06
+Vegavero,Shopify,VV-VITA-198,201.04743341710807,37.0,Bromelain Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.04,,,2026-06
+Vegavero,Shopify,VV-VITA-199,140.34856293399315,19.0,St. John's Wort + Passion Flower Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.29,,,2026-06
+Vegavero,Shopify,VV-VITA-202,86.55807010763895,11.0,Multivitamin Junior Spray,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,2.73,,,2026-06
+Vegavero,Shopify,VV-VITA-203,188.13000596735915,32.0,GABA Plus Capsules,44.76593986917565,1,,,,,False,,2026-07-09,False,False,False,False,False,False,5.79,,,2026-06
+Vegavero,Shopify,VV-VITA-204,33.059605704543884,2.0,Devil's Claw Plus Capsules,33.059605704543884,1,,,,,False,,2026-07-09,False,False,False,False,False,False,5.01,,,2026-06
+Vegavero,Shopify,VV-VITA-206,57.16791452257466,12.0,Artichoke Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.06,,,2026-06
+Vegavero,Shopify,VV-VITA-207,266.4608185710241,23.0,Astragalus Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.79,,,2026-06
+Vegavero,Shopify,VV-VITA-208,289.8581352323031,85.0,Horse Chestnut Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.57,,,2026-06
+Vegavero,Shopify,VV-VITA-215,166.5201921512249,27.0,Horsetail Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.99,,,2026-06
+Vegavero,Shopify,VV-VITA-216,379.4189566552712,37.0,Kudzu Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.56,,,2026-06
+Vegavero,Shopify,VV-VITA-222,495.6659363915333,110.0,Black Cumin Seed Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.68,,,2026-06
+Vegavero,Shopify,VV-VITA-223,1672.3307713623326,365.0,Omega 3 Oil Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.85,,,2026-06
+Vegavero,Shopify,VV-VITA-224,349.93706453386653,35.0,Vegan Essentials Complex Capsules,0.0,1,,,,,False,,2026-07-09,False,False,False,False,False,False,6.26,,,2026-06
+Vegavero,Shopify,VV-VITA-225,196.99391544880973,56.0,Shilajit Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.81,,,2026-06
+Vegavero,Shopify,VV-VITA-227,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.65,,,2026-06
+Vegavero,Shopify,VV-VITA-228,814.4595741226696,135.0,Vitamin D3 + K2 Oil Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.53,,,2026-06
+Vegavero,Shopify,VV-VITA-230,9.88,0.0,Berberine Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.89,,,2026-06
+Vegavero,Shopify,VV-VITA-231,2508.3583696423434,325.0,Myo-Inositol Complex Capsules,123.82778100388668,1,,,,,False,,2026-07-09,False,False,False,False,False,False,7.05,,,2026-06
+Vegavero,Shopify,VV-VITA-237,416.0001426478901,83.0,Choline Trio Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.16,,,2026-06
+Vegavero,Shopify,VV-VITA-243,907.7086353739488,201.0,Multi Magnesium Complex Capsules,3.643199857705072,1,,,,,False,,2026-07-09,False,False,False,False,False,False,6.04,,,2026-06
+Vegavero,Shopify,VV-VITA-247,210.22430759534305,32.0,Astaxanthin Oil Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.24,,,2026-06
+Vegavero,Shopify,VV-VITA-248,288.8667143803124,43.0,Oregano Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.15,,,2026-06
+Vegavero,Shopify,VV-VITA-249,362.5394394483619,71.0,Saccharomyces Boulardii Capsules,37.96490251028239,1,,,,,False,,2026-07-09,False,False,False,False,False,False,6.2,,,2026-06
+Vegavero,Shopify,VV-VITA-250,181.9539363732041,24.0,Brahmi Tablets Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.09,,,2026-06
+Vegavero,Shopify,VV-VITA-252,176.53626860148046,24.0,Shiitake Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.18,,,2026-06
+Vegavero,Shopify,VV-VITA-256,431.7007090572085,49.0,Pumpkin Seed Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.02,,,2026-06
+Vegavero,Shopify,VV-VITA-257,455.1982297072966,58.0,Lecithin Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.65,,,2026-06
+Vegavero,Shopify,VV-VITA-258,99.39982593464444,17.0,Flaxseed Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.93,,,2026-06
+Vegavero,Shopify,VV-VITA-259,327.63677908902474,29.0,Mushroom Mix Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.47,,,2026-06
+Vegavero,Shopify,VV-VITA-262,86.28174053431427,11.0,Bilberry & Pine Bark Extracts Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.33,,,2026-06
+Vegavero,Shopify,VV-VITA-264,236.64482224697952,29.0,Mugwort Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.3,,,2026-06
+Vegavero,Shopify,VV-VITA-266,43.257351560470966,10.0,Moringa Oleifera Tablets Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.94,,,2026-06
+Vegavero,Shopify,VV-VITA-276,1097.395641252066,164.0,Venaflux Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.95,,,2026-06
+Vegavero,Shopify,VV-VITA-277,94.89874252584612,14.0,Vitamin B12 Junior Spray,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.48,,,2026-06
+Vegavero,Shopify,VV-VITA-284,113.38817451218134,8.0,Chaga Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.63,,,2026-06
+Vegavero,Shopify,VV-VITA-286,270.21587417845353,37.0,Saw palmetto + Pygeum africanum Extracts Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.53,,,2026-06
+Vegavero,Shopify,VV-VITA-287,286.51175078759104,59.0,Natural Silicium Capsules Organic,18.3277416544277,2,,,,,False,,2026-07-09,False,False,False,False,False,False,6.87,,,2026-06
+Vegavero,Shopify,VV-VITA-295,124.91804008919809,28.0,Sugar Balance Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.83,,,2026-06
+Vegavero,Shopify,VV-VITA-297,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.12,,,2026-06
+Vegavero,Shopify,VV-VITA-298,224.71594029706472,44.0,Black Maca + Tribulus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.34,,,2026-06
+Vegavero,Shopify,VV-VITA-301,224.39135670425597,51.0,ZMA Capsules: Zinc + Magnesium + Vitamin B6,0.0,1,,,,,False,,2026-07-09,False,False,False,False,False,False,4.05,,,2026-06
+Vegavero,Shopify,VV-VITA-303,148.5092408682607,22.0,Drenaflux Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.45,,,2026-06
+Vegavero,Shopify,VV-VITA-304,204.53043448858756,44.0,Folate Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.26,,,2026-06
+Vegavero,Shopify,VV-VITA-307,45.31000441796143,16.0,Vitamin B3 Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.42,,,2026-06
+Vegavero,Shopify,VV-VITA-308,225.9291442711824,33.0,Digestive Enzymes Complex Capsules,133.68445537515163,1,,,,,False,,2026-07-09,False,False,False,False,False,False,7.62,,,2026-06
+Vegavero,Shopify,VV-VITA-31,58.52289301036468,10.0,Papaya Enzyme Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,0.0,,,2026-06
+Vegavero,Shopify,VV-VITA-310,274.4785782848336,60.0,Bergamot Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.02,,,2026-06
+Vegavero,Shopify,VV-VITA-311,260.9784972162051,36.0,NAC Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.48,,,2026-06
+Vegavero,Shopify,VV-VITA-313,355.69026735791863,36.0,Boswellia Extract Capsules,36.06260398957748,1,,,,,False,,2026-07-09,False,False,False,False,False,False,4.89,,,2026-06
+Vegavero,Shopify,VV-VITA-314,354.541689745888,70.0,Glycine Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.25,,,2026-06
+Vegavero,Shopify,VV-VITA-316,180.9241610938882,39.0,Ceylon Cinnamon Extract Capsules Organic,43.66957024123869,1,,,,,False,,2026-07-09,False,False,False,False,False,False,5.92,,,2026-06
+Vegavero,Shopify,VV-VITA-317,278.0047466381903,37.0,Citrulline Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.5,,,2026-06
+Vegavero,Shopify,VV-VITA-318,130.67013224616844,22.0,Garlic Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.77,,,2026-06
+Vegavero,Shopify,VV-VITA-319,50.05502281966652,8.0,Chia Seed Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.97,,,2026-06
+Vegavero,Shopify,VV-VITA-320,995.9862209597804,187.0,Vollagen + Hyaluronic Acid Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.37,,,2026-06
+Vegavero,Shopify,VV-VITA-326,223.5291170158809,35.0,Griffonia Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.56,,,2026-06
+Vegavero,Shopify,VV-VITA-329,318.9112106257708,47.0,Liposomal Vitamin C Capsules,16.184743764118966,1,,,,,False,,2026-07-09,False,False,False,False,False,False,5.69,,,2026-06
+Vegavero,Shopify,VV-VITA-333,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.08,,,2026-06
+Vegavero,Shopify,VV-VITA-336,44.1145809972788,5.0,Devil's Claw Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.07,,,2026-06
+Vegavero,Shopify,VV-VITA-338,168.02653161853283,37.0,Turmeric Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.0,,,2026-06
+Vegavero,Shopify,VV-VITA-339,199.97619556883808,16.0,L-Tyrosine Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.93,,,2026-06
+Vegavero,Shopify,VV-VITA-340,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.84,,,2026-06
+Vegavero,Shopify,VV-VITA-341,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.27,,,2026-06
+Vegavero,Shopify,VV-VITA-342,390.7691526115135,72.0,Vitamin D3 + K2 Drops,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.62,,,2026-06
+Vegavero,Shopify,VV-VITA-344,525.5804861161537,84.0,Ashwagandha KSM-66 Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.82,,,2026-06
+Vegavero,Shopify,VV-VITA-345,106.0698696031011,12.0,Serenity Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.38,,,2026-06
+Vegavero,Shopify,VV-VITA-346,42.01884321439447,7.0,Chromium Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.18,,,2026-06
+Vegavero,Shopify,VV-VITA-349,38.9328583260572,4.0,Fenugreek Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.27,,,2026-06
+Vegavero,Shopify,VV-VITA-351,16.17377765676079,2.0,Cordyceps Sinensis Extract Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.43,,,2026-06
+Vegavero,Shopify,VV-VITA-352,223.0608245309282,38.0,Omega 3 + ADEK Oil Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.3,,,2026-06
+Vegavero,Shopify,VV-VITA-354,198.9193189629012,36.0,Mushroom Complex Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.66,,,2026-06
+Vegavero,Shopify,VV-VITA-355,233.24611150727563,45.0,L-Glutathione Complex Capsules,0.0,1,,,,,False,,2026-07-09,False,False,False,False,False,False,8.39,,,2026-06
+Vegavero,Shopify,VV-VITA-356,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.29,,,2026-06
+Vegavero,Shopify,VV-VITA-357,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.91,,,2026-06
+Vegavero,Shopify,VV-VITA-358,10.7298,-1.0,OPC Trio Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.92,,,2026-06
+Vegavero,Shopify,VV-VITA-359,94.31899324634182,13.0,Red Yeast Rice Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.78,,,2026-06
+Vegavero,Shopify,VV-VITA-360,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.18,,,2026-06
+Vegavero,Shopify,VV-VITA-361,393.6266154756479,77.0,Rapunzel Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.44,,,2026-06
+Vegavero,Shopify,VV-VITA-362,26.1328741352143,4.0,Echinacea Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.53,,,2026-06
+Vegavero,Shopify,VV-VITA-363,105.19851300299707,24.0,Apple Cider Vinegar Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.01,,,2026-06
+Vegavero,Shopify,VV-VITA-364,1724.0361867448823,275.0,Astaxanthin Oil Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.93,,,2026-06
+Vegavero,Shopify,VV-VITA-365,108.77333646222728,33.0,Apple Cider Vinegar Gummies,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.38,,,2026-06
+Vegavero,Shopify,VV-VITA-366,105.23932296512942,20.0,Iron Gummies,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.42,,,2026-06
+Vegavero,Shopify,VV-VITA-367,351.7730924943359,94.0,Creatine Monohydrate Powder,0.0,1,,,,,False,,2026-07-09,False,False,False,False,False,False,5.35,,,2026-06
+Vegavero,Shopify,VV-VITA-368,120.74447216753856,29.0,L-Glutamine Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.35,,,2026-06
+Vegavero,Shopify,VV-VITA-369,67.78406352904523,65.0,Glucomannan Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.22,,,2026-06
+Vegavero,Shopify,VV-VITA-370,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.01,,,2026-06
+Vegavero,Shopify,VV-VITA-371,171.24638027465588,27.0,Nattokinase Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.76,,,2026-06
+Vegavero,Shopify,VV-VITA-372,164.20225283385295,25.0,Vitamin D3 + K2 Depot Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-373,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.81,,,2026-06
+Vegavero,Shopify,VV-VITA-374,83.18476844856251,17.0,Psyllium Husks Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.36,,,2026-06
+Vegavero,Shopify,VV-VITA-375,101.04395639991104,24.0,Strong Bones Complex Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.81,,,2026-06
+Vegavero,Shopify,VV-VITA-376,83.89127660615547,19.0,Griffonia Extract (5-HTP) Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.84,,,2026-06
+Vegavero,Shopify,VV-VITA-377,406.6029336190107,62.0,Choline Bitartrate Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.05,,,2026-06
+Vegavero,Shopify,VV-VITA-378,12.99763560585096,1.0,Brewer's Yeast Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.81,,,2026-06
+Vegavero,Shopify,VV-VITA-379,327.2951012231249,66.0,Glucosamine Plus Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.87,,,2026-06
+Vegavero,Shopify,VV-VITA-38,308.49996811632565,66.0,Vitamin B Plus Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.27,,,2026-06
+Vegavero,Shopify,VV-VITA-380,57.035954338520455,5.0,Party Hero Complex Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,2.87,,,2026-06
+Vegavero,Shopify,VV-VITA-381,328.9952384241576,38.0,Myo-Inositol Powder,149.1343531814986,1,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-382,142.5149319256411,28.0,Taurine Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.08,,,2026-06
+Vegavero,Shopify,VV-VITA-383,78.90291721458291,13.0,Vitamin K2 Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.12,,,2026-06
+Vegavero,Shopify,VV-VITA-384,0.0,,,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.65,,,2026-06
+Vegavero,Shopify,VV-VITA-385,71.60490923056338,4.0,Evening Primrose Oil Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.27,,,2026-06
+Vegavero,Shopify,VV-VITA-386,111.52487930263676,19.0,Femme Biotics Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,9.2,,,2026-06
+Vegavero,Shopify,VV-VITA-387,71.47259134830622,49.0,Youth Biotics Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,11.01,,,2026-06
+Vegavero,Shopify,VV-VITA-388,166.9094029013659,37.0,Glycine Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,1.67,,,2026-06
+Vegavero,Shopify,VV-VITA-389,487.1049803728438,52.0,Prosta-X Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,9.81,,,2026-06
+Vegavero,Shopify,VV-VITA-39,247.08201610179248,58.0,D-Mannose Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,5.89,,,2026-06
+Vegavero,Shopify,VV-VITA-390,113.07430539445356,13.0,L-Citrulline Malate Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,10.32,,,2026-06
+Vegavero,Shopify,VV-VITA-391,325.89339314411814,39.0,Quercetin Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-392,26.277649096984817,1.0,VV-VITA-392,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.36,,,2026-06
+Vegavero,Shopify,VV-VITA-393,27.488617532128263,7.0,BCAA Powder Mango,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.28,,,2026-06
+Vegavero,Shopify,VV-VITA-394,111.20593117618006,17.0,EAA Powder Peach,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.07,,,2026-06
+Vegavero,Shopify,VV-VITA-395,142.38872460205937,29.0,Zinc Bisglycinate Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.22,,,2026-06
+Vegavero,Shopify,VV-VITA-398,159.11863587015722,37.0,Multivitamin Junior Gummies,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.35,,,2026-06
+Vegavero,Shopify,VV-VITA-399,37.3137930563673,8.0,Glucomannan Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-400,84.88008810128446,18.0,Keto Power Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-401,18.998649050982195,1.0,VV-VITA-401,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.78,,,2026-06
+Vegavero,Shopify,VV-VITA-402,133.79122488553014,27.0,Un-Bloat Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,7.17,,,2026-06
+Vegavero,Shopify,VV-VITA-403,579.6766555601544,59.0,Magnesium Citrate Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.22,,,2026-06
+Vegavero,Shopify,VV-VITA-405,135.80148278414467,34.0,Vitamin B12 Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.8,,,2026-06
+Vegavero,Shopify,VV-VITA-407,178.73644356175993,54.0,Green Supreme Complex Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.83,,,2026-06
+Vegavero,Shopify,VV-VITA-408,94.60899821931676,20.0,Gut Routine Powder,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-409,1.9348821518174,1.0,Magnesium Citrate Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-410,74.60160386443894,11.0,OPC Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-411,173.6695403266663,31.0,Digestive Enzymes Pro Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-412,56.44984034433975,9.0,Lactase Tablets,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-413,225.00050541830967,23.0,Q10 Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-414,58.71175133343986,7.0,Hericium Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-415,45.194571027691424,2.0,PMS Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-417,680.4035054604951,115.0,Omega 3 Gummies,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+Vegavero,Shopify,VV-VITA-46,180.14074978426072,38.0,Multivitamin Plus Capsules,32.37221009369648,1,,,,,False,,2026-07-09,False,False,False,False,False,False,6.2,,,2026-06
+Vegavero,Shopify,VV-VITA-49,363.5896796932414,81.0,Iron Bisglycinate Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.7,,,2026-06
+Vegavero,Shopify,VV-VITA-50,143.6412351236782,26.0,Colla-Veg Complex Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.39,,,2026-06
+Vegavero,Shopify,VV-VITA-57-V,214.77682565288325,31.0,Hyaluronic Acid Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,16.78,,,2026-06
+Vegavero,Shopify,VV-VITA-57-V2,156.36498189965778,20.0,Hyaluronic Acid Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.72,,,2026-06
+Vegavero,Shopify,VV-VITA-63,189.599736886688,26.0,Cordyceps Sinensis Extract Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,4.22,,,2026-06
+Vegavero,Shopify,VV-VITA-86,0.0,-1.0,MSM Capsules,0.36,1,,,,,False,,2026-07-09,False,False,False,False,False,False,7.95,,,2026-06
+Vegavero,Shopify,VV-VITA-88,236.3312058116778,47.0,Chlorella & Spirulina Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,8.03,,,2026-06
+Vegavero,Shopify,VV-VITA-90,459.8768252714432,223.0,Beta Carotene Capsules,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,6.32,,,2026-06
+Vegavero,Shopify,VV-VITA-93,198.18748869357316,52.0,Vitamin B12 Spray,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,3.85,,,2026-06
+Vegavero,Shopify,VV-VITA-94,366.8760601785274,60.0,Pro Bio Capsules Organic,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,9.5,,,2026-06
+wowtamins,Amazon,98-VX35-DC63-2er,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,98-VX35-DC63-Neu,4660.32,860.0,"wowtamins Teens Complete zuckerfrei - Vitamine für Jugendliche (30-Tage-Vorrat) - Multivitamin Gummies mit Omega 3 - Nahrungsergänzungsmittel für das Immunsystem mit Vitamin C, D3, B12, Zink & mehr",0.0,1,1015.0,0.0,23.0896,46.2546,False,812.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,9G-B3KH-DDA0-2er,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,9G-B3KH-DDA0-Neu,846.9,146.0,wowtamins Vitamin D3 Gummies + K2 - Vitamin Gummies mit 1000 IE Vitamin D3 (60 Stück) - Veganes Nahrungsergänzungsmittel für das Immunsystem,0.0,2,125.0,0.0,4.318,29.8746,True,138.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+wowtamins,Amazon,A0-22PS-COWR,2497.26,426.0,wowtamins Kids Multi Gummies zuckerfrei - Vitamine für Kinder (30-Tage-Vorrat) mit 13 Vitaminen & 3 Mineralstoffen - Nahrungsergänzungsmittel als hochdosierte & Vegane Multivitamin Gummies,0.0,1,969.0,0.0,13.1927,74.89,False,435.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,CW-BID2-NFIP,3339.29,666.0,wowtamins Omega 3 für Kinder zuckerfrei - vegane & hochdosierte Gummies (60 Stück) mit EPA und DHA aus Algenöl - Nahrungsergänzungsmittel kinderleicht und lecker (Mango-Geschmack),0.0,2,508.0,72.0,18.9605,28.0584,True,639.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+wowtamins,Amazon,Eisen-02-2025,0.0,0.0,Eisen-02-2025,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,Eisen-Feb-25,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,FH-L1DD-WJN8,0.0,0.0,FH-L1DD-WJN8,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,FW-WAIL-UBVC-Neu,0.0,,,0.0,0,0.0,0.0,0.0,,False,0.0,2026-07-09,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,Immun-Intense-1er,189.02,47.0,"wowtamins IMMUN Intense - Zinc, Elderberry, Echinacea, Ginseng and Ginger Gummy Bears (Pack of 60) for Kids and Adults",0.0,1,100.0,0.0,1.86,55.3759,False,56.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,KO-0JFH-PXEC,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,Kids Complete zuckerfrei-alt,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,MW-NLU9-BEWZ,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,NB-49AE-8MWZ,3432.01,701.0,wowtamins Eisen Bisglycinat mit Vitamin C (60 Stück) - Zuckerfreie & Vegane Eisen Gummies - Hochdosiertes Eisenpräparat als Nahrungsergänzungsmittel für Kinder und Frauen bei Eisenunterversorgung,0.0,1,411.0,720.0,19.8445,21.8196,False,658.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,OD-MZWV-JBYL,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,OD-MZWV-JBYL-Neu,4444.72,1552.0,"wowtamins Kids Complete zuckerfrei - Vegane Multivitamin Gummies mit Omega 3 (30-Tage-Vorrat) - Vitamine für Kinder - Nahrungsergänzungsmittel für das Immunsystem mit Vitamin C, D3, B12, Zink & mehr",0.0,1,987.0,1300.0,44.7981,23.885,False,1507.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,OD-OAK8-N5TW,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,OD-OAK8-N5TW-Neu,1097.01,472.0,"wowtamins Kids Complete - Vegane Multivitamin Gummies mit Omega 3 (30-Tage-Vorrat) - Vitamine für Kinder - Nahrungsergänzungsmittel für das Immunsystem mit Vitamin C, D3, B12, Zink & mehr",0.0,1,174.0,200.0,13.3033,15.1842,True,447.0,2026-07-09,False,True,False,True,False,False,,,,2026-06
+wowtamins,Amazon,SKU-WT-WKPz,1501.82,81.0,wowtamins Kids Probio – Leckere Direktsticks mit 9 ausgewählten Darmbakterien-Kulturen (30-Tage-Vorrat) für eine gesunde Darmflora – Nahrungsergänzungsmittel für Kinder ab 4 Jahre,0.0,1,137.0,0.0,3.0448,46.3079,False,97.0,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,U1-6CTS-AHGW-Neu,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Amazon,WT-66DZ-EI2B,0.0,,,0.0,0,,,,,False,,,True,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Flyer-Fachexperten-mit-Code,0.0,0.0,Fachexperten Flyer mit Rabattcode,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Flyer-RKI-Studie,0.0,0.0,Beileger - Ernährungsstudie RKI - EsKiMo II,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Flyer-kinderleicht-mit-Code,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Flyer-kinderleicht-ohne-Code,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-KC2-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-KMM,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-LZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Omega3-Studie,0.0,0.0,Beileger - Studie Omega 3 Fettsäuren,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-SP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-SPJ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-SPM,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Ueberraschung,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-Vitamindose,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WB12,0.0,0.0,Vitamin B12 Spray Energiespritzer,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WD3,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WEBZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WEBz-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WEGZ,0.0,0.0,Eisen Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WIG,0.0,0.0,Immun Gummies,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WIG-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKC,0.0,0.0,Kids Complete Gummies (Zucker / zuckerfrei),0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKC-BIO360,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKC-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKCZ,0.0,0.0,Kids Complete Gummies (Zucker / zuckerfrei),0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKCZ-BIO360,0.0,0.0,Kids Complete (BIO360),0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKCZ-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKMz,0.0,0.0,Kids Multi Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WKPz,0.0,0.0,Kids Probio Sticks zuckerfrei,0.0,0,,,,,False,,2026-07-09,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WMGz,0.0,0.0,Magnesium Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WO3,0.0,0.0,Omega 3 Gummies (Zucker / zuckerfrei),0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WO3Z,0.0,0.0,Omega 3 Gummies - Sonderverkauf,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WSEZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WTCZ,0.0,0.0,Teens Complete Gummies zuckerfrei,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WVCZ,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WVD,0.0,0.0,Vitamin D3 + K2 Gummies,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
+wowtamins,Shopify,SKU-WT-WVD-PP,0.0,,,0.0,0,,,,,False,,,False,False,False,False,False,False,,,,2026-06
