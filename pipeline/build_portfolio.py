@@ -75,13 +75,18 @@ def load_margin_export() -> pd.DataFrame:
             "Period", "Marketplace Name", "SKU", "Product", "Brand",
             "Units", "Product Sales",
             "Contribution Margin 1", "Contribution Margin 2", "Contribution Margin 3",
-            "Advertising Costs",
+            "Advertising Costs", "ROAS",
         ],
         compression="gzip",
     )
     df["month"] = df["Period"].str[:7]
     df["country"] = df["Marketplace Name"].map(MARKETPLACE_TO_COUNTRY)
     df = df.dropna(subset=["country", "SKU"])
+    # PPC (ad-attributed) sales = ROAS x ad cost. Advertising Costs is stored
+    # negative, so -cost = positive spend; ppc_sales lets us aggregate a proper
+    # ROAS (ppc_sales / ppc_spend) rather than averaging ratios.
+    ad_cost = -pd.to_numeric(df["Advertising Costs"], errors="coerce")
+    df["ppc_sales"] = pd.to_numeric(df["ROAS"], errors="coerce") * ad_cost
     grouped = (
         df.groupby(["Brand", "country", "SKU", "month"], as_index=False)
         .agg(
@@ -92,6 +97,7 @@ def load_margin_export() -> pd.DataFrame:
             cm2=("Contribution Margin 2", "sum"),
             cm3=("Contribution Margin 3", "sum"),
             ad_spend=("Advertising Costs", "sum"),
+            ppc_sales=("ppc_sales", "sum"),
         )
         .rename(columns={"Brand": "brand", "SKU": "sku"})
     )

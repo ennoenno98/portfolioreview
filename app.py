@@ -484,13 +484,13 @@ def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> N
             ann["font"] = dict(size=11, color=INK60)
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
-    # PPC: ad spend (bars) + ROAS from actual spend (own panel) — real per-market
-    # facts (Amazon from Feb 2026, webshop from Oct 2025), not the Excel history.
-    f = f.assign(ad_spend=pd.to_numeric(f["ad_spend"], errors="coerce"))
+    # PPC: ad spend (bars) + true ROAS = PPC sales ÷ PPC spend (ad-attributed
+    # sales, Amazon ROAS column). Webshop has spend but no ad-attributed sales yet.
+    f = f.assign(ad_spend=pd.to_numeric(f["ad_spend"], errors="coerce"),
+                 ppc_sales=pd.to_numeric(f.get("ppc_sales"), errors="coerce"))
     ppc = f[f["ad_spend"].notna() & (f["ad_spend"] > 0)].copy()
     c3, c4 = st.columns(2)
     if not ppc.empty:
-        ppc["roas"] = ppc["net_sales"] / ppc["ad_spend"]
         with c3:
             fig = go.Figure(go.Bar(
                 x=ppc["month"], y=ppc["ad_spend"],
@@ -498,41 +498,53 @@ def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> N
                 hovertemplate="%{x}: €%{y:,.0f} ad spend<extra></extra>",
             ))
             fig.update_layout(**PLOT_LAYOUT, height=280,
-                              title=dict(text="Ad spend · monthly (PPC)", font=dict(size=14)),
+                              title=dict(text="PPC spend · monthly", font=dict(size=14)),
                               xaxis=xc(), yaxis=dict(gridcolor=HAIR),
                               showlegend=False)
             st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
         with c4:
-            fig = go.Figure(go.Bar(
-                x=ppc["month"], y=ppc["roas"],
-                marker=dict(color="#008300", line=dict(width=1, color="#fbf7f2")),
-                text=[f"{r:.1f}×" for r in ppc["roas"]], textposition="outside",
-                textfont=dict(color=INK, size=10),
-                hovertemplate="%{x}: ROAS %{y:.2f}× (sales ÷ ad spend)<extra></extra>",
-            ))
-            fig.add_hline(y=1, line=dict(color=INK60, dash="dot", width=1),
-                          annotation_text="break-even on spend", annotation_font_color=INK60)
-            fig.update_layout(**PLOT_LAYOUT, height=280,
-                              title=dict(text="ROAS · sales ÷ PPC spend", font=dict(size=14)),
-                              xaxis=xc(),
-                              yaxis=dict(gridcolor=HAIR, rangemode="tozero"), showlegend=False)
-            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+            roas = ppc[ppc["ppc_sales"].notna() & (ppc["ppc_sales"] > 0)].copy()
+            if roas.empty:
+                st.caption("PPC ROAS needs ad-attributed sales — available for Amazon "
+                           "(from Feb 2026); not connected for the webshop yet.")
+            else:
+                roas["roas"] = roas["ppc_sales"] / roas["ad_spend"]
+                fig = go.Figure(go.Bar(
+                    x=roas["month"], y=roas["roas"],
+                    marker=dict(color="#008300", line=dict(width=1, color="#fbf7f2")),
+                    text=[f"{r:.1f}×" for r in roas["roas"]], textposition="outside",
+                    textfont=dict(color=INK, size=10),
+                    hovertemplate="%{x}: ROAS %{y:.2f}× (PPC sales ÷ PPC spend)<extra></extra>",
+                ))
+                fig.add_hline(y=1, line=dict(color=INK60, dash="dot", width=1),
+                              annotation_text="break-even", annotation_font_color=INK60)
+                fig.update_layout(**PLOT_LAYOUT, height=280,
+                                  title=dict(text="ROAS · PPC sales ÷ PPC spend",
+                                             font=dict(size=14)),
+                                  xaxis=xc(),
+                                  yaxis=dict(gridcolor=HAIR, rangemode="tozero"),
+                                  showlegend=False)
+                st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
     else:
         c3.caption("No PPC spend recorded for this market/period.")
 
-    # Amazon BSR as a bar chart (lower is better -> reversed axis), same month axis
+    # Amazon BSR as a colour-coded heatmap over time (lower rank = better = greener)
     if not bsr.empty:
-        fig = go.Figure(go.Bar(
-            x=bsr["month"], y=bsr["value"],
-            marker=dict(color="#4a3aa7", line=dict(width=1, color="#fbf7f2")),
-            hovertemplate="%{x}: BSR %{y:,.0f}<extra></extra>",
+        bmap = {m: v for m, v in zip(bsr["month"], bsr["value"])}
+        z = [[bmap.get(m, None) for m in months]]
+        txt = [[f"{bmap[m]:,.0f}" if m in bmap else "" for m in months]]
+        fig = go.Figure(go.Heatmap(
+            z=z, x=months, y=["BSR"], text=txt, texttemplate="%{text}",
+            textfont=dict(size=10, color=INK),
+            colorscale="Greens_r", reversescale=False,
+            hovertemplate="%{x}: BSR %{z:,.0f}<extra></extra>",
+            colorbar=dict(title="BSR", tickformat=",.0f"),
+            xgap=2, ygap=2,
         ))
-        fig.update_layout(**PLOT_LAYOUT, height=280,
-                          title=dict(text="Amazon BSR · monthly (lower is better)",
+        fig.update_layout(**PLOT_LAYOUT, height=170,
+                          title=dict(text="Amazon BSR · monthly (darker = better rank)",
                                      font=dict(size=14)),
-                          xaxis=xc(),
-                          yaxis=dict(gridcolor=HAIR, autorange="reversed", rangemode="tozero"),
-                          showlegend=False)
+                          xaxis=xc(), yaxis=dict(showgrid=False))
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 
