@@ -2,7 +2,8 @@
 # CM for the webshop is ESTIMATED until a real margin feed exists:
 #   CM1 = net sales - COGS            (COGS per unit from productpricer, else fallback %)
 #   CM2 = CM1 - payment fees - fulfillment
-#   CM3 = CM2 - marketing             (no per-SKU webshop marketing data yet -> CM3 = CM2)
+#   CM3 = CM2 - marketing             (actual Google Ads spend via Windsor.ai from Oct 2025;
+#                                      Meta/other channels not connected -> understated)
 #
 # >>> TODO (owner: Enno/Omar): replace these placeholders with real numbers from
 # >>> the payment provider statement and the 3PL invoice, then rerun the pipeline.

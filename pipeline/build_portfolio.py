@@ -8,6 +8,8 @@ Sources
    pulled from the Novadata API (separate seller account, DE only, no PPC data).
 3. Vegavero Shopify monthly snapshot (data/source/shopify_vegavero_monthly.csv)
    pulled from the Shopify Admin API; CM is ESTIMATED from COGS + fee assumptions.
+   CM3 subtracts actual Google Ads spend (data/source/google_ads_web_*.csv from
+   Windsor.ai, mapped to SKUs via data/source/shopify_variant_sku_map.csv).
 4. Historical Excel workbook (data/source/Vanatari_Product_Insights_v3.xlsx)
    25 months of channel-level net sales / ad spend / ROAS / BSR per SKU. Used for
    launch-date proxies, wowtamins/Jasnum history and drill-down context.
@@ -37,6 +39,8 @@ from pipeline.common import (  # noqa: E402
     EXPORTS_DIR,
     FACTS_PATH,
     GENERATED_DIR,
+    GOOGLE_ADS_ACCOUNT_CSV,
+    GOOGLE_ADS_PRODUCT_CSV,
     LAUNCH_PATH,
     MARKETPLACE_TO_COUNTRY,
     OVERRIDES_DIR,
@@ -44,6 +48,7 @@ from pipeline.common import (  # noqa: E402
     SHOPIFY_COUNTRY,
     SHOPIFY_CSV,
     TAGGING_XLSX,
+    VARIANT_SKU_MAP_CSV,
     WOWTAMINS_CSV,
 )
 
@@ -115,6 +120,35 @@ def load_wowtamins() -> pd.DataFrame:
 # --------------------------------------------------------------------------- #
 # 3. Vegavero Shopify (Shopify API snapshot) with provisional CM from COGS
 # --------------------------------------------------------------------------- #
+def load_web_ad_spend() -> tuple[pd.DataFrame, pd.Series]:
+    """Google Ads spend for vegavero.com (Windsor.ai snapshot, all 4 country accounts).
+
+    Returns
+    -------
+    mapped : per (month, sku) product-attributed spend (Shopping/PMax product
+             placements, variant id -> SKU via the Shopify Admin API map).
+    totals : per-month account-level spend across all Vegavero Google Ads
+             accounts. The gap between totals and product-attributed spend
+             (search/brand campaigns, unmapped Merchant Center items) is
+             allocated pro-rata by net sales in load_shopify().
+    """
+    prod = pd.read_csv(GOOGLE_ADS_PRODUCT_CSV, dtype={"product_item_id": str})
+    vmap = pd.read_csv(VARIANT_SKU_MAP_CSV, dtype={"variant_id": str})
+    prod = prod.merge(
+        vmap, left_on="product_item_id", right_on="variant_id", how="left"
+    )
+    mapped = (
+        prod.dropna(subset=["sku"])
+        .groupby(["month", "sku"], as_index=False)["spend"]
+        .sum()
+    )
+    totals = pd.read_csv(GOOGLE_ADS_ACCOUNT_CSV).groupby("month")["spend"].sum()
+    mapped_share = prod["spend"][prod["sku"].notna()].sum() / totals.sum()
+    print(f"  google ads: {totals.sum():,.0f} EUR over {totals.index.min()}..{totals.index.max()}"
+          f" ({mapped_share:.0%} product-attributed via variant map)")
+    return mapped, totals
+
+
 def load_shopify() -> pd.DataFrame:
     df = pd.read_csv(SHOPIFY_CSV)
     df = df[df["month"] >= SHOPIFY_LIVE_FROM]
@@ -143,15 +177,34 @@ def load_shopify() -> pd.DataFrame:
 
     df["cm1"] = df["net_sales"] - est_cogs
     df["cm2"] = df["cm1"] - payment - fulfil
-    # no per-SKU marketing attribution for the webshop yet -> CM3 = CM2 (flagged gap)
-    df["cm3"] = df["cm2"]
+
+    # Web marketing: actual Google Ads spend (Windsor.ai). Product-attributed
+    # spend lands on its SKU; the monthly remainder (search/brand campaigns,
+    # spend on SKUs without a sales row) is allocated pro-rata by net sales.
+    # Months without ads data (pre 2025-10) keep CM3 = CM2. Meta & other
+    # channels are not connected yet (documented gap).
+    mapped, totals = load_web_ad_spend()
+    df = df.merge(
+        mapped.rename(columns={"spend": "ads_product"}), on=["month", "sku"], how="left"
+    )
+    df["ads_product"] = df["ads_product"].fillna(0.0)
+    month_total = df["month"].map(totals)
+    landed = df.groupby("month")["ads_product"].transform("sum")
+    residual = (month_total - landed).clip(lower=0)
+    pos_sales = df["net_sales"].clip(lower=0)
+    sales_share = pos_sales / df.groupby("month")["net_sales"].transform(
+        lambda s: s.clip(lower=0).sum()
+    )
+    df["ad_spend"] = np.where(
+        month_total.notna(), df["ads_product"] + residual * sales_share, np.nan
+    )
+    df["cm3"] = df["cm2"] - df["ad_spend"].fillna(0.0)
 
     out = df.rename(columns={"net_items_sold": "units"}).copy()
     out["brand"] = "Vegavero"
     out["channel"] = "Shopify"
     out["country"] = SHOPIFY_COUNTRY
     out["product"] = out["sku"]
-    out["ad_spend"] = np.nan
     out["cm_source"] = np.where(out["cogs_known"], "estimated", "estimated-fallback")
     out["in_scope"] = True
     return out[

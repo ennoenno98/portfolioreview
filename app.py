@@ -368,7 +368,8 @@ def data_gaps(v: pd.DataFrame, launch: pd.DataFrame) -> None:
         "Shopify margins are estimates",
         f"{len(est)} webshop rows use COGS + placeholder fees from "
         "config/shopify_assumptions.yaml — replace with real payment/3PL numbers. "
-        "Webshop CM3 = CM2 (no per-SKU marketing attribution yet).",
+        "Webshop CM3 subtracts actual Google Ads spend (Windsor.ai, from Oct 2025); "
+        "Meta and other web channels are not connected yet.",
     ))
     cens = launch[launch["censored"]]
     gaps.append((

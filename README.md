@@ -80,7 +80,7 @@ Correct any SKU in `data/overrides/launch_dates_overrides.csv`
 | Jasnum: no margin feed | whole brand is "No data" | connect the account to Nova or provide a margin export |
 | wowtamins webshop not connected | ~€0.9m TTM unclassifiable | authorize the wowtamins Shopify store, add a snapshot like the Vegavero one |
 | Webshop margins estimated | CM for `WEB` uses COGS + placeholder fees | put real payment/3PL numbers into `config/shopify_assumptions.yaml` |
-| Webshop CM3 = CM2 | web marketing not attributed per SKU | export Meta/Google spend per product, extend `load_shopify()` |
+| Webshop marketing = Google Ads only | CM3 for `WEB` subtracts actual Google Ads spend (Windsor.ai, from Oct 2025); Shopping/PMax spend lands on its SKU, the search/brand remainder is allocated pro-rata by net sales | connect Meta (and other channels) in Windsor.ai and extend `load_web_ad_spend()` |
 | wowtamins Amazon: no PPC data, June 2025 missing | CM2 = CM3, ad checks impossible | check the Nova account's advertising connection |
 | 209 of 322 launch dates censored | incubation blind for older SKUs | fill `launch_dates_overrides.csv` from the ERP |
 | Amazon CM history starts Jul 2025 | pre-2025 margin trends unavailable | fine for the monthly cadence; older data is sales-only |
