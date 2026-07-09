@@ -312,7 +312,7 @@ def channel_table(v: pd.DataFrame) -> None:
     show = v[[
         "brand", "channel", "sku", "product", "verdict", "incubating", "reasons",
         "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
-        "cm3_pct_l6m", "cm3_target", "n_markets", "n_markets_action",
+        "cm3_pct_l6m", "cm3_target", "bsr", "n_markets", "n_markets_action",
         "country_verdicts", "cluster", "cm_source", "manual",
     ]].sort_values("net_sales_ttm", ascending=False)
     st.dataframe(
@@ -325,6 +325,7 @@ def channel_table(v: pd.DataFrame) -> None:
             "cm2_pct_l6m": st.column_config.NumberColumn("CM2%", format="%.1f"),
             "cm3_pct_l6m": st.column_config.NumberColumn("CM3%", format="%.1f"),
             "cm3_target": st.column_config.NumberColumn("CM3% plan", format="%.1f"),
+            "bsr": st.column_config.NumberColumn("BSR", format="%d", help="Latest Amazon Best Seller Rank (avg across marketplaces); lower is better"),
             "n_markets": st.column_config.NumberColumn("# mkts", format="%d"),
             "n_markets_action": st.column_config.NumberColumn("# Fix/Exit", format="%d"),
             "country_verdicts": st.column_config.TextColumn("Per-country verdicts", width="large"),
@@ -343,13 +344,14 @@ def country_table(cv: pd.DataFrame) -> None:
     show = cv[[
         "brand", "channel", "country", "sku", "product", "verdict", "incubating",
         "reasons", "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
-        "cm3_pct_l6m", "cm3_target", "launch_month", "age_months", "censored",
+        "cm3_pct_l6m", "cm3_target", "bsr", "launch_month", "age_months", "censored",
         "cluster", "cm_source", "manual",
     ]].sort_values("net_sales_ttm", ascending=False)
     st.dataframe(
         show, use_container_width=True, height=520, hide_index=True,
         column_config={
             "incubating": st.column_config.CheckboxColumn("New"),
+            "bsr": st.column_config.NumberColumn("BSR", format="%d", help="Latest Amazon Best Seller Rank; lower is better"),
             "net_sales_ttm": st.column_config.NumberColumn("Net TTM €", format="€%.0f"),
             "sales_trend_pct": st.column_config.NumberColumn("Δ sales 3m", format="%.0f%%"),
             "cm1_pct_l6m": st.column_config.NumberColumn("CM1%", format="%.1f"),

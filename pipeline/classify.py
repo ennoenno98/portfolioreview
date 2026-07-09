@@ -330,6 +330,31 @@ def apply_overrides(verdicts: pd.DataFrame, grain: str) -> pd.DataFrame:
     return verdicts
 
 
+def load_latest_bsr() -> pd.DataFrame:
+    """Latest Amazon Best Seller Rank per SKU from the Excel history (BSR is a
+    display-group rank averaged across marketplaces, so it is per SKU, not per
+    country). Novadata's live BSR feed is empty, so the workbook is the source."""
+    path = GENERATED_DIR / "excel_history.csv.gz"
+    if not path.exists():
+        return pd.DataFrame(columns=["sku", "bsr", "bsr_month"])
+    h = pd.read_csv(path)
+    b = h[(h["metric"] == "bsr") & h["value"].notna() & (h["value"] > 0)]
+    if b.empty:
+        return pd.DataFrame(columns=["sku", "bsr", "bsr_month"])
+    latest = b.sort_values("month").groupby("sku").tail(1)
+    return latest[["sku", "value", "month"]].rename(
+        columns={"value": "bsr", "month": "bsr_month"}
+    )
+
+
+def add_bsr(verdicts: pd.DataFrame, bsr: pd.DataFrame) -> pd.DataFrame:
+    """Attach latest BSR to Amazon rows only (Shopify has no Amazon rank)."""
+    out = verdicts.merge(bsr, on="sku", how="left")
+    non_amazon = out["channel"] != "Amazon"
+    out.loc[non_amazon, ["bsr", "bsr_month"]] = pd.NA
+    return out
+
+
 def summarise_country_verdicts(country_v: pd.DataFrame) -> pd.DataFrame:
     """One compact per-SKU-x-channel summary of the country verdicts, for the
     review tab chips: a 'DE:Fix|FR:Scale|IT:Watch' string plus counts."""
@@ -362,8 +387,10 @@ def main(review_month: str | None = None) -> pd.DataFrame:
     feat_c = build_features(facts, launch, review_month, cfg,
                             COUNTRY_KEYS, ["channel", "country"])
     feat_c["cm3_target"] = feat_c["country"].map(lambda c: cm3_target_for(c, targets))
+    bsr = load_latest_bsr()
     country_v = classify_frame(feat_c, cfg, apply_volume_floor=False)
     country_v["review_month"] = review_month
+    country_v = add_bsr(country_v, bsr)
     country_v = apply_overrides(country_v, "country")
 
     # ---- channel grain (countries collapsed) = primary review unit ----
@@ -374,6 +401,7 @@ def main(review_month: str | None = None) -> pd.DataFrame:
     )
     channel_v = classify_frame(feat_ch, cfg, apply_volume_floor=True)
     channel_v["review_month"] = review_month
+    channel_v = add_bsr(channel_v, bsr)
     channel_v = channel_v.merge(summarise_country_verdicts(country_v),
                                 on=CHANNEL_KEYS, how="left")
     channel_v = apply_overrides(channel_v, "channel")
