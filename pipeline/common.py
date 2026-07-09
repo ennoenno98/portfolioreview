@@ -18,8 +18,13 @@ WOWTAMINS_CSV = SOURCE_DIR / "wowtamins_amazon_de_monthly.csv"
 SHOPIFY_CSV = SOURCE_DIR / "shopify_vegavero_monthly.csv"
 COGS_CSV = SOURCE_DIR / "pricer_products_cogs.csv"
 GOOGLE_ADS_PRODUCT_CSV = SOURCE_DIR / "google_ads_web_product_monthly.csv"
-GOOGLE_ADS_ACCOUNT_CSV = SOURCE_DIR / "google_ads_web_account_monthly.csv"
 VARIANT_SKU_MAP_CSV = SOURCE_DIR / "shopify_variant_sku_map.csv"
+# Account-level web ad spend, one CSV per platform (month, account, spend). Only
+# Google Ads carries a product-level feed; the rest are account totals that flow
+# into the pro-rata residual. Glob picks up every *_web_account_monthly.csv.
+WEB_ACCOUNT_SPEND_GLOB = "*_web_account_monthly.csv"
+GOOGLE_ADS_ACCOUNT_CSV = SOURCE_DIR / "google_ads_web_account_monthly.csv"
+META_WEB_ACCOUNT_CSV = SOURCE_DIR / "meta_web_account_monthly.csv"
 TAGGING_XLSX = SOURCE_DIR / "product_tagging.xlsx"
 TARGETS_JSON = CONFIG_DIR / "ap26_targets.json"
 RULES_YAML = CONFIG_DIR / "rules.yaml"

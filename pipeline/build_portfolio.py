@@ -8,8 +8,9 @@ Sources
    pulled from the Novadata API (separate seller account, DE only, no PPC data).
 3. Vegavero Shopify monthly snapshot (data/source/shopify_vegavero_monthly.csv)
    pulled from the Shopify Admin API; CM is ESTIMATED from COGS + fee assumptions.
-   CM3 subtracts actual Google Ads spend (data/source/google_ads_web_*.csv from
-   Windsor.ai, mapped to SKUs via data/source/shopify_variant_sku_map.csv).
+   CM3 subtracts actual Google Ads + Meta spend (data/source/*_web_account_*.csv
+   and google_ads_web_product_monthly.csv from Windsor.ai; Google product spend
+   mapped to SKUs via data/source/shopify_variant_sku_map.csv, the rest pro-rata).
 4. Historical Excel workbook (data/source/Vanatari_Product_Insights_v3.xlsx)
    25 months of channel-level net sales / ad spend / ROAS / BSR per SKU. Used for
    launch-date proxies, wowtamins/Jasnum history and drill-down context.
@@ -39,7 +40,6 @@ from pipeline.common import (  # noqa: E402
     EXPORTS_DIR,
     FACTS_PATH,
     GENERATED_DIR,
-    GOOGLE_ADS_ACCOUNT_CSV,
     GOOGLE_ADS_PRODUCT_CSV,
     LAUNCH_PATH,
     MARKETPLACE_TO_COUNTRY,
@@ -47,8 +47,10 @@ from pipeline.common import (  # noqa: E402
     SHOPIFY_ASSUMPTIONS_YAML,
     SHOPIFY_COUNTRY,
     SHOPIFY_CSV,
+    SOURCE_DIR,
     TAGGING_XLSX,
     VARIANT_SKU_MAP_CSV,
+    WEB_ACCOUNT_SPEND_GLOB,
     WOWTAMINS_CSV,
 )
 
@@ -121,16 +123,18 @@ def load_wowtamins() -> pd.DataFrame:
 # 3. Vegavero Shopify (Shopify API snapshot) with provisional CM from COGS
 # --------------------------------------------------------------------------- #
 def load_web_ad_spend() -> tuple[pd.DataFrame, pd.Series]:
-    """Google Ads spend for vegavero.com (Windsor.ai snapshot, all 4 country accounts).
+    """Web ad spend for vegavero.com (Windsor.ai snapshots).
 
     Returns
     -------
-    mapped : per (month, sku) product-attributed spend (Shopping/PMax product
-             placements, variant id -> SKU via the Shopify Admin API map).
-    totals : per-month account-level spend across all Vegavero Google Ads
-             accounts. The gap between totals and product-attributed spend
-             (search/brand campaigns, unmapped Merchant Center items) is
-             allocated pro-rata by net sales in load_shopify().
+    mapped : per (month, sku) product-attributed spend. Only Google Ads carries
+             a product-level feed (Shopping/PMax placements), mapped variant id
+             -> SKU via the Shopify Admin API map.
+    totals : per-month account-level spend across every platform CSV matching
+             WEB_ACCOUNT_SPEND_GLOB (Google Ads + Meta + any future), Vegavero
+             accounts only. The gap between totals and product-attributed spend
+             (search/brand campaigns, all of Meta, unmapped Merchant Center
+             items) is allocated pro-rata by net sales in load_shopify().
     """
     prod = pd.read_csv(GOOGLE_ADS_PRODUCT_CSV, dtype={"product_item_id": str})
     vmap = pd.read_csv(VARIANT_SKU_MAP_CSV, dtype={"variant_id": str})
@@ -142,10 +146,27 @@ def load_web_ad_spend() -> tuple[pd.DataFrame, pd.Series]:
         .groupby(["month", "sku"], as_index=False)["spend"]
         .sum()
     )
-    totals = pd.read_csv(GOOGLE_ADS_ACCOUNT_CSV).groupby("month")["spend"].sum()
-    mapped_share = prod["spend"][prod["sku"].notna()].sum() / totals.sum()
-    print(f"  google ads: {totals.sum():,.0f} EUR over {totals.index.min()}..{totals.index.max()}"
-          f" ({mapped_share:.0%} product-attributed via variant map)")
+
+    # account-level spend, one CSV per platform; webshop = Vegavero accounts only
+    # (wowtamins ad accounts are excluded - that store's sales are not connected).
+    frames = []
+    for path in sorted(SOURCE_DIR.glob(WEB_ACCOUNT_SPEND_GLOB)):
+        a = pd.read_csv(path)
+        a["platform"] = path.name.split("_web_account")[0]
+        frames.append(a)
+    if not frames:
+        raise FileNotFoundError(f"No {WEB_ACCOUNT_SPEND_GLOB} in {SOURCE_DIR}")
+    acct = pd.concat(frames, ignore_index=True)
+    acct = acct[acct["account"].astype(str).str.startswith("Vegavero")]
+    totals = acct.groupby("month")["spend"].sum()
+
+    by_platform = acct.groupby("platform")["spend"].sum().sort_values(ascending=False)
+    mapped_share = (
+        prod["spend"][prod["sku"].notna()].sum() / totals.sum() if totals.sum() else float("nan")
+    )
+    plat = ", ".join(f"{p} €{v:,.0f}" for p, v in by_platform.items())
+    print(f"  web ads: €{totals.sum():,.0f} over {totals.index.min()}..{totals.index.max()}"
+          f" ({plat}); {mapped_share:.0%} product-attributed via variant map")
     return mapped, totals
 
 
@@ -178,13 +199,12 @@ def load_shopify() -> pd.DataFrame:
     df["cm1"] = df["net_sales"] - est_cogs
     df["cm2"] = df["cm1"] - payment - fulfil
 
-    # Web marketing: actual Google Ads spend (Windsor.ai). Product-attributed
-    # spend lands on its SKU; the monthly remainder (search/brand campaigns,
-    # spend on SKUs without a sales row) is allocated pro-rata by net sales.
+    # Web marketing: actual Google Ads + Meta spend (Windsor.ai). Google product
+    # spend lands on its SKU; the monthly remainder (Google search/brand, all of
+    # Meta, spend on SKUs without a sales row) is allocated pro-rata by net sales.
     # CM3 is computed ONLY for months that have ads data (Oct 2025 onward). A
     # month without an ads figure gets ad_spend = CM3 = NaN (treated as "no CM3"
     # downstream) rather than a flattering CM3 = CM2 that hides marketing cost.
-    # Meta & other channels are not connected yet (documented gap).
     mapped, totals = load_web_ad_spend()
     df = df.merge(
         mapped.rename(columns={"spend": "ads_product"}), on=["month", "sku"], how="left"
