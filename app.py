@@ -24,11 +24,14 @@ from pipeline.common import (
     GENERATED_DIR,
     HISTORY_DIR,
     LAUNCH_PATH,
+    NO_DATA,
     RULES_YAML,
     TARGETS_JSON,
     VERDICT_ORDER,
     VERDICTS_PATH,
 )
+
+VERDICT_FILTER_OPTS = VERDICT_ORDER + [NO_DATA]
 
 st.set_page_config(
     page_title="Vanatari · Portfolio Review", page_icon=":compass:", layout="wide"
@@ -77,13 +80,12 @@ st.markdown(VANATARI_CSS, unsafe_allow_html=True)
 VERDICT_COLORS = {
     "Scale": "#008300",
     "Defend": "#2a78d6",
-    "Watch": "#e87ba4",
-    "Incubate": "#4a3aa7",
     "Fix": "#eb6834",
     "Harvest": "#eda100",
     "Exit": "#e34948",
     "No data": "#9e9e9e",
 }
+NEW_TAG_COLOR = "#4a3aa7"  # "New" (incubating) badge — plum
 # CM1 -> CM3 ordinal plum ramp (validated: monotone L, single hue)
 CM_RAMP = {"cm1": "#c9a2b4", "cm2": "#8d5a75", "cm3": "#54233c"}
 INK, INK60, ORANGE, HAIR = "#3c1826", "#8a6675", "#ff5c3e", "#ecdfd5"
@@ -206,6 +208,17 @@ def verdict_overview(v: pd.DataFrame) -> None:
                 f"{desc.split('.')[0]}.</span>",
                 unsafe_allow_html=True,
             )
+        n_new = int(v["incubating"].fillna(False).sum())
+        n_nodata = int((v["verdict"] == NO_DATA).sum())
+        st.markdown(
+            f"<span style='color:{NEW_TAG_COLOR}'>&#9632;</span> **New** tag "
+            f"<span style='color:{INK60};font-size:0.85rem'>— {n_new} launches inside "
+            "the incubation window, shielded from Fix/Exit.</span><br>"
+            f"<span style='color:{VERDICT_COLORS[NO_DATA]}'>&#9632;</span> **No data** "
+            f"<span style='color:{INK60};font-size:0.85rem'>— {n_nodata} without a "
+            "verdict (see Data gaps).</span>",
+            unsafe_allow_html=True,
+        )
 
 
 def cluster_scatter(v: pd.DataFrame, unit_label: str) -> None:
@@ -297,7 +310,7 @@ def _chips_html(country_verdicts: str) -> str:
 
 def channel_table(v: pd.DataFrame) -> None:
     show = v[[
-        "brand", "channel", "sku", "product", "verdict", "reasons",
+        "brand", "channel", "sku", "product", "verdict", "incubating", "reasons",
         "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
         "cm3_pct_l6m", "cm3_target", "n_markets", "n_markets_action",
         "country_verdicts", "cluster", "cm_source", "manual",
@@ -305,6 +318,7 @@ def channel_table(v: pd.DataFrame) -> None:
     st.dataframe(
         show, use_container_width=True, height=480, hide_index=True,
         column_config={
+            "incubating": st.column_config.CheckboxColumn("New"),
             "net_sales_ttm": st.column_config.NumberColumn("Net TTM €", format="€%.0f"),
             "sales_trend_pct": st.column_config.NumberColumn("Δ sales 3m", format="%.0f%%"),
             "cm1_pct_l6m": st.column_config.NumberColumn("CM1%", format="%.1f"),
@@ -327,14 +341,15 @@ def channel_table(v: pd.DataFrame) -> None:
 
 def country_table(cv: pd.DataFrame) -> None:
     show = cv[[
-        "brand", "channel", "country", "sku", "product", "verdict", "reasons",
-        "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
+        "brand", "channel", "country", "sku", "product", "verdict", "incubating",
+        "reasons", "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
         "cm3_pct_l6m", "cm3_target", "launch_month", "age_months", "censored",
         "cluster", "cm_source", "manual",
     ]].sort_values("net_sales_ttm", ascending=False)
     st.dataframe(
         show, use_container_width=True, height=520, hide_index=True,
         column_config={
+            "incubating": st.column_config.CheckboxColumn("New"),
             "net_sales_ttm": st.column_config.NumberColumn("Net TTM €", format="€%.0f"),
             "sales_trend_pct": st.column_config.NumberColumn("Δ sales 3m", format="%.0f%%"),
             "cm1_pct_l6m": st.column_config.NumberColumn("CM1%", format="%.1f"),
@@ -364,10 +379,14 @@ def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> N
     row = opts[opts["label"] == pick].iloc[0]
     sku, country = row["sku"], row["country"]
 
+    new_badge = ""
+    if bool(row.get("incubating", False)):
+        new_badge = (f" <span style='background:{NEW_TAG_COLOR};color:#fff;"
+                     "padding:1px 7px;border-radius:10px;font-size:0.72rem'>New</span>")
     st.markdown(
         f"**{row['product']}**  \n"
         f"<span style='color:{VERDICT_COLORS[row['verdict']]}'>&#9632;</span> "
-        f"**{row['verdict']}** — {row['reasons']}  ·  launched {row['launch_month']}"
+        f"**{row['verdict']}**{new_badge} — {row['reasons']}  ·  launched {row['launch_month']}"
         + (" (censored: first month of history)" if row["censored"] else ""),
         unsafe_allow_html=True,
     )
@@ -508,7 +527,8 @@ def main() -> None:
         countries = sorted(country["country"].dropna().unique())
         f_brand = st.multiselect("Brand", brands, default=brands)
         f_channel = st.multiselect("Channel", channels, default=channels)
-        f_verdict = st.multiselect("Verdict", VERDICT_ORDER, default=VERDICT_ORDER)
+        f_verdict = st.multiselect("Verdict", VERDICT_FILTER_OPTS, default=VERDICT_FILTER_OPTS)
+        f_new = st.checkbox("New (incubating) only", value=False)
         st.markdown("**By-country tab only**")
         f_country = st.multiselect("Market", countries, default=countries)
         st.markdown("---")
@@ -531,6 +551,9 @@ def main() -> None:
         & country["country"].isin(f_country)
         & country["verdict"].isin(f_verdict)
     ]
+    if f_new:
+        v = v[v["incubating"].fillna(False)]
+        cv = cv[cv["incubating"].fillna(False)]
     if v.empty:
         st.warning("Nothing matches the current filters.")
         st.stop()

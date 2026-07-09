@@ -177,7 +177,20 @@ def channel_target_blend(facts: pd.DataFrame, review_month: str, targets: dict) 
     return out.rename("cm3_target").reset_index()
 
 
+def is_incubating(row: pd.Series, cfg: dict) -> bool:
+    """New product still inside the incubation window (and not censored)."""
+    r = cfg["review"]
+    return bool(
+        pd.notna(row["age_months"])
+        and row["age_months"] <= r["incubation_months"]
+        and not row.get("censored", False)
+    )
+
+
 def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
+    """Return one of the five verdicts (Scale/Defend/Fix/Harvest/Exit) or the
+    'No data' state. New products are shielded: a would-be Fix/Exit is held as
+    Defend while they ramp (the 'New' tag carries the context)."""
     r, t = cfg["review"], cfg["thresholds"]
     reasons: list[str] = []
 
@@ -197,21 +210,25 @@ def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
     if stalled:
         reasons.append("no sales in last 2 months (OOS / delisted?)")
 
-    # 0. not enough history
+    # 0. states (not verdicts)
     if row["months_active"] < r["min_months_data"]:
         return "No data", "fewer than %d months with sales" % r["min_months_data"]
     if not has_cm:
         return "No data", "; ".join(["no margin data for this market"] + reasons)
 
-    # 1. incubation shield
-    young = pd.notna(row["age_months"]) and row["age_months"] <= r["incubation_months"]
-    if young and not row.get("censored", False):
-        reasons.insert(0, f"launched {row['launch_month']} ({int(row['age_months'])}m ago)")
-        if pd.notna(cm3) and target is not None and cm3 >= target:
-            reasons.append("already at target CM3% - candidate for early Scale")
-        return "Incubate", "; ".join(reasons)
+    young = is_incubating(row, cfg)
 
-    # 2. exit: persistently losing money and not turning
+    def finish(verdict: str) -> tuple[str, str]:
+        # incubation shield: never Fix/Exit a fresh launch - hold as Defend
+        if young:
+            tag = f"new: launched {row['launch_month']} ({int(row['age_months'])}m ago)"
+            if verdict in ("Fix", "Exit"):
+                reasons.insert(0, f"would be {verdict} but shielded while ramping")
+                verdict = "Defend"
+            reasons.insert(0, tag)
+        return verdict, "; ".join(reasons)
+
+    # 1. exit: persistently losing money and not turning
     # (requires the 6m window to be negative OVERALL, so storage fees during a
     # stock-out don't send an otherwise healthy product to Exit)
     if (
@@ -224,45 +241,45 @@ def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
         if vol_tier == 1:
             # a top-volume money loser gets one repair cycle before delisting
             reasons.append("top volume tier: EXIT CANDIDATE if fix fails next review")
-            return "Fix", "; ".join(reasons)
-        return "Exit", "; ".join(reasons)
+            return finish("Fix")
+        return finish("Exit")
 
     below_gap = target is not None and pd.notna(cm3) and cm3 < target - t["fix_gap_pp"]
     below_target = target is not None and pd.notna(cm3) and cm3 < target
 
-    # 3. fix: margin broken but worth saving
+    # 2. fix: margin broken but worth saving
     if below_gap or (pd.notna(cm3) and cm3 < 0):
         gap = f"CM3% {cm3:.1f} vs target {target:.1f}" if target is not None else f"CM3% {cm3:.1f}"
         reasons.insert(0, gap)
         if top_vol or improving or growing:
             if improving:
                 reasons.append(f"margin improving ({row['cm3_improving_pp']:+.1f}pp)")
-            return "Fix", "; ".join(reasons)
+            return finish("Fix")
         reasons.append("bottom volume tier, no momentum")
-        return "Harvest", "; ".join(reasons)
+        return finish("Harvest")
 
-    # 4. harvest: profitable, below target, small and fading
+    # 3. harvest: profitable, below target, small and fading
     if below_target and vol_tier == 3 and not growing:
         reasons.insert(0, f"CM3% {cm3:.1f} below target {target:.1f}, low volume, "
                           "flat/declining")
-        return "Harvest", "; ".join(reasons)
+        return finish("Harvest")
 
-    # 5. at/above target
+    # 4. at/above target
     if target is None or cm3 >= target:
         if stalled:
             reasons.insert(0, "healthy margin but supply stalled")
-            return "Fix", "; ".join(reasons)
-        if vol_tier == 1 and (declining or not growing):
-            reasons.insert(0, "top seller at target margin, momentum "
-                              f"{'negative' if declining else 'flat'}")
-            return "Defend", "; ".join(reasons)
+            return finish("Fix")
         if growing or (top_vol and not declining):
             reasons.insert(0, f"CM3% {cm3:.1f} >= target"
                            + (f", sales {trend:+.0f}% 3m" if pd.notna(trend) else ""))
-            return "Scale", "; ".join(reasons)
+            return finish("Scale")
+        reasons.insert(0, f"CM3% {cm3:.1f} >= target, momentum "
+                          f"{'negative' if declining else 'flat'} - hold")
+        return finish("Defend")
 
-    reasons.insert(0, "between target and broken - no trigger fired")
-    return "Watch", "; ".join(reasons)
+    # 5. between the gap and target - hold (was 'Watch')
+    reasons.insert(0, "between target and broken - hold, re-check next month")
+    return finish("Defend")
 
 
 def classify_frame(feat: pd.DataFrame, cfg: dict) -> pd.DataFrame:
@@ -270,6 +287,7 @@ def classify_frame(feat: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     feat = feat.copy()
     feat["verdict"] = verdict
     feat["reasons"] = reasons
+    feat["incubating"] = feat.apply(lambda row: is_incubating(row, cfg), axis=1)
     return feat
 
 

@@ -53,16 +53,10 @@ MARKETPLACE_TO_COUNTRY = {
 # Shopify D2C is treated as one "market" in the SKU x country review grid.
 SHOPIFY_COUNTRY = "WEB"
 
-VERDICT_ORDER = [
-    "Incubate",
-    "Exit",
-    "Fix",
-    "Harvest",
-    "Scale",
-    "Defend",
-    "Watch",
-    "No data",
-]
+# The five verdicts, ordered best -> worst for display. "New" and "No data" are
+# tags/states shown separately, not verdicts.
+VERDICT_ORDER = ["Scale", "Defend", "Fix", "Harvest", "Exit"]
+NO_DATA = "No data"
 
 
 def load_targets() -> dict:

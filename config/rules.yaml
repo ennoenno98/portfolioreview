@@ -6,8 +6,8 @@
 # ---------------------------------------------------------------------------
 
 review:
-  min_months_data: 3        # fewer active months -> "No data"
-  incubation_months: 6      # age <= this -> Incubate (agreed 2026-07)
+  min_months_data: 3        # fewer active months -> "No data" state (no verdict)
+  incubation_months: 6      # age <= this -> "New" tag: shielded from Fix/Exit
   trend_window_months: 3    # sales trend = last 3m vs prior 3m
   margin_window_months: 6   # CM gates evaluated on the trailing 6 months
 
@@ -19,28 +19,31 @@ thresholds:
   exit_neg_months: 3        # months with CM3 < 0 within the margin window -> Exit
   stall_min_ttm_sales: 500  # EUR TTM; below this a silent SKU is noise, not a stall
 
-# Verdict definitions (documented for the review meeting; engine mirrors this order)
+# Five verdicts, each a distinct budget decision (engine mirrors this order).
 verdicts:
-  Incubate: >
-    Younger than the incubation window. Judged only on growth and gross sanity,
-    never Harvest/Exit. Goal: reach run-rate and target CM3% by month 6.
-  Exit: >
-    CM3 negative in >= exit_neg_months of the margin window, margin not improving,
-    out of incubation. Delist / liquidate in this market.
+  Scale: >
+    At or above CM3% target with top-tier volume or strong growth.
+    Invest: budget, inventory, variations, new markets.
+  Defend: >
+    Hold / maintain. At or around target with no trigger to act - includes top
+    sellers with flat/negative momentum (protect share) and the healthy middle
+    that needs nothing this month.
   Fix: >
-    CM3% more than fix_gap_pp below the country target (or negative) but the
-    product is worth saving - high volume tier or improving. Actions: price,
-    fees, COGS, ad efficiency.
+    CM3% more than fix_gap_pp below the country target (or negative) but worth
+    saving - high volume tier or improving. Actions: price, fees, COGS, ad
+    efficiency. Also healthy SKUs with stalled supply.
   Harvest: >
     Profitable but below target, bottom volume tier, flat or declining.
     Keep selling, cut ads to maintenance, no aggressive restock.
-  Scale: >
-    At or above CM3% target with top-tier volume or strong growth.
-    Feed it: budget, inventory, variations, new markets.
-  Defend: >
-    At or above target, top volume tier, but momentum flat/negative.
-    Protect share: availability, price position, listing quality.
-  Watch: >
-    Everything in between. No action this month; re-check next review.
+  Exit: >
+    CM3 negative in >= exit_neg_months of the margin window, margin not improving.
+    Delist / liquidate in this market. (Top-volume losers get one Fix cycle first.)
+
+# States and tags (NOT verdicts - shown separately in the review)
+states:
+  New: >
+    Age <= incubation_months. Still gets a verdict, but is shielded from Fix/Exit
+    (held as Defend while it ramps) and flagged "New" so we protect the launch.
   No data: >
-    Not enough history or no margin data - listed in the data-gaps panel.
+    Fewer than min_months_data active months, or no margin data. No verdict -
+    listed in the data-gaps panel.

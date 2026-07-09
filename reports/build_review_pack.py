@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline.common import (  # noqa: E402
     COUNTRY_VERDICTS_PATH,
     HISTORY_DIR,
+    NO_DATA,
     VERDICT_ORDER,
     VERDICTS_PATH,
 )
@@ -95,7 +96,7 @@ def main(month: str | None = None) -> Path:
     agg = (
         v.groupby("verdict")
         .agg(n=("sku", "count"), sales=("net_sales_ttm", "sum"), cm3=("cm3_l6m", "sum"))
-        .reindex([x for x in VERDICT_ORDER if x in v["verdict"].values])
+        .reindex([x for x in VERDICT_ORDER + [NO_DATA] if x in v["verdict"].values])
     )
     lines = ["| Verdict | SKU × channels | Net sales TTM | CM3 last 6m |", "|---|---|---|---|"]
     for name, r in agg.iterrows():
@@ -133,7 +134,7 @@ def main(month: str | None = None) -> Path:
         ("Exit", "delist / liquidate in this market"),
         ("Fix", "margin repair: price, fees, COGS, ad efficiency"),
         ("Scale", "feed with budget, inventory, expansion"),
-        ("Incubate", "ramping - protect and coach to target"),
+        ("Harvest", "milk: cut ad support, no aggressive restock"),
     ]:
         sub = v[v["verdict"] == verdict].sort_values("net_sales_ttm", ascending=False)
         parts.append(f"## {verdict} — {blurb} ({len(sub)})\n")
