@@ -187,10 +187,14 @@ def is_incubating(row: pd.Series, cfg: dict) -> bool:
     )
 
 
-def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
+def classify_row(row: pd.Series, cfg: dict, apply_volume_floor: bool = False) -> tuple[str, str]:
     """Return one of the five verdicts (Scale/Defend/Fix/Harvest/Exit) or the
     'No data' state. New products are shielded: a would-be Fix/Exit is held as
-    Defend while they ramp (the 'New' tag carries the context)."""
+    Defend while they ramp (the 'New' tag carries the context).
+
+    apply_volume_floor (channel grain only): a whole product below
+    thresholds.discontinue_below_ttm is discontinued (Exit), unless it is a New
+    launch (shielded) or still growing."""
     r, t = cfg["review"], cfg["thresholds"]
     reasons: list[str] = []
 
@@ -227,6 +231,17 @@ def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
                 verdict = "Defend"
             reasons.insert(0, tag)
         return verdict, "; ".join(reasons)
+
+    # 0b. volume floor: a whole product too small to keep (channel grain only).
+    # New launches are shielded by finish(); a SKU whose recent run-rate is
+    # already on pace to clear the floor (annualised last-3m >= floor) is spared.
+    floor = t.get("discontinue_below_ttm")
+    ttm_sales = row["net_sales_ttm"] or 0
+    run_rate = (row["net_sales_l3m"] or 0) * 4  # annualised recent pace
+    if apply_volume_floor and floor and ttm_sales < floor and run_rate < floor:
+        reasons.insert(0, f"TTM sales EUR {ttm_sales:,.0f} < EUR {floor:,.0f} floor "
+                          f"(run-rate EUR {run_rate:,.0f}/yr) - discontinue")
+        return finish("Exit")
 
     # 1. exit: persistently losing money and not turning
     # (requires the 6m window to be negative OVERALL, so storage fees during a
@@ -282,8 +297,8 @@ def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
     return finish("Defend")
 
 
-def classify_frame(feat: pd.DataFrame, cfg: dict) -> pd.DataFrame:
-    verdict, reasons = zip(*(classify_row(r, cfg) for _, r in feat.iterrows()))
+def classify_frame(feat: pd.DataFrame, cfg: dict, apply_volume_floor: bool = False) -> pd.DataFrame:
+    verdict, reasons = zip(*(classify_row(r, cfg, apply_volume_floor) for _, r in feat.iterrows()))
     feat = feat.copy()
     feat["verdict"] = verdict
     feat["reasons"] = reasons
@@ -347,7 +362,7 @@ def main(review_month: str | None = None) -> pd.DataFrame:
     feat_c = build_features(facts, launch, review_month, cfg,
                             COUNTRY_KEYS, ["channel", "country"])
     feat_c["cm3_target"] = feat_c["country"].map(lambda c: cm3_target_for(c, targets))
-    country_v = classify_frame(feat_c, cfg)
+    country_v = classify_frame(feat_c, cfg, apply_volume_floor=False)
     country_v["review_month"] = review_month
     country_v = apply_overrides(country_v, "country")
 
@@ -357,7 +372,7 @@ def main(review_month: str | None = None) -> pd.DataFrame:
     feat_ch = feat_ch.merge(
         channel_target_blend(facts, review_month, targets), on=CHANNEL_KEYS, how="left"
     )
-    channel_v = classify_frame(feat_ch, cfg)
+    channel_v = classify_frame(feat_ch, cfg, apply_volume_floor=True)
     channel_v["review_month"] = review_month
     channel_v = channel_v.merge(summarise_country_verdicts(country_v),
                                 on=CHANNEL_KEYS, how="left")

@@ -18,6 +18,8 @@ thresholds:
   improving_pp: 2.0         # CM3% improvement (3m vs prior 3m) that counts as "improving"
   exit_neg_months: 3        # months with CM3 < 0 within the margin window -> Exit
   stall_min_ttm_sales: 500  # EUR TTM; below this a silent SKU is noise, not a stall
+  discontinue_below_ttm: 15000  # EUR TTM; a whole product below this -> Exit
+                                # (channel level only; New launches + growers spared)
 
 # Five verdicts, each a distinct budget decision (engine mirrors this order).
 verdicts:
