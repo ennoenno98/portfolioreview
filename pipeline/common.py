@@ -27,7 +27,8 @@ SHOPIFY_ASSUMPTIONS_YAML = CONFIG_DIR / "shopify_assumptions.yaml"
 
 FACTS_PATH = GENERATED_DIR / "facts_monthly.csv.gz"
 LAUNCH_PATH = GENERATED_DIR / "launch_dates.csv"
-VERDICTS_PATH = GENERATED_DIR / "verdicts.csv"
+VERDICTS_PATH = GENERATED_DIR / "verdicts.csv"              # channel grain (primary)
+COUNTRY_VERDICTS_PATH = GENERATED_DIR / "verdicts_country.csv"  # per marketplace
 HISTORY_DIR = GENERATED_DIR / "verdict_history"
 
 # Nova margin export: amazon.xx -> ISO-ish country code used across the app

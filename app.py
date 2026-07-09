@@ -1,21 +1,25 @@
 """Vanatari monthly portfolio review dashboard.
 
 Reads the generated fact table + verdicts (run pipeline/build_portfolio.py and
-pipeline/classify.py first) and renders the review: KPI band, verdict overview,
-margin x volume cluster matrix, the SKU x market decision table, per-SKU
-drill-down and the data-gaps panel.
+pipeline/classify.py first) and renders the review. The headline unit is
+SKU x channel (Amazon vs Shopify, countries collapsed); each row also shows a
+compact per-country verdict summary. The full per-country assessment lives in
+its own tab, alongside a margin x volume quadrant map, per-SKU drill-down and
+the data-gaps panel.
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import yaml
 
 from pipeline.common import (
+    COUNTRY_VERDICTS_PATH,
     FACTS_PATH,
     GENERATED_DIR,
     HISTORY_DIR,
@@ -59,6 +63,10 @@ h1 { font-size: 2.4rem !important; }
 [data-testid="stSidebar"] * { color: var(--vt-ink); }
 hr { border-color: var(--vt-hair); }
 a { color: var(--vt-orange); }
+.vt-chips span {
+  display:inline-block; padding:1px 7px; margin:2px 3px 2px 0; border-radius:10px;
+  font-size:0.72rem; color:#fff; white-space:nowrap;
+}
 </style>
 """
 st.markdown(VANATARI_CSS, unsafe_allow_html=True)
@@ -92,6 +100,7 @@ PLOT_LAYOUT = dict(
 @st.cache_data(show_spinner=False)
 def load_data():
     verdicts = pd.read_csv(VERDICTS_PATH)
+    country = pd.read_csv(COUNTRY_VERDICTS_PATH)
     facts = pd.read_csv(FACTS_PATH)
     history = pd.read_csv(GENERATED_DIR / "excel_history.csv.gz")
     launch = pd.read_csv(LAUNCH_PATH)
@@ -99,7 +108,7 @@ def load_data():
         rules = yaml.safe_load(fh)
     with open(TARGETS_JSON) as fh:
         targets = json.load(fh)
-    return verdicts, facts, history, launch, rules, targets
+    return verdicts, country, facts, history, launch, rules, targets
 
 
 def eur(x, digits=0) -> str:
@@ -132,17 +141,19 @@ def kpi_band(v: pd.DataFrame) -> None:
     cm3_l6m = v["cm3_l6m"].sum()
     ns_l6m = v["net_sales_l6m"].sum()
     cm3_pct = cm3_l6m / ns_l6m * 100 if ns_l6m else float("nan")
-    target = (v["cm3_target"] * v["net_sales_l6m"]).sum() / ns_l6m if ns_l6m else float("nan")
+    tmask = v["cm3_target"].notna() & (v["net_sales_l6m"] > 0)
+    tw = v.loc[tmask, "net_sales_l6m"]
+    target = (v.loc[tmask, "cm3_target"] * tw).sum() / tw.sum() if tw.sum() else float("nan")
     coverage = scoped["net_sales_ttm"].sum() / sales_ttm * 100 if sales_ttm else 0
 
     c = st.columns(6)
-    c[0].metric("Net sales · TTM", eur(sales_ttm / 1e6, 2).replace("€", "€") + "m")
+    c[0].metric("Net sales · TTM", eur(sales_ttm / 1e6, 2) + "m")
     c[1].metric("CM3 · last 6m", eur(cm3_l6m / 1e6, 2) + "m")
     c[2].metric("CM3 % · last 6m", f"{cm3_pct:.1f}%",
                 delta=f"{cm3_pct - target:+.1f}pp vs plan", delta_color="normal")
-    c[3].metric("SKU × market", f"{len(v):,}")
+    c[3].metric("SKU × channel", f"{len(v):,}")
     c[4].metric("Action needed", f"{int(v['verdict'].isin(['Fix', 'Exit']).sum()):,}",
-                help="Fix + Exit verdicts")
+                help="Fix + Exit verdicts at channel level")
     c[5].metric("Revenue classified", f"{coverage:.0f}%",
                 help="Share of TTM revenue with enough data for a verdict")
 
@@ -189,9 +200,7 @@ def verdict_overview(v: pd.DataFrame) -> None:
             if name not in v["verdict"].values:
                 continue
             desc = (rules.get("verdicts", {}).get(name) or "").strip()
-            dot = (
-                f"<span style='color:{VERDICT_COLORS[name]}'>&#9632;</span>"
-            )
+            dot = f"<span style='color:{VERDICT_COLORS[name]}'>&#9632;</span>"
             st.markdown(
                 f"{dot} **{name}** — <span style='color:{INK60};font-size:0.85rem'>"
                 f"{desc.split('.')[0]}.</span>",
@@ -199,49 +208,132 @@ def verdict_overview(v: pd.DataFrame) -> None:
             )
 
 
-def cluster_matrix(v: pd.DataFrame) -> str | None:
-    st.markdown("#### Margin × volume clusters")
+def cluster_scatter(v: pd.DataFrame, unit_label: str) -> None:
+    """Margin × volume quadrant map: X = net sales (volume), Y = CM3% (margin),
+    bubble = one SKU coloured by its verdict (the 'category'). Dashed lines at
+    the medians split the four strategic quadrants."""
+    d = v[v["net_sales_ttm"].notna() & (v["net_sales_ttm"] > 0)
+          & v["cm3_pct_l6m"].notna()].copy()
+    st.markdown("#### Margin × volume map")
     st.caption(
-        "Tier 1 = top third within its market, tier 3 = bottom third — the "
-        "clustering carried over from Margin-Analytics. Click a cell to filter "
-        "the table; click again to clear."
+        "Each bubble is one " + unit_label + ", placed by TTM net sales (volume) "
+        "and last-6m CM3 % (margin), sized by sales and coloured by verdict. "
+        "Dashed lines are the medians; quadrants read like the categories below."
     )
-    active = st.session_state.get("active_cluster")
-    counts = v.groupby("cluster")["sku"].count()
-    vol_labels = {1: "High sales", 2: "Mid sales", 3: "Low sales"}
-    mar_labels = {1: "High margin", 2: "Mid margin", 3: "Low margin"}
-    head = st.columns([1.2, 1, 1, 1])
-    for i, vt in enumerate([1, 2, 3]):
-        head[i + 1].markdown(f"<div style='text-align:center;color:{INK60}'>"
-                             f"{vol_labels[vt]}</div>", unsafe_allow_html=True)
-    for mt in [1, 2, 3]:
-        cols = st.columns([1.2, 1, 1, 1])
-        cols[0].markdown(f"<div style='padding-top:6px;color:{INK60}'>"
-                         f"{mar_labels[mt]}</div>", unsafe_allow_html=True)
-        for i, vt in enumerate([1, 2, 3]):
-            code = f"{mt}-{vt}"
-            n = int(counts.get(code, 0))
-            label = f"{n}" + (" ●" if active == code else "")
-            if cols[i + 1].button(label, key=f"cl_{code}", use_container_width=True):
-                st.session_state["active_cluster"] = None if active == code else code
-                st.rerun()
-    return st.session_state.get("active_cluster")
+    if len(d) < 4:
+        st.info("Not enough classified rows to draw the map for this filter.")
+        return
+
+    xmed = d["net_sales_ttm"].median()
+    ymed = d["cm3_pct_l6m"].median()
+    xmin, xmax = d["net_sales_ttm"].min() * 0.6, d["net_sales_ttm"].max() * 1.6
+    ypad = (d["cm3_pct_l6m"].max() - d["cm3_pct_l6m"].min()) * 0.12 + 1
+    ymin, ymax = d["cm3_pct_l6m"].min() - ypad, d["cm3_pct_l6m"].max() + ypad
+
+    fig = go.Figure()
+    # quadrant tints (log-x aware: use paper-relative shapes around the medians)
+    quad = [
+        (xmin, xmed, ymed, ymax, "rgba(0,131,0,0.05)"),      # low vol / high margin
+        (xmed, xmax, ymed, ymax, "rgba(42,120,214,0.06)"),   # high vol / high margin
+        (xmin, xmed, ymin, ymed, "rgba(158,158,158,0.06)"),  # low vol / low margin
+        (xmed, xmax, ymin, ymed, "rgba(235,104,52,0.06)"),   # high vol / low margin
+    ]
+    for x0, x1, y0, y1, col in quad:
+        fig.add_shape(type="rect", x0=x0, x1=x1, y0=y0, y1=y1,
+                      fillcolor=col, line=dict(width=0), layer="below")
+    labels = [
+        (xmin, ymax, "Grow / boost", "left", "top", "#4a3aa7"),
+        (xmax, ymax, "Winners", "right", "top", "#2a78d6"),
+        (xmin, ymin, "Low priority", "left", "bottom", INK60),
+        (xmax, ymin, "Fix margin", "right", "bottom", "#eb6834"),
+    ]
+    for x, y, txt, xa, ya, col in labels:
+        fig.add_annotation(x=np.log10(x), y=y, text=txt, showarrow=False,
+                           xanchor=xa, yanchor=ya, font=dict(color=col, size=12))
+    fig.add_vline(x=np.log10(xmed), line=dict(color=INK60, dash="dash", width=1))
+    fig.add_hline(y=ymed, line=dict(color=INK60, dash="dash", width=1))
+
+    sizeref = 2.0 * d["net_sales_ttm"].max() / (42.0 ** 2)
+    for verdict in VERDICT_ORDER:
+        sub = d[d["verdict"] == verdict]
+        if sub.empty:
+            continue
+        fig.add_trace(go.Scatter(
+            x=sub["net_sales_ttm"], y=sub["cm3_pct_l6m"], mode="markers",
+            name=verdict,
+            marker=dict(size=sub["net_sales_ttm"], sizemode="area", sizeref=sizeref,
+                        sizemin=5, color=VERDICT_COLORS[verdict],
+                        line=dict(width=1, color="#fbf7f2"), opacity=0.85),
+            customdata=np.stack([sub["sku"], sub["product"].astype(str).str.slice(0, 48),
+                                 sub["net_sales_ttm"]], axis=-1),
+            hovertemplate=("%{customdata[0]} — %{customdata[1]}<br>"
+                           "CM3%: %{y:.1f} · TTM €%{customdata[2]:,.0f}<extra>"
+                           + verdict + "</extra>"),
+        ))
+    fig.update_layout(
+        **PLOT_LAYOUT, height=520,
+        title=dict(text=None),
+        xaxis=dict(title="Net sales · TTM (€, log)", type="log", showgrid=False,
+                   range=[np.log10(xmin), np.log10(xmax)]),
+        yaxis=dict(title="CM3 % · last 6m", gridcolor=HAIR, zeroline=True,
+                   zerolinecolor=INK60, range=[ymin, ymax]),
+        legend=dict(orientation="h", y=-0.16, title=None),
+    )
+    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 
-def decision_table(v: pd.DataFrame) -> None:
-    show = v.copy()
-    show["market"] = show["channel"].where(show["channel"] != "Amazon", "AMZ ") + ""
-    show = show[[
+def _chips_html(country_verdicts: str) -> str:
+    if not isinstance(country_verdicts, str) or not country_verdicts:
+        return ""
+    out = []
+    for pair in country_verdicts.split("|"):
+        if ":" not in pair:
+            continue
+        c, verd = pair.split(":", 1)
+        out.append(f"<span style='background:{VERDICT_COLORS.get(verd, '#9e9e9e')}'>"
+                    f"{c} {verd}</span>")
+    return "<div class='vt-chips'>" + "".join(out) + "</div>"
+
+
+def channel_table(v: pd.DataFrame) -> None:
+    show = v[[
+        "brand", "channel", "sku", "product", "verdict", "reasons",
+        "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
+        "cm3_pct_l6m", "cm3_target", "n_markets", "n_markets_action",
+        "country_verdicts", "cluster", "cm_source", "manual",
+    ]].sort_values("net_sales_ttm", ascending=False)
+    st.dataframe(
+        show, use_container_width=True, height=480, hide_index=True,
+        column_config={
+            "net_sales_ttm": st.column_config.NumberColumn("Net TTM €", format="€%.0f"),
+            "sales_trend_pct": st.column_config.NumberColumn("Δ sales 3m", format="%.0f%%"),
+            "cm1_pct_l6m": st.column_config.NumberColumn("CM1%", format="%.1f"),
+            "cm2_pct_l6m": st.column_config.NumberColumn("CM2%", format="%.1f"),
+            "cm3_pct_l6m": st.column_config.NumberColumn("CM3%", format="%.1f"),
+            "cm3_target": st.column_config.NumberColumn("CM3% plan", format="%.1f"),
+            "n_markets": st.column_config.NumberColumn("# mkts", format="%d"),
+            "n_markets_action": st.column_config.NumberColumn("# Fix/Exit", format="%d"),
+            "country_verdicts": st.column_config.TextColumn("Per-country verdicts", width="large"),
+            "reasons": st.column_config.TextColumn("Why (channel)", width="large"),
+            "manual": st.column_config.CheckboxColumn("Manual"),
+        },
+    )
+    st.download_button(
+        "Download this view (CSV)",
+        show.to_csv(index=False).encode(),
+        file_name=f"portfolio_review_channel_{v['review_month'].iloc[0]}.csv",
+    )
+
+
+def country_table(cv: pd.DataFrame) -> None:
+    show = cv[[
         "brand", "channel", "country", "sku", "product", "verdict", "reasons",
         "net_sales_ttm", "sales_trend_pct", "cm1_pct_l6m", "cm2_pct_l6m",
         "cm3_pct_l6m", "cm3_target", "launch_month", "age_months", "censored",
         "cluster", "cm_source", "manual",
     ]].sort_values("net_sales_ttm", ascending=False)
     st.dataframe(
-        show,
-        use_container_width=True,
-        height=520,
-        hide_index=True,
+        show, use_container_width=True, height=520, hide_index=True,
         column_config={
             "net_sales_ttm": st.column_config.NumberColumn("Net TTM €", format="€%.0f"),
             "sales_trend_pct": st.column_config.NumberColumn("Δ sales 3m", format="%.0f%%"),
@@ -256,16 +348,16 @@ def decision_table(v: pd.DataFrame) -> None:
         },
     )
     st.download_button(
-        "Download this view (CSV)",
+        "Download by-country view (CSV)",
         show.to_csv(index=False).encode(),
-        file_name=f"portfolio_review_{v['review_month'].iloc[0]}.csv",
+        file_name=f"portfolio_review_country_{cv['review_month'].iloc[0]}.csv",
     )
 
 
-def drilldown(v: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> None:
+def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> None:
     opts = (
-        v.assign(label=lambda d: d["sku"] + " · " + d["country"] + " · "
-                 + d["product"].str.slice(0, 60))
+        cv.assign(label=lambda d: d["sku"] + " · " + d["country"] + " · "
+                  + d["product"].astype(str).str.slice(0, 60))
         .sort_values("net_sales_ttm", ascending=False)
     )
     pick = st.selectbox("SKU × market", opts["label"], index=0)
@@ -359,17 +451,17 @@ def data_gaps(v: pd.DataFrame, launch: pd.DataFrame) -> None:
     nodata = v[v["verdict"] == "No data"]
     gaps.append((
         "No verdict possible",
-        f"{len(nodata)} SKU × markets (€{nodata['net_sales_ttm'].sum():,.0f} TTM) "
+        f"{len(nodata)} SKU × channels (€{nodata['net_sales_ttm'].sum():,.0f} TTM) "
         "have no margin data or under 3 months of history — includes ALL of "
         "Jasnum (no margin feed) and the wowtamins webshop (store not connected).",
     ))
-    est = v[v["cm_source"].str.startswith("estimated", na=False)]
+    est = v[v["cm_source"].astype(str).str.startswith("estimated")]
     gaps.append((
         "Shopify margins are estimates",
         f"{len(est)} webshop rows use COGS + placeholder fees from "
         "config/shopify_assumptions.yaml — replace with real payment/3PL numbers. "
-        "Webshop CM3 subtracts actual Google Ads spend (Windsor.ai, from Oct 2025); "
-        "Meta and other web channels are not connected yet.",
+        "Webshop CM3 subtracts actual Google Ads spend (Windsor.ai, from Oct 2025) "
+        "only where that spend exists; Meta and other web channels are not connected yet.",
     ))
     cens = launch[launch["censored"]]
     gaps.append((
@@ -386,8 +478,8 @@ def data_gaps(v: pd.DataFrame, launch: pd.DataFrame) -> None:
     gaps.append((
         "wowtamins DE supply collapse",
         "Account-wide sales fell ~97% May → June 2026 (stock-out pattern: storage "
-        "fees on zero sales). Verdicts for these SKUs read 'supply stalled' — "
-        "resolve availability before acting on margins.",
+        "fees on zero sales). See docs/wowtamins_stockout_2026-07.md — resolve "
+        "availability before acting on margins.",
     ))
     gaps.append((
         "CM history depth",
@@ -400,11 +492,11 @@ def data_gaps(v: pd.DataFrame, launch: pd.DataFrame) -> None:
 
 
 def main() -> None:
-    if not VERDICTS_PATH.exists():
+    if not VERDICTS_PATH.exists() or not COUNTRY_VERDICTS_PATH.exists():
         st.error("Run the pipeline first: `python pipeline/build_portfolio.py && "
                  "python pipeline/classify.py`")
         st.stop()
-    verdicts, facts, history, launch, rules, _targets = load_data()
+    verdicts, country, facts, history, launch, rules, _targets = load_data()
     st.session_state["_rules"] = rules
 
     header(verdicts)
@@ -413,23 +505,31 @@ def main() -> None:
         st.markdown("**Filters**")
         brands = sorted(verdicts["brand"].dropna().unique())
         channels = sorted(verdicts["channel"].dropna().unique())
-        countries = sorted(verdicts["country"].dropna().unique())
+        countries = sorted(country["country"].dropna().unique())
         f_brand = st.multiselect("Brand", brands, default=brands)
         f_channel = st.multiselect("Channel", channels, default=channels)
-        f_country = st.multiselect("Market", countries, default=countries)
         f_verdict = st.multiselect("Verdict", VERDICT_ORDER, default=VERDICT_ORDER)
+        st.markdown("**By-country tab only**")
+        f_country = st.multiselect("Market", countries, default=countries)
         st.markdown("---")
         st.caption(
-            "Rules live in `config/rules.yaml`; manual calls in "
-            "`data/overrides/verdict_overrides.csv`. Rerun "
-            "`pipeline/classify.py` after editing."
+            "Headline unit is SKU × channel; the Market filter scopes the "
+            "By-country tab. Rules live in `config/rules.yaml`; manual calls in "
+            "`data/overrides/verdict_overrides.csv` (country `*` = channel-wide)."
         )
 
+    # channel-grain view (Review tab) — Brand / Channel / Verdict
     v = verdicts[
         verdicts["brand"].isin(f_brand)
         & verdicts["channel"].isin(f_channel)
-        & verdicts["country"].isin(f_country)
         & verdicts["verdict"].isin(f_verdict)
+    ]
+    # country-grain view (By-country tab + drill-down) — adds Market
+    cv = country[
+        country["brand"].isin(f_brand)
+        & country["channel"].isin(f_channel)
+        & country["country"].isin(f_country)
+        & country["verdict"].isin(f_verdict)
     ]
     if v.empty:
         st.warning("Nothing matches the current filters.")
@@ -438,16 +538,28 @@ def main() -> None:
     kpi_band(v)
     st.markdown("---")
 
-    tab_review, tab_drill, tab_gaps = st.tabs(
-        [":compass: Review", ":mag: Drill-down", ":warning: Data gaps"]
+    tab_review, tab_country, tab_drill, tab_gaps = st.tabs(
+        [":compass: Review (channel)", ":globe_with_meridians: By country",
+         ":mag: Drill-down", ":warning: Data gaps"]
     )
     with tab_review:
         verdict_overview(v)
-        active = cluster_matrix(v)
-        table = v[v["cluster"] == active] if active else v
-        decision_table(table)
+        unit = "SKU × " + (" / ".join(sorted(v["channel"].unique())) or "channel")
+        cluster_scatter(v, unit)
+        st.markdown("#### Decision table — SKU × channel")
+        st.caption("Each row is a channel-level verdict; the *Per-country verdicts* "
+                   "column shows how the markets split without the full detail.")
+        channel_table(v)
+    with tab_country:
+        st.markdown("#### Per-country assessment")
+        st.caption("Every SKU × marketplace classified on its own AP26 country target. "
+                   "Use the Market filter in the sidebar to focus.")
+        if cv.empty:
+            st.info("No rows for the current Market/brand/verdict filter.")
+        else:
+            country_table(cv)
     with tab_drill:
-        drilldown(v, facts, history)
+        drilldown(cv if not cv.empty else country, facts, history)
     with tab_gaps:
         data_gaps(verdicts, launch)
 

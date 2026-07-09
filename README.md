@@ -90,15 +90,25 @@ Deterministic and ordered — the first match wins. Current calibration
 | **Watch** | Everything in between | Nothing this month. |
 | **No data** | < 3 months history or no margin data | Close the data gap (see below). |
 
-Margin gates use **absolute AP26 targets per country** (CM3: DE 19.7 · IT 16.6
-· FR 23.6 · ES 19.6 · GB 27.4 · IE 29.4 · NL 34.0); priority within a verdict
-uses the **relative 3×3 margin × volume clustering** carried over from
-Margin-Analytics (tier 1 = top third of its market).
+Margin gates use **absolute AP26 CM3 targets per country** (DE 19.7 · IT 16.6
+· FR 23.6 · ES 19.6 · GB 27.4 · IE 29.4 · NL 34.0); at channel level they are
+blended per SKU, weighted by each country's TTM net sales. Priority within a
+verdict uses the **relative margin × volume tiers** carried over from
+Margin-Analytics (tier 1 = top third of its group), visualised as the quadrant
+map in the app.
 
 ## Review unit
 
-**SKU × market**: each Amazon marketplace (DE/FR/IT/ES/GB/NL/IE/…) is its own
-market, the webshop is one market (`WEB`). A SKU can Scale in DE and Exit in FR.
+**Headline: SKU × channel** — each SKU gets one verdict per channel (Amazon vs
+Shopify/`WEB`), with the Amazon marketplaces collapsed together and the CM3
+target blended by country sales mix. The channel row shows a compact per-country
+verdict summary (`DE·Fix FR·Scale IT·Watch`) so the country split is visible
+without the detail.
+
+**Underneath: SKU × country** — every marketplace is still classified on its own
+country target (a SKU can Scale in DE and Exit in FR) and written to
+`data/generated/verdicts_country.csv`. The app's **By country** tab shows the
+full per-marketplace table and drill-down.
 
 ## Release dates
 
@@ -115,7 +125,7 @@ Correct any SKU in `data/overrides/launch_dates_overrides.csv`
 | Jasnum: no margin feed | whole brand is "No data" | connect the account to Nova or provide a margin export |
 | wowtamins webshop not connected | ~€0.9m TTM unclassifiable | authorize the wowtamins Shopify store, add a snapshot like the Vegavero one |
 | Webshop margins estimated | CM for `WEB` uses COGS + placeholder fees | put real payment/3PL numbers into `config/shopify_assumptions.yaml` |
-| Webshop marketing = Google Ads only | CM3 for `WEB` subtracts actual Google Ads spend (Windsor.ai, from Oct 2025); Shopping/PMax spend lands on its SKU, the search/brand remainder is allocated pro-rata by net sales | connect Meta (and other channels) in Windsor.ai and extend `load_web_ad_spend()` |
+| Webshop marketing = Google Ads only | CM3 for `WEB` is computed **only for months with Google Ads data** (Windsor.ai, from Oct 2025); Shopping/PMax spend lands on its SKU, the search/brand remainder is allocated pro-rata by net sales. Months without ads data have no CM3 (not CM3 = CM2). | connect Meta (and other channels) in Windsor.ai and extend `load_web_ad_spend()` |
 | wowtamins Amazon: no PPC data, June 2025 missing | CM2 = CM3, ad checks impossible | check the Nova account's advertising connection |
 | 209 of 322 launch dates censored | incubation blind for older SKUs | fill `launch_dates_overrides.csv` from the ERP |
 | Amazon CM history starts Jul 2025 | pre-2025 margin trends unavailable | fine for the monthly cadence; older data is sales-only |
@@ -125,7 +135,8 @@ Correct any SKU in `data/overrides/launch_dates_overrides.csv`
 ```
 app.py                      Streamlit dashboard (Vanatari CD 2026)
 pipeline/build_portfolio.py sources -> data/generated/facts_monthly.csv.gz
-pipeline/classify.py        rules engine -> verdicts.csv (+ verdict_history/)
+pipeline/classify.py        rules engine -> verdicts.csv (SKU x channel) +
+                            verdicts_country.csv (SKU x country) + verdict_history/
 reports/build_review_pack.py monthly markdown pack -> reports/packs/
 config/rules.yaml           thresholds + verdict definitions (edit me)
 config/ap26_targets.json    plan targets (from productpricer)

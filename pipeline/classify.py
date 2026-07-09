@@ -1,12 +1,20 @@
-"""Classification engine: one verdict per SKU x market for a review month.
+"""Classification engine: verdicts for a review month at two grains.
+
+The review is driven at **SKU x channel** level (Amazon vs Shopify, countries
+collapsed) - that is the primary output in verdicts.csv. Country marketplaces
+are still classified individually (verdicts_country.csv) so the review can show
+a compact per-country verdict summary and a full by-country tab without changing
+the headline unit.
 
 Reads config/rules.yaml (thresholds), config/ap26_targets.json (CM3 targets),
 data/generated/facts_monthly.csv.gz and launch_dates.csv; writes
-data/generated/verdicts.csv plus a dated copy in verdict_history/ so packs can
-diff month over month.
+data/generated/verdicts.csv (channel grain) + verdicts_country.csv (country
+grain) plus a dated channel-grain copy in verdict_history/ so packs can diff
+month over month.
 
 Manual overrides: data/overrides/verdict_overrides.csv
-(columns: sku, country, verdict, note) always win and are marked as manual.
+(columns: sku, country, verdict, note). country="*" targets the channel-grain
+row; a country code targets that market. Overrides always win.
 """
 from __future__ import annotations
 
@@ -19,7 +27,9 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline.common import (  # noqa: E402
+    COUNTRY_VERDICTS_PATH,
     FACTS_PATH,
+    GENERATED_DIR,
     HISTORY_DIR,
     LAUNCH_PATH,
     OVERRIDES_DIR,
@@ -29,6 +39,12 @@ from pipeline.common import (  # noqa: E402
     load_targets,
     month_range,
 )
+
+# Grain definitions: (groupby keys, keys the relative volume/margin tiers are
+# ranked within). Country tiers rank inside a single marketplace; channel tiers
+# rank across the whole channel (all countries pooled).
+CHANNEL_KEYS = ["brand", "channel", "sku"]
+COUNTRY_KEYS = ["brand", "channel", "country", "sku"]
 
 
 def month_diff(a: str, b: str) -> int:
@@ -48,15 +64,19 @@ def tier_1_to_3(values: pd.Series) -> pd.Series:
         return pd.Series(pd.NA, index=values.index, dtype="Int64")
 
 
-def build_features(facts: pd.DataFrame, launch: pd.DataFrame,
-                   review_month: str, cfg: dict) -> pd.DataFrame:
-    """Per SKU x market metrics as of the review month."""
+def build_features(facts: pd.DataFrame, launch: pd.DataFrame, review_month: str,
+                   cfg: dict, keys: list[str], tier_keys: list[str]) -> pd.DataFrame:
+    """Per-group metrics as of the review month, at the grain given by `keys`.
+
+    Windowed sums group by `keys`, so passing CHANNEL_KEYS collapses the country
+    marketplaces into one channel row automatically; COUNTRY_KEYS keeps them
+    separate. Relative volume/margin tiers are ranked within `tier_keys`.
+    """
     r = cfg["review"]
     trend_n = r["trend_window_months"]
     margin_n = r["margin_window_months"]
 
     df = facts[(facts["in_scope"]) & (facts["month"] <= review_month)].copy()
-    keys = ["brand", "channel", "country", "sku"]
 
     l3 = set(month_range(review_month, trend_n))
     p3 = set(month_range(str(pd.Period(review_month) - trend_n), trend_n))
@@ -70,12 +90,19 @@ def build_features(facts: pd.DataFrame, launch: pd.DataFrame,
         agg = sub.groupby(keys)[cols].sum(min_count=1)
         return agg.rename(columns={c: f"{c}_{suffix}" for c in cols})
 
-    base = df.groupby(keys).agg(
+    # grain-safe base: product/cm_source from the latest month; months_active and
+    # last sale counted as DISTINCT months (a channel row spans several countries
+    # per month, so a plain row count would multi-count).
+    df_sorted = df.sort_values("month")
+    base = df_sorted.groupby(keys).agg(
         product=("product", "last"),
-        months_active=("net_sales", lambda s: int((s > 0).sum())),
-        last_sale_month=("month", "max"),
         cm_source=("cm_source", "last"),
     )
+    sold = df[df["net_sales"] > 0]
+    base["months_active"] = sold.groupby(keys)["month"].nunique()
+    base["last_sale_month"] = sold.groupby(keys)["month"].max()
+    base["months_active"] = base["months_active"].fillna(0).astype(int)
+
     parts = [
         window_sum(["net_sales"], l3, "l3m"),
         window_sum(["net_sales"], p3, "p3m"),
@@ -118,8 +145,8 @@ def build_features(facts: pd.DataFrame, launch: pd.DataFrame,
         lambda m: month_diff(review_month, m) if isinstance(m, str) else np.nan
     )
 
-    # relative tiers within each market (brand-agnostic, like the 3x3 matrix)
-    grp = feat.groupby(["channel", "country"], group_keys=False)
+    # relative tiers within each tier group (brand-agnostic, like the 3x3 matrix)
+    grp = feat.groupby(tier_keys, group_keys=False)
     feat["vol_tier"] = grp["net_sales_ttm"].apply(tier_1_to_3)
     feat["margin_tier"] = grp["cm3_pct_l6m"].apply(tier_1_to_3)
     feat["cluster"] = (
@@ -128,11 +155,33 @@ def build_features(facts: pd.DataFrame, launch: pd.DataFrame,
     return feat
 
 
-def classify_row(row: pd.Series, cfg: dict, targets: dict) -> tuple[str, str]:
+def channel_target_blend(facts: pd.DataFrame, review_month: str, targets: dict) -> pd.DataFrame:
+    """Sales-weighted CM3 target per SKU x channel: each country's AP26 target
+    weighted by that SKU's TTM net sales in the country."""
+    ttm = set(month_range(review_month, 12))
+    sub = facts[facts["in_scope"] & facts["month"].isin(ttm)]
+    w = (
+        sub.groupby(CHANNEL_KEYS + ["country"], as_index=False)["net_sales"].sum()
+    )
+    w["net_sales"] = w["net_sales"].clip(lower=0)
+    w["tgt"] = w["country"].map(lambda c: cm3_target_for(c, targets))
+    w = w.dropna(subset=["tgt"])
+
+    def blend(g: pd.DataFrame) -> float:
+        s = g["net_sales"].sum()
+        if s <= 0:
+            return float(g["tgt"].mean())
+        return float((g["tgt"] * g["net_sales"]).sum() / s)
+
+    out = w.groupby(CHANNEL_KEYS).apply(blend, include_groups=False)
+    return out.rename("cm3_target").reset_index()
+
+
+def classify_row(row: pd.Series, cfg: dict) -> tuple[str, str]:
     r, t = cfg["review"], cfg["thresholds"]
     reasons: list[str] = []
 
-    target = cm3_target_for(row["country"], targets)
+    target = row["cm3_target"] if pd.notna(row.get("cm3_target")) else None
     cm3 = row["cm3_pct_l6m"]
     has_cm = row["cm_months_l6m"] > 0 and pd.notna(cm3)
     trend = row["sales_trend_pct"]
@@ -216,18 +265,50 @@ def classify_row(row: pd.Series, cfg: dict, targets: dict) -> tuple[str, str]:
     return "Watch", "; ".join(reasons)
 
 
-def apply_overrides(verdicts: pd.DataFrame) -> pd.DataFrame:
+def classify_frame(feat: pd.DataFrame, cfg: dict) -> pd.DataFrame:
+    verdict, reasons = zip(*(classify_row(r, cfg) for _, r in feat.iterrows()))
+    feat = feat.copy()
+    feat["verdict"] = verdict
+    feat["reasons"] = reasons
+    return feat
+
+
+def apply_overrides(verdicts: pd.DataFrame, grain: str) -> pd.DataFrame:
+    """Manual overrides. grain='country' matches (sku, country); grain='channel'
+    matches (sku) where the override country is '*' (channel-wide call)."""
     path = OVERRIDES_DIR / "verdict_overrides.csv"
+    verdicts = verdicts.copy()
     verdicts["manual"] = False
     if not path.exists():
         return verdicts
     ov = pd.read_csv(path, dtype=str).dropna(subset=["sku", "country", "verdict"])
     for _, o in ov.iterrows():
-        mask = (verdicts["sku"] == o["sku"]) & (verdicts["country"] == o["country"])
+        if grain == "country":
+            if o["country"] == "*":
+                continue
+            mask = (verdicts["sku"] == o["sku"]) & (verdicts["country"] == o["country"])
+        else:
+            if o["country"] != "*":
+                continue
+            mask = verdicts["sku"] == o["sku"]
         verdicts.loc[mask, "verdict"] = o["verdict"]
         verdicts.loc[mask, "reasons"] = "MANUAL: " + str(o.get("note", "") or "")
         verdicts.loc[mask, "manual"] = True
     return verdicts
+
+
+def summarise_country_verdicts(country_v: pd.DataFrame) -> pd.DataFrame:
+    """One compact per-SKU-x-channel summary of the country verdicts, for the
+    review tab chips: a 'DE:Fix|FR:Scale|IT:Watch' string plus counts."""
+    def one(g: pd.DataFrame) -> pd.Series:
+        pairs = sorted(zip(g["country"], g["verdict"]))
+        return pd.Series({
+            "country_verdicts": "|".join(f"{c}:{v}" for c, v in pairs),
+            "n_markets": len(pairs),
+            "n_markets_action": int(g["verdict"].isin(["Fix", "Exit"]).sum()),
+        })
+
+    return country_v.groupby(CHANNEL_KEYS).apply(one, include_groups=False).reset_index()
 
 
 def main(review_month: str | None = None) -> pd.DataFrame:
@@ -244,21 +325,37 @@ def main(review_month: str | None = None) -> pd.DataFrame:
         review_month = complete[-2] if len(complete) > 1 else complete[-1]
     print(f"Review month: {review_month}")
 
-    feat = build_features(facts, launch, review_month, cfg)
-    verdict, reasons = zip(*(classify_row(r, cfg, targets) for _, r in feat.iterrows()))
-    feat["verdict"] = verdict
-    feat["reasons"] = reasons
-    feat["review_month"] = review_month
-    feat["cm3_target"] = feat["country"].map(lambda c: cm3_target_for(c, targets))
-    feat = apply_overrides(feat)
+    # ---- country grain (per marketplace) ----
+    feat_c = build_features(facts, launch, review_month, cfg,
+                            COUNTRY_KEYS, ["channel", "country"])
+    feat_c["cm3_target"] = feat_c["country"].map(lambda c: cm3_target_for(c, targets))
+    country_v = classify_frame(feat_c, cfg)
+    country_v["review_month"] = review_month
+    country_v = apply_overrides(country_v, "country")
 
+    # ---- channel grain (countries collapsed) = primary review unit ----
+    feat_ch = build_features(facts, launch, review_month, cfg,
+                             CHANNEL_KEYS, ["channel"])
+    feat_ch = feat_ch.merge(
+        channel_target_blend(facts, review_month, targets), on=CHANNEL_KEYS, how="left"
+    )
+    channel_v = classify_frame(feat_ch, cfg)
+    channel_v["review_month"] = review_month
+    channel_v = channel_v.merge(summarise_country_verdicts(country_v),
+                                on=CHANNEL_KEYS, how="left")
+    channel_v = apply_overrides(channel_v, "channel")
+
+    GENERATED_DIR.mkdir(parents=True, exist_ok=True)
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
-    feat.to_csv(VERDICTS_PATH, index=False)
-    feat.to_csv(HISTORY_DIR / f"verdicts_{review_month}.csv", index=False)
+    channel_v.to_csv(VERDICTS_PATH, index=False)
+    channel_v.to_csv(HISTORY_DIR / f"verdicts_{review_month}.csv", index=False)
+    country_v.to_csv(COUNTRY_VERDICTS_PATH, index=False)
 
-    print(feat["verdict"].value_counts().to_string())
-    print(f"-> {VERDICTS_PATH}")
-    return feat
+    print("Channel grain (primary):")
+    print(channel_v["verdict"].value_counts().to_string())
+    print(f"-> {VERDICTS_PATH}  ({len(channel_v)} SKU x channel)")
+    print(f"-> {COUNTRY_VERDICTS_PATH}  ({len(country_v)} SKU x country)")
+    return channel_v
 
 
 if __name__ == "__main__":
