@@ -30,7 +30,10 @@ TARGETS_JSON = CONFIG_DIR / "ap26_targets.json"
 RULES_YAML = CONFIG_DIR / "rules.yaml"
 SHOPIFY_ASSUMPTIONS_YAML = CONFIG_DIR / "shopify_assumptions.yaml"
 
+INVENTORY_GLOB = "nova_inventory_*.csv"  # live FBA stock snapshots in data/source/
+
 FACTS_PATH = GENERATED_DIR / "facts_monthly.csv.gz"
+OOS_PATH = GENERATED_DIR / "oos.csv"
 LAUNCH_PATH = GENERATED_DIR / "launch_dates.csv"
 VERDICTS_PATH = GENERATED_DIR / "verdicts.csv"              # channel grain (primary)
 COUNTRY_VERDICTS_PATH = GENERATED_DIR / "verdicts_country.csv"  # per marketplace

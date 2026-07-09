@@ -97,6 +97,10 @@ def load_margin_export() -> pd.DataFrame:
     grouped["channel"] = "Amazon"
     grouped["cm_source"] = "actual"
     grouped["in_scope"] = True
+    # Nova stores Advertising Costs as a negative amount (a cost). Store ad_spend
+    # as a positive magnitude, consistent with the webshop, so spend can be summed
+    # and compared. (CM1/2/3 already net it out, so this only affects ad_spend.)
+    grouped["ad_spend"] = grouped["ad_spend"].abs()
     return grouped
 
 

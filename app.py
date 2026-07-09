@@ -25,6 +25,7 @@ from pipeline.common import (
     HISTORY_DIR,
     LAUNCH_PATH,
     NO_DATA,
+    OOS_PATH,
     RULES_YAML,
     TARGETS_JSON,
     VERDICT_ORDER,
@@ -106,11 +107,12 @@ def load_data():
     facts = pd.read_csv(FACTS_PATH)
     history = pd.read_csv(GENERATED_DIR / "excel_history.csv.gz")
     launch = pd.read_csv(LAUNCH_PATH)
+    oos = pd.read_csv(OOS_PATH) if OOS_PATH.exists() else pd.DataFrame()
     with open(RULES_YAML) as fh:
         rules = yaml.safe_load(fh)
     with open(TARGETS_JSON) as fh:
         targets = json.load(fh)
-    return verdicts, country, facts, history, launch, rules, targets
+    return verdicts, country, facts, history, launch, oos, rules, targets
 
 
 def eur(x, digits=0) -> str:
@@ -466,6 +468,95 @@ def drilldown(cv: pd.DataFrame, facts: pd.DataFrame, history: pd.DataFrame) -> N
                 st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 
+def oos_view(oos: pd.DataFrame, verdicts: pd.DataFrame) -> None:
+    if oos.empty:
+        st.info("No OOS data — run `python pipeline/oos.py` after the build.")
+        return
+    o = oos.merge(verdicts[["brand", "channel", "sku", "verdict"]],
+                  on=["brand", "channel", "sku"], how="left")
+
+    st.markdown("#### Out of stock — and where marketing is still running")
+    st.caption(
+        "Amazon FBA stock (Novadata snapshot, "
+        f"{o['snapshot'].dropna().iloc[0] if o['snapshot'].notna().any() else 'latest'}). "
+        "‘Out of stock’ = zero sellable units in the pool. Amazon ad spend is "
+        "reported from Feb 2026; the webshop has no live stock feed."
+    )
+
+    waste = o[o["advertising_while_out_now"]].sort_values("recent_ad_spend", ascending=False)
+    low = o[o["advertising_while_low"]].sort_values("recent_ad_spend", ascending=False)
+    c = st.columns(4)
+    c[0].metric("Out of stock now", f"{int(o['out_now'].sum())}",
+                help="Amazon SKUs with zero sellable units in the pool")
+    c[1].metric("OOS & still advertised", f"{len(waste)}",
+                help="Out of stock but still drew ad spend last month — wasted")
+    c[2].metric("Wasted ad € · last month", eur(waste["recent_ad_spend"].sum()),
+                help="Last-month ad spend on products that are now out of stock")
+    c[3].metric("Low stock & advertised", f"{len(low)}",
+                help="Selling but running low — a restock signal, not wasted spend")
+
+    st.markdown("##### :rotating_light: Out of stock but still advertised — stop the spend")
+    cols = ["sku", "product", "channel", "verdict", "fba_available", "fba_incoming",
+            "sales_velocity", "recent_ad_spend", "recent_units"]
+    if waste.empty:
+        st.success("No fully out-of-stock product is currently being advertised.")
+    else:
+        st.dataframe(
+            waste[cols], use_container_width=True, height=300, hide_index=True,
+            column_config={
+                "fba_available": st.column_config.NumberColumn("Avail", format="%.0f"),
+                "fba_incoming": st.column_config.NumberColumn("Incoming", format="%.0f"),
+                "sales_velocity": st.column_config.NumberColumn("Units/day", format="%.1f"),
+                "recent_ad_spend": st.column_config.NumberColumn("Ad € last m", format="€%.0f"),
+                "recent_units": st.column_config.NumberColumn("Units last m", format="%.0f"),
+                "product": st.column_config.TextColumn("Product", width="medium"),
+            },
+        )
+
+    st.markdown("##### Selling but running low while advertised — restock, don't cut ads")
+    if low.empty:
+        st.info("No low-stock products with active ad spend.")
+    else:
+        st.dataframe(
+            low[["sku", "product", "channel", "verdict", "days_of_inventory",
+                 "fba_available", "fba_incoming", "sales_velocity", "recent_ad_spend"]],
+            use_container_width=True, height=300, hide_index=True,
+            column_config={
+                "days_of_inventory": st.column_config.NumberColumn("Days stock", format="%.0f"),
+                "fba_available": st.column_config.NumberColumn("Avail", format="%.0f"),
+                "fba_incoming": st.column_config.NumberColumn("Incoming", format="%.0f"),
+                "sales_velocity": st.column_config.NumberColumn("Units/day", format="%.1f"),
+                "recent_ad_spend": st.column_config.NumberColumn("Ad € last m", format="€%.0f"),
+                "product": st.column_config.TextColumn("Product", width="medium"),
+            },
+        )
+    st.download_button(
+        "Download OOS view (CSV)", o.to_csv(index=False).encode(),
+        file_name=f"oos_{o['review_month'].iloc[0]}.csv",
+    )
+
+    wasted = o[o["wasted_ad_spend_l6m"] > 0].sort_values("wasted_ad_spend_l6m", ascending=False)
+    st.markdown("##### Confirmed wasted spend during past stock-outs (last 6 months)")
+    st.caption(
+        "Demand-gap proxy: months where units collapsed to near-zero against the "
+        "product's own baseline while it still booked ad spend. Conservative — a "
+        f"floor, not a ceiling. Total €{o['wasted_ad_spend_l6m'].sum():,.0f}."
+    )
+    if wasted.empty:
+        st.info("No demand-gap stock-out months with ad spend in the window.")
+    else:
+        st.dataframe(
+            wasted[["sku", "product", "channel", "verdict", "oos_months_l6m",
+                    "wasted_ad_spend_l6m"]],
+            use_container_width=True, height=280, hide_index=True,
+            column_config={
+                "oos_months_l6m": st.column_config.NumberColumn("OOS months", format="%d"),
+                "wasted_ad_spend_l6m": st.column_config.NumberColumn("Wasted €", format="€%.0f"),
+                "product": st.column_config.TextColumn("Product", width="medium"),
+            },
+        )
+
+
 def data_gaps(v: pd.DataFrame, launch: pd.DataFrame) -> None:
     st.markdown("#### Where the review is flying blind")
     gaps = []
@@ -517,7 +608,7 @@ def main() -> None:
         st.error("Run the pipeline first: `python pipeline/build_portfolio.py && "
                  "python pipeline/classify.py`")
         st.stop()
-    verdicts, country, facts, history, launch, rules, _targets = load_data()
+    verdicts, country, facts, history, launch, oos, rules, _targets = load_data()
     st.session_state["_rules"] = rules
 
     header(verdicts)
@@ -563,9 +654,9 @@ def main() -> None:
     kpi_band(v)
     st.markdown("---")
 
-    tab_review, tab_country, tab_drill, tab_gaps = st.tabs(
+    tab_review, tab_country, tab_oos, tab_drill, tab_gaps = st.tabs(
         [":compass: Review (channel)", ":globe_with_meridians: By country",
-         ":mag: Drill-down", ":warning: Data gaps"]
+         ":package: Out of stock", ":mag: Drill-down", ":warning: Data gaps"]
     )
     with tab_review:
         verdict_overview(v)
@@ -583,6 +674,8 @@ def main() -> None:
             st.info("No rows for the current Market/brand/verdict filter.")
         else:
             country_table(cv)
+    with tab_oos:
+        oos_view(oos, verdicts)
     with tab_drill:
         drilldown(cv if not cv.empty else country, facts, history)
     with tab_gaps:

@@ -61,10 +61,14 @@ and share it with named viewers (free tier allows a limited number).
    - Refresh `data/source/wowtamins_amazon_de_monthly.csv` (Novadata, wowtamins
      account) and `data/source/shopify_vegavero_monthly.csv` (Shopify analytics,
      net sales by variant SKU by month).
+   - Drop a fresh FBA stock snapshot `data/source/nova_inventory_<date>.csv`
+     (Novadata inventory: sku, available/incoming pool, salesVelocity,
+     daysOfInventory, oosRiskFlag) for the out-of-stock view.
 2. **Run the pipeline**
    ```bash
    python pipeline/build_portfolio.py
    python pipeline/classify.py            # defaults to last complete month
+   python pipeline/oos.py                 # out-of-stock + marketing-while-OOS view
    python reports/build_review_pack.py
    ```
 3. **Hold the review** with the generated pack + dashboard
@@ -137,6 +141,7 @@ app.py                      Streamlit dashboard (Vanatari CD 2026)
 pipeline/build_portfolio.py sources -> data/generated/facts_monthly.csv.gz
 pipeline/classify.py        rules engine -> verdicts.csv (SKU x channel) +
                             verdicts_country.csv (SKU x country) + verdict_history/
+pipeline/oos.py             out-of-stock + marketing-while-OOS view -> oos.csv
 reports/build_review_pack.py monthly markdown pack -> reports/packs/
 config/rules.yaml           thresholds + verdict definitions (edit me)
 config/ap26_targets.json    plan targets (from productpricer)
